@@ -30,8 +30,10 @@
 <ul>
 <li>(for <a href="index.html#g2">older</a> gitolite (v1 or v2) users)</li>
 <li><a href="index.html#ql">quick links</a></li>
-<li><a href="index.html#what">what</a> is gitolite</li>
-<li><a href="why.html">why</a> might you need it</li>
+<li><a href="index.html#what">what</a> is gitolite?</li>
+<li><a href="how.html">how</a> does it work?</li>
+<li><a href="why.html">why</a> might you need it?</li>
+<li><a href="who.html">who</a> is using it?</li>
 <li><a href="index.html#contact">contact</a> info, mailing list, IRC channel</li>
 <li><a href="index.html#license">license</a> info</li>
 </ul>
@@ -39,11 +41,13 @@
 <h2>help for <a href="emergencies.html">emergencies</a></h2>
 
 <ul>
+<li><strong>install/setup issues caused by <a href="ssh.html">ssh</a></strong></li>
 <li><a href="emergencies.html#lost-key">lost</a> admin key/access</li>
 <li><a href="emergencies.html#bypass">bypass</a>ing gitolite</li>
 <li><a href="emergencies.html#clean">clean</a>ing out a botched install</li>
 <li><a href="emergencies.html#ce">common</a> errors</li>
 <li><a href="emergencies.html#ue">uncommon</a> errors</li>
+<li><a href="emergencies.html#nonstd">non-standard configs</a> that'll trip you up</li>
 <li>things that are <a href="emergencies.html#ngp">not gitolite problems</a></li>
 </ul>
 
@@ -61,7 +65,7 @@
 
 <ul>
 <li>notes and naming conventions</li>
-<li>requirements
+<li><a href="install.html#req">requirements</a>
 <ul>
 <li>your skills</li>
 <li>server</li>
@@ -70,8 +74,8 @@
 <li>getting the software</li>
 <li>the actual install</li>
 <li>upgrading</li>
-<li>packaging gitolite</li>
-<li><a href="install.html#migr">migr</a>ating</li>
+<li><a href="install.html#package">packaging</a> gitolite</li>
+<li><a href="install.html#migr">migrating</a> from v2</li>
 </ul>
 
 <h2><a href="setup.html">setup</a></h2>
@@ -102,7 +106,7 @@
 </ul></li>
 <li>adding and removing <a href="users.html">users</a>
 <ul>
-<li>multiple keys per user</li>
+<li><a href="users.html#multi-key">multiple keys</a> per user</li>
 </ul></li>
 <li>adding and removing <a href="repos.html">repos</a>
 <ul>
@@ -144,21 +148,22 @@
 
 <h2>what your <a href="user.html">user</a>s need to know</h2>
 
-<h2><a href="special.html">special</a> features/setups</h2>
+<h2><a href="special.html">special</a> features in core gitolite</h2>
+
+<p><strong>NOTE: <a href="non-core.html">non-core</a> features are listed in a <a href="non-core.html">separate document</a>
+since there are so many of them</strong>.</p>
 
 <ul>
 <li>putting 'repositories' and '.gitolite' <a href="special.html#elsewhere">somewhere else</a></li>
 <li><a href="special.html#writable">disabling pushes</a> to take backups</li>
 <li><a href="special.html#pers">personal</a> branches</li>
-<li>(<a href="vref.html#votes">link</a>: voting on commits)</li>
 <li><a href="deleg.html">delegating</a> access control responsibilities
 <ul>
 <li>(<a href="vref.html#NAME">link</a>: the NAME VREF)</li>
 <li>the <a href="deleg.html#subconf">subconf</a> command</li>
 </ul></li>
-<li>(<a href="non-core.html#partial-copy">link</a>: faking selective READ control)</li>
 <li>using pubkeys obtained <a href="special.html#keysonly">from elsewhere</a></li>
-<li>(<a href="cust.html#pushcode">link</a>: updating code via the admin repo)</li>
+<li>giving users <a href="special.html#gh">their own repos</a></li>
 </ul>
 
 <h2>interfacing with <a href="external.html">external</a> tools</h2>
@@ -180,11 +185,18 @@
 <li><a href="rare.html#moving">moving</a> servers</li>
 </ul>
 
-<h2><a href="cust.html">customisation</a></h2>
+<h2>customising gitolite</h2>
 
 <ul>
-<li>where do you put custom code?</li>
-<li>types of non-core programs
+<li><p><a href="cust.html">customisation</a> overview</p>
+
+<ul>
+<li>introduction</li>
+<li><a href="cust.html#ncloc">where</a> do you put custom code?
+<ul>
+<li>(<a href="cust.html#pushcode">link</a>: updating code via the admin repo)</li>
+</ul></li>
+<li><a href="cust.html#nctypes">types</a> of non-core programs
 <ul>
 <li><a href="cust.html#commands">commands</a></li>
 <li><a href="cust.html#hooks">hooks</a></li>
@@ -192,8 +204,9 @@
 <li>(<a href="triggers.html">link</a>: triggers)</li>
 <li>(<a href="vref.html">link</a>: VREFs)</li>
 </ul></li>
-<li>(<a href="non-core.html">link</a>: non-core programs shipped with gitolite)</li>
-<li><a href="dev-notes.html">developer notes</a> -- writing custom code
+</ul></li>
+<li><p><a href="dev-notes.html">developer notes</a> -- writing your own custom code</p>
+
 <ul>
 <li>environment variables and other inputs</li>
 <li>APIs
@@ -208,20 +221,9 @@
 <li>trigger programs</li>
 <li>sugar</li>
 </ul></li>
+<li>(appendix 1) notes on the INPUT trigger</li>
 </ul></li>
-</ul>
-
-<h2><a href="non-core.html">non-core</a> programs shipped with gitolite</h2>
-
-<ul>
-<li>commands</li>
-<li>syntactic sugar</li>
-<li>triggers</li>
-<li>(<a href="vref.html">link</a>: VREFs)</li>
-<li>special cases
-<ul>
-<li><a href="non-core.html#partial-copy">partial-copy</a>: selective read control for branches</li>
-</ul></li>
+<li><p><a href="non-core.html">list of non-core programs</a> shipped with gitolite</p></li>
 </ul>
 
 <h2>background info</h2>
@@ -235,6 +237,7 @@
 </ul></li>
 <li><a href="ssh.html">ssh</a></li>
 <li><a href="regex.html">regular expressions</a></li>
+<li><a href="perf.html">gitolite performance</a> and optional <a href="cache.html">caching</a></li>
 </ul>
 
 <h2>contributed software, tools, and documentation</h2>

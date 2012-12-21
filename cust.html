@@ -30,9 +30,16 @@ not considered "core".  This keeps the core simpler, and allows you to enhance
 gitolite for your own purposes without too much fuss.  (As an extreme example,
 even mirroring is not in core now!)</p>
 
-<p>This document will tell you about the types of non-core programs, and
-how/where to install your own.  (Actually <em>writing</em> the code is described in
-the <a href="dev-notes.html">developer notes</a> page).</p>
+<p>Here's how to find out more:</p>
+
+<ul>
+<li><p>this document describes the types of non-core programs and how/where to
+install your own</p></li>
+<li><p>the <a href="dev-notes.html">developer notes</a> page tells you how to write your own
+non-core programs</p></li>
+<li><p>the <a href="non-core.html">list of non-core programs</a> talks about what's already
+shipped with gitolite, with a brief description of each</p></li>
+</ul>
 
 <hr />
 
@@ -40,13 +47,13 @@ the <a href="dev-notes.html">developer notes</a> page).</p>
 <li><a href="cust.html">customising gitolite</a>
 <ul>
 <li>introduction</li>
-<li>locations
+<li><a href="cust.html#ncloc">locations</a>
 <ul>
 <li>default/primary location of non-core programs</li>
 <li><a href="cust.html#localcode">alternate location -- the <code>LOCAL_CODE</code> rc variable</a></li>
 <li><a href="cust.html#pushcode">managing custom code via the gitolite-admin repo</a></li>
 </ul></li>
-<li>types of non-core programs
+<li><a href="cust.html#nctypes">types of non-core programs</a>
 <ul>
 <li><a href="cust.html#commands">gitolite "commands"</a></li>
 <li><a href="cust.html#hooks">hooks and gitolite</a></li>
@@ -74,10 +81,7 @@ different name to avoid confusion and constant disambiguation in the docs.</li>
 <li><strong>VREFs</strong> are extensions to the access control check part of gitolite.</li>
 </ul>
 
-<p><a href="non-core.html">Here</a> is a list of non-core programs shipped with gitolite, with
-some description of each.</p>
-
-<h2>locations</h2>
+<h2><a name="ncloc"></a> locations</h2>
 
 <h3>default/primary location of non-core programs</h3>
 
@@ -147,7 +151,7 @@ running <code>gitolite setup --hooks-only</code> when you change any hooks and p
 <strong>However, if you do this, anyone who can push changes to the admin repo will
 effectively be able to run any arbitrary command on the server.</strong></p>
 
-<h2>types of non-core programs</h2>
+<h2><a name="nctypes"></a> types of non-core programs</h2>
 
 <h3><a name="commands"></a> gitolite "commands"</h3>
 
@@ -164,6 +168,8 @@ commands by saying:</p>
 
 <p>Very few commands are designed to be run both ways, but it can be done, by
 checking for the presence of env var <code>GL_USER</code>.</p>
+
+<p>All commands respond to a single <code>-h</code> option with a suitable message.</p>
 
 <p>You can get a <strong>list of available commands</strong> by using the <code>help</code> command.
 Naturally, a remote user will see a much smaller list than the server user.</p>
@@ -182,10 +188,13 @@ section in <a href="dev-notes.html">dev-notes</a> if you want additional update 
 <li><p>(gitolite-admin repo only) gitolite reserves the <code>post-update</code> hook.</p></li>
 </ul>
 
+<p><strong>NOTE</strong>: if you want to install a hook in only a few specific repositories,
+do it directly on the server.</p>
+
 <p>How/where to install them is described in detail in the "locations" section
 above, especially <a href="cust.html#localcode">this</a> and <a href="cust.html#pushcode">this</a>.  The summary is that
 you put them in the "hooks/common" sub-directory within the directory whose
-name is given in the <code>LOCAL_CODE</code> rc variable.</p>
+name is given in the <code>LOCAL_CODE</code> rc variable, then run <code>gitolite setup</code>.</p>
 
 <h3><a name="sugar"></a> syntactic sugar</h3>
 
@@ -198,6 +207,9 @@ lines), while the parser in the core gitolite engine does not change.</p>
 
 <p>If you want to write your own sugar scripts, please read the "your own sugar"
 section in <a href="dev-notes.html">dev-notes</a> first then email me.</p>
+
+<p>You enable a sugar script by adding it to the <code>SYNTACTIC_SUGAR</code> list in the rc
+file.</p>
 
 <h3>triggers</h3>
 
