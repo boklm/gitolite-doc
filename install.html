@@ -90,8 +90,9 @@ conf file uses.</li>
 
 <ul>
 <li><p>If you're installing gitolite, you're a "system admin", like it or not.
-Ssh is therefore a necessary skill.  Please take the time to learn at
-least enough to get passwordless access working.</p></li>
+Since most people use the ssh mode, <strong><a href="ssh.html">ssh</a></strong> is therefore a necessary
+skill.  Please take the time to learn at least enough to get passwordless
+access working.</p></li>
 <li><p>You also need to be somewhat familiar with git itself.  You cannot
 administer a whole bunch of git repositories if you don't know the basics
 of git.</p></li>
@@ -103,8 +104,9 @@ familiarity is not necessary to do <em>basic</em> access control.</p></li>
 <h3>server</h3>
 
 <ul>
-<li>Any Unix system with a posix compatible "sh".</li>
-<li>Git version 1.6.6 or later.</li>
+<li>Any Unix system with a posix compatible "sh" and a <strong>sane</strong> file system.</li>
+<li>Git version 1.6.6 or later.  (Git 1.7.8 or later if you want to run the
+test suite).</li>
 <li>Perl 5.8.8 or later.</li>
 <li>Openssh (almost any version).  Optional if you're using <a href="http.html">smart
 http</a>.</li>
