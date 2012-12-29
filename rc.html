@@ -107,6 +107,10 @@ end).</p>
 <p>The third choice (which you may have guessed already if you're familiar
 with regular expressions) is to allow anything and everything:
 <code>$GIT_CONFIG_KEYS = '.*';</code></p></li>
+<li><p><code>ROLES</code>, hash, default keys 'READERS' and 'WRITERS'</p>
+
+<p>This specifies the role names allowed to be used by users running the
+<a href="user.html#perms">perms</a> command.  The <a href="wild.html">wild</a> repos doc has more info on roles.</p></li>
 <li><p><code>DEFAULT_ROLE_PERMS</code>, string, default undef</p>
 
 <p>This sets default wildcard permissions for newly created wildcard repos.</p>
