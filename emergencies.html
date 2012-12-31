@@ -133,44 +133,7 @@ don't need gitolite!</p></li>
 
 <h2><a name="ue"></a> uncommon errors</h2>
 
-<ul>
-<li><p><code>WARNING: split conf not set, gl-conf present for &lt;repo&gt;</code></p>
-
-<p>(Case 1) you copied a bare repo ("repo.git") from another g3 site (or g2
-with <code>GL_BIG_CONFIG</code> on).  Then you pushed a change to "gitolite.conf" or
-ran certain server-side commands without adding the repo to the conf.</p>
-
-<p>Conversely, you removed "repo" from "gitolite.conf" but did not remove the
-actual "repo.git" on disk.</p>
-
-<p>(Case 2) This can also happen if you changed something like this</p>
-
-<pre><code>repo foo
-    ...&lt;some rules&gt;...
-</code></pre>
-
-<p>to this</p>
-
-<pre><code>@grp = foo
-repo @grp
-    ...&lt;some rules&gt;...
-</code></pre>
-
-<p>Also, even running <code>gitolite setup</code> will not fix this.</p>
-
-<p>The root cause is an internal consistency check that I do not wish to
-disable or subvert.  It is there for a reason, and I would prefer a
-warning that a human can investigate.</p>
-
-<p>If you're sure the reasons are one of the two above, you can either add
-the repo to the conf file in case 1, or manually remove the gl-conf file
-from the repo.git directory in case 2.</p>
-
-<p>Either way, run <code>gitolite setup</code> afterwards to make sure things are in
-good shape.</p>
-
-<p>If you think neither of those is the cause, email me.</p></li>
-</ul>
+<p>(This page intentionally left blank)</p>
 
 <h2><a name="nonstd"></a> non-standard configs that'll trip you up</h2>
 
