@@ -1,0 +1,106 @@
+
+<head>
+    <title>gitolite cookbook</title>
+<style>
+    body        { background: #fff; text-color: #000; margin-left:  40px;   font-size:  0.9em;  font-family: sans-serif; max-width: 800px; }
+    h1          { background: #ffb; text-color: #000; margin-left: -30px;   border-top:    5px  solid #ccc; }
+    h2          { background: #ffb; text-color: #000; margin-left: -20px;   border-top:    3px  solid #ddd; }
+    h3          { background: #ffb; text-color: #000; margin-left: -10px; }
+    h4          { background: #ffb; text-color: #000; }
+    code        { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+    pre         { margin-left:  2em;    background:  #ddf; text-color: #000; }
+    pre code    { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+</style>
+</head>
+
+<p style="text-align:center">
+    <a href="master-toc.html">master TOC</a>
+|
+    <a href="index.html">main page</a>
+|
+    <a href="index.html#license">license</a>
+</p>
+<p style="text-align:center">
+<font color="gray">This is for gitolite "g3"; for older (v2.x) documentation click <a href="http://sitaramc.github.com/gitolite/g2/master-toc.html">here</a></font>
+</p>
+<h1>gitolite cookbook</h1>
+
+<p>Documentation is meant to be as complete as possible, which means it attempts
+to cover all situations and scenarios.  That makes it harder to read.</p>
+
+<p>However, if you make some assumptions, remove the rationale, justification,
+and exceptions and special cases, etc., and generally just say <em>what</em> is to be
+done rather than explain <em>why</em>, many tasks can be described very easily.</p>
+
+<p>Maybe this will help.  If you run into problems, please check the main
+documentation before asking for help.</p>
+
+<hr />
+
+<ul>
+<li><a href="cookbook.html">gitolite cookbook</a>
+<ul>
+<li>hooks
+<ul>
+<li>adding you own update hooks</li>
+<li>adding other (non-update) hooks</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2>hooks</h2>
+
+<h3>adding you own update hooks</h3>
+
+<p>You have some update hooks (for example crlf checking) that you
+want to include in gitolite.  Assuming the hook itself is tested
+and works as a normal <strong>git</strong> update hook does, here's what you
+do:</p>
+
+<ol>
+<li><p>add this line in the rc file if it's not already present:</p>
+
+<pre><code>LOCAL_CODE =&gt; "$ENV{HOME}/.gitolite/local",
+</code></pre></li>
+<li><p>in your gitolite-admin clone, do this:</p>
+
+<pre><code>mkdir -p local/VREF
+cp your-crlf-update-hook local/VREF/crlf
+chmod +x local/VREF/crlf
+git add local
+</code></pre></li>
+<li><p>in your gitolite-admin clone, edit conf/gitolite.conf and
+add lines like this:</p>
+
+<pre><code>    -   VREF/crlf       =   @all
+</code></pre>
+
+<p>to each repo that should have that "update" hook.</p>
+
+<p>Alternatively, you can simply add this at the end of the
+gitolite.conf file:</p>
+
+<pre><code>repo @all
+    -   VREF/crlf       =   @all
+</code></pre></li>
+<li><p>'git add conf; git commit; git push' (the admin repo)</p></li>
+</ol>
+
+<h3>adding other (non-update) hooks</h3>
+
+<p>Say you want other hooks, like a post-receive hook.  Here's how:</p>
+
+<ol>
+<li><p>add this line in the rc file if it's not already present:</p>
+
+<pre><code>LOCAL_CODE =&gt; "$ENV{HOME}/.gitolite/local",
+</code></pre></li>
+<li><p>in your gitolite-admin clone, do this:</p>
+
+<pre><code>mkdir -p local/common/hooks
+cp your-post-receive-hook local/common/hooks/post-receive
+chmod +x local/common/hooks/post-receive
+git add local
+</code></pre></li>
+<li><p>'git add conf; git commit; git push' (the admin repo)</p></li>
+</ol>
