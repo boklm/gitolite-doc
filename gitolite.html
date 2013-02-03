@@ -54,15 +54,15 @@ people who'd rather Ctrl-F around than click around :-)</p>
 <p>The page is loosely divided into the following sections:</p>
 
 <ol>
-<li>introduction, quick links, basics, and emergency help</li>
-<li>detailed install/setup and access rules</li>
-<li>git-config, gitolite options, gitweb/daemon, and the rc file</li>
-<li>wildcard repos, mirroring, and some other special features</li>
-<li>smart http mode</li>
-<li>customising gitolite with your own code</li>
-<li>all things ssh</li>
-<li>various odds and ends like how/why/who, regexes, and performance</li>
-<li>everything to do with migration from v2.</li>
+<li><a href="gitolite.html#s1">introduction, quick links, basics, and emergency help</a></li>
+<li><a href="gitolite.html#s2">detailed install/setup and access rules</a></li>
+<li><a href="gitolite.html#s3">git-config, gitolite options, gitweb/daemon, and the rc file</a></li>
+<li><a href="gitolite.html#s4">wildcard repos, mirroring, and some other special features</a></li>
+<li><a href="gitolite.html#s5">smart http mode</a></li>
+<li><a href="gitolite.html#s6">customising gitolite with your own code</a></li>
+<li><a href="gitolite.html#s7">all things ssh</a></li>
+<li><a href="gitolite.html#s8">various odds and ends like how/why/who, regexes, and performance</a></li>
+<li><a href="gitolite.html#s9">everything to do with migration from v2</a></li>
 </ol>
 
 <p>Please note that this is only the latest entry point to the documentation.
@@ -81,7 +81,7 @@ avoid scaring people away!</li>
 
 <hr />
 
-<h1>basics, quick links, and help</h1>
+<h1><a name="s1"></a> basics, quick links, and help</h1>
 
 <h2><a name="index-index"></a> Hosting git repositories</h2>
 
@@ -867,7 +867,7 @@ assumptions".  Where does it end?</p></li>
 
 <hr />
 
-<h1>detailed installation and access rules</h1>
+<h1><a name="s2"></a> detailed installation and access rules</h1>
 
 <h2><a name="install-install"></a> installing gitolite</h2>
 
@@ -1656,7 +1656,7 @@ only accept a straight line series of commits).</li>
 
 <hr />
 
-<h1>the rc file, git-config, and options</h1>
+<h1><a name="s3"></a> the rc file, git-config, and options</h1>
 
 <h2><a name="rc-rc"></a> the "rc" file (<code>$HOME/.gitolite.rc</code>)</h2>
 
@@ -2048,7 +2048,7 @@ certainly do things like</p>
 
 <hr />
 
-<h1>wild repos, mirroring, and other features</h1>
+<h1><a name="s4"></a> wild repos, mirroring, and other features</h1>
 
 <h2><a name="wild-wild"></a> "wild" repos (user created repos)</h2>
 
@@ -2677,7 +2677,7 @@ cb0957cab3b43f4d0cbc6ce189a70698
 
 
 
-<h1>smart http</h1>
+<h1><a name="s5"></a> smart http</h1>
 
 <h2><a name="http-http"></a> how to setup gitolite to use smart http mode</h2>
 
@@ -2860,7 +2860,7 @@ make available via http.
 
 
 
-<h1>customising gitolite</h1>
+<h1><a name="s6"></a> customising gitolite</h1>
 
 <h2><a name="cust-cust"></a> customising gitolite</h2>
 
@@ -3773,7 +3773,7 @@ value of the environment variable <code>GL_TID</code> to tie together related en
 
 <hr />
 
-<h1>ssh</h1>
+<h1><a name="s7"></a> ssh</h1>
 
 <h2><a name="ssh-ssh"></a> ssh</h2>
 
@@ -4765,7 +4765,7 @@ Authenticating with public key "My Key" from agent
 
 <hr />
 
-<h1>odds and ends</h1>
+<h1><a name="s8"></a> odds and ends</h1>
 
 <h2><a name="how-how"></a> how does gitolite work</h2>
 
@@ -5018,8 +5018,8 @@ gitolite would just run out of memory and die!).</p>
 issue tracking and reviewboard for code review).  Apart from the usual access
 control, the KDE folks are heavy users of the "ad hoc repo creation" features
 enabled by wildrepos and the accompanying commands.  Several of the changes to
-the "admin defined commands" were also inspired by KDE's needs.  See <a href="http://community.kde.org/Sysadmin/GitKdeOrgManual#Server-side_commands">section
-5</a> and <a href="http://community.kde.org/Sysadmin/GitKdeOrgManual#Personal_repositories">section 6</a> of the above linked page for details.</p>
+the "admin defined commands" were also inspired by KDE's needs.  See <a href="gitolite.html#s5">section
+5</a> and <a href="gitolite.html#s6">section 6</a> of the above linked page for details.</p>
 
 <p><strong>Prof. Hiren Patel</strong> of the University of Waterloo is responsible for the
 existence of the fairly popular "<a href="gitolite.html#wild-wild">wildrepos</a>" feature.  The
@@ -5385,7 +5385,7 @@ the "projects.list" file.)</p></li>
 
 <hr />
 
-<h1>migration</h1>
+<h1><a name="s9"></a> migration</h1>
 
 <h2><a name="g2incompat-g2incompat"></a> incompatibility with g2</h2>
 
@@ -6174,6 +6174,8 @@ the files to make sure this worked properly</em></p></li>
 </ul>
 
 <hr />
+
+<p><strong>THE END</strong></p>
 
 <hr />
 
