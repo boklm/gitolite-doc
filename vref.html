@@ -59,35 +59,58 @@ who stop reading halfway!</p>
 <ul>
 <li><a href="vref.html">virtual refs</a>
 <ul>
-<li>rule matching recap</li>
-<li>what is a virtual ref?</li>
-<li>how do I use a VREF?</li>
-<li>where do VREFs come from?</li>
-<li>ok who calls the VREF-maker?</li>
-<li>how does a VREF-maker work?</li>
-<li>mimicking a plain old update hook</li>
+<li>rule matching recap
+</li>
+<li>what is a virtual ref?
+</li>
+<li>how do I use a VREF?
+</li>
+<li>where do VREFs come from?
+</li>
+<li>ok who calls the VREF-maker?
+</li>
+<li>how does a VREF-maker work?
+</li>
+<li>mimicking a plain old update hook
+</li>
 <li>details
 <ul>
-<li>what if the VREF-maker prints a different VREF?</li>
-<li><a href="vref.html#vref-fallthru">why is fallthru considered success with VREFs</a></li>
-<li>what if the VREF-maker prints something that's not even a VREF?</li>
-<li>in what order are VREF-makers called?</li>
-<li><a href="vref.html#vref-args">what arguments are passed to the vref-maker?</a></li>
-</ul></li>
+<li>what if the VREF-maker prints a different VREF?
+</li>
+<li><a href="vref.html#vref-fallthru">why is fallthru considered success with VREFs</a>
+</li>
+<li>what if the VREF-maker prints something that's not even a VREF?
+</li>
+<li>in what order are VREF-makers called?
+</li>
+<li><a href="vref.html#vref-args">what arguments are passed to the vref-maker?</a>
+</li>
+</ul>
+</li>
 <li>VREF-makers shipped with gitolite
 <ul>
-<li><a href="vref.html#NAME">restricting pushes by dir/file name</a></li>
-<li><a href="vref.html#COUNT">number of changed or new files</a></li>
-<li>advanced filetype detection</li>
-<li>checking author email</li>
-<li><a href="vref.html#votes">voting on commits</a></li>
-</ul></li>
+<li><a href="vref.html#NAME">restricting pushes by dir/file name</a>
+</li>
+<li><a href="vref.html#COUNT">number of changed or new files</a>
+</li>
+<li>advanced filetype detection
+</li>
+<li>checking author email
+</li>
+<li><a href="vref.html#votes">voting on commits</a>
+</li>
+</ul>
+</li>
 <li>other ideas -- code welcome!
 <ul>
-<li>"no non-merge first-parents"</li>
-<li>other ideas for VREFs</li>
-</ul></li>
-</ul></li>
+<li>"no non-merge first-parents"
+</li>
+<li>other ideas for VREFs
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <hr />
@@ -429,14 +452,20 @@ quite different.</p>
 <p>Here are some more ideas:</p>
 
 <ul>
-<li>Number of commits (<code>git rev-list --count $old $new</code>).</li>
+<li>Number of commits (<code>git rev-list --count $old $new</code>).
+</li>
 <li>Number of binary files in commit (currently I only know to count
-occurrences of <code>Bin</code> in the output of <code>git diff --stat</code>.</li>
+occurrences of <code>Bin</code> in the output of <code>git diff --stat</code>.
+</li>
 <li>Number of <em>new</em> binary files (count <code>Bin 0 -&gt;</code> in <code>git diff --stat</code>
-output).</li>
-<li>Time of day/day of week (see example snippet somewhere above).</li>
-<li>IP address.</li>
-<li>Phase of the moon.</li>
+output).
+</li>
+<li>Time of day/day of week (see example snippet somewhere above).
+</li>
+<li>IP address.
+</li>
+<li>Phase of the moon.
+</li>
 </ul>
 
 <p>Note that pretty much anything that involves <code>$oldsha..$newsha</code> will have to

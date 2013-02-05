@@ -163,6 +163,13 @@ don't need gitolite!</p></li>
 <h2><a name="nonstd"></a> non-standard configs that'll trip you up</h2>
 
 <ul>
+<li><p>if your 'git' binary is in a non-PATH location, or you have more than one
+version and want a specific one to be picked up, you will have to add a
+line like this at the end of the rc file (outside the <code>%RC</code> hash, but
+before the<code>1;</code> line):</p>
+
+<pre><code>$ENV{PATH} = "/your/git/path:$ENV{PATH}";
+</code></pre></li>
 <li><p>having sshd setup to put the authorized_keys file somewhere other than
 the default (which is in .ssh in the <a href="install.html#nnc">hosting user</a>'s home directory).</p></li>
 <li><p>having sshd setup to not allow incoming ssh for the hosting user.  Check
@@ -183,13 +190,20 @@ lot more patience than I do, bless 'em!)</p>
 <li><p><strong>Client side software</strong></p>
 
 <ul>
-<li>putty/plink</li>
-<li>jgit/Eclipse</li>
-<li>Mac OS client <strong>or</strong> server</li>
-<li>putty/plink</li>
-<li>windows as a server</li>
-<li>...probably some more I forgot; will update this list as I remember...</li>
-<li>did I mention putty/plink?</li>
+<li>putty/plink
+</li>
+<li>jgit/Eclipse
+</li>
+<li>Mac OS client <strong>or</strong> server
+</li>
+<li>putty/plink
+</li>
+<li>windows as a server
+</li>
+<li>...probably some more I forgot; will update this list as I remember...
+</li>
+<li>did I mention putty/plink?
+</li>
 </ul></li>
 <li><p><strong>Ssh</strong></p>
 

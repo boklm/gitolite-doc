@@ -54,27 +54,40 @@ people who'd rather Ctrl-F around than click around :-)</p>
 <p>The page is loosely divided into the following sections:</p>
 
 <ol>
-<li><a href="gitolite.html#s1">introduction, quick links, basics, and emergency help</a></li>
-<li><a href="gitolite.html#s2">detailed install/setup and access rules</a></li>
-<li><a href="gitolite.html#s3">git-config, gitolite options, gitweb/daemon, and the rc file</a></li>
-<li><a href="gitolite.html#s4">wildcard repos, mirroring, and some other special features</a></li>
-<li><a href="gitolite.html#s5">smart http mode</a></li>
-<li><a href="gitolite.html#s6">customising gitolite with your own code</a></li>
-<li><a href="gitolite.html#s7">all things ssh</a></li>
-<li><a href="gitolite.html#s8">various odds and ends like how/why/who, regexes, and performance</a></li>
-<li><a href="gitolite.html#s9">everything to do with migration from v2</a></li>
+<li><a href="gitolite.html#s1">introduction, quick links, basics, and emergency help</a>
+</li>
+<li><a href="gitolite.html#s2">detailed install/setup and access rules</a>
+</li>
+<li><a href="gitolite.html#s3">git-config, gitolite options, gitweb/daemon, and the rc file</a>
+</li>
+<li><a href="gitolite.html#s4">wildcard repos, mirroring, and some other special features</a>
+</li>
+<li><a href="gitolite.html#s5">smart http mode</a>
+</li>
+<li><a href="gitolite.html#s6">customising gitolite with your own code</a>
+</li>
+<li><a href="gitolite.html#s7">all things ssh</a>
+</li>
+<li><a href="gitolite.html#s8">various odds and ends like how/why/who, regexes, and performance</a>
+</li>
+<li><a href="gitolite.html#s9">everything to do with migration from v2</a>
+</li>
 </ol>
 
 <p>Please note that this is only the latest entry point to the documentation.
 Others are:</p>
 
 <ul>
-<li>the main page -- see link at the top</li>
-<li>the "master table of contents" -- see link at the top</li>
-<li>the graphical overviews: <a href="basic.html">basic</a> and <a href="advanced.html">advanced</a></li>
+<li>the main page -- see link at the top
+</li>
+<li>the "master table of contents" -- see link at the top
+</li>
+<li>the graphical overviews: <a href="basic.html">basic</a> and <a href="advanced.html">advanced</a>
+</li>
 <li>a truly humungous index of all the section headings in <em>this</em> document
 appears at the end, cleverly moved there from its traditional place to
-avoid scaring people away!</li>
+avoid scaring people away!
+</li>
 </ul>
 
 <p>Enjoy!</p>
@@ -101,9 +114,12 @@ and <a href="gitolite.html#who-who">who</a> else is using it.</p>
 <p>For users of gitolite v2.x (call it "g2" for convenience),</p>
 
 <ul>
-<li><a href="gitolite.html#g3why-g3why">Why</a> I rewrote gitolite.</li>
-<li>Development <a href="gitolite.html#dev-status-dev-status">status</a>.</li>
-<li>Information on <a href="gitolite.html#install-migr">migrating</a> from g2 to g3.</li>
+<li><a href="gitolite.html#g3why-g3why">Why</a> I rewrote gitolite.
+</li>
+<li>Development <a href="gitolite.html#dev-status-dev-status">status</a>.
+</li>
+<li>Information on <a href="gitolite.html#install-migr">migrating</a> from g2 to g3.
+</li>
 </ul>
 
 <p></font></p>
@@ -111,13 +127,20 @@ and <a href="gitolite.html#who-who">who</a> else is using it.</p>
 <h3><a name="index-ql"></a> quick links</h3>
 
 <ul>
-<li><a href="gitolite.html#testing-trying">Trying</a> out gitolite.</li>
-<li>Minimum <a href="gitolite.html#install-req">requirements</a>.</li>
-<li>Here's how to do a <a href="gitolite.html#qi-qi">quick install, setup, and clone</a>.</li>
-<li>Don't know ssh well enough?  <a href="gitolite.html#ssh-ssh">Learn</a>.  It's <strong>IMPORTANT</strong>.</li>
-<li>Add <a href="gitolite.html#users-users">users</a> and <a href="gitolite.html#repos-repos">repos</a>.</li>
-<li>Learn about fine-grained access control with the <a href="gitolite.html#admin-conf">conf</a> file.</li>
-<li>Explain gitolite to your <a href="gitolite.html#user-user">users</a>.</li>
+<li><a href="gitolite.html#testing-trying">Trying</a> out gitolite.
+</li>
+<li>Minimum <a href="gitolite.html#install-req">requirements</a>.
+</li>
+<li>Here's how to do a <a href="gitolite.html#qi-qi">quick install, setup, and clone</a>.
+</li>
+<li>Don't know ssh well enough?  <a href="gitolite.html#ssh-ssh">Learn</a>.  It's <strong>IMPORTANT</strong>.
+</li>
+<li>Add <a href="gitolite.html#users-users">users</a> and <a href="gitolite.html#repos-repos">repos</a>.
+</li>
+<li>Learn about fine-grained access control with the <a href="gitolite.html#admin-conf">conf</a> file.
+</li>
+<li>Explain gitolite to your <a href="gitolite.html#user-user">users</a>.
+</li>
 </ul>
 
 <p>The rest of the documentation is in the "master index" link at the top of each
@@ -130,22 +153,31 @@ for specific information.</p>
 most people see:</p>
 
 <ul>
-<li>Use a single unix user ("real" user) on the server.</li>
+<li>Use a single unix user ("real" user) on the server.
+</li>
 <li>Provide access to many gitolite users:
 <ul>
-<li>they are not "real" users,</li>
-<li>they do not get shell access.</li>
-</ul></li>
+<li>they are not "real" users,
+</li>
+<li>they do not get shell access.
+</li>
+</ul>
+</li>
 <li>Control access to many git repositories:
 <ul>
-<li>read access controlled at the repo level,</li>
+<li>read access controlled at the repo level,
+</li>
 <li>write access controlled at the branch/tag/file/directory level,
-including who can rewind, create, and delete branches/tags.</li>
-</ul></li>
+including who can rewind, create, and delete branches/tags.
+</li>
+</ul>
+</li>
 <li>Can be installed without root access, assuming git and perl are already
-installed.</li>
+installed.
+</li>
 <li>Authentication is most commonly done using sshd, but you can also use
-<a href="gitolite.html#http-http">http</a> if you prefer (this may require root access).</li>
+<a href="gitolite.html#http-http">http</a> if you prefer (this may require root access).
+</li>
 </ul>
 
 <h3><a name="index-contact"></a> contact and support</h3>
@@ -154,13 +186,16 @@ installed.</li>
 <li><p>mailing list for support and general discussion:</p>
 
 <ul>
-<li>gitolite@googlegroups.com</li>
-<li>subscribe address: gitolite+subscribe@googlegroups.com</li>
+<li>gitolite@googlegroups.com
+</li>
+<li>subscribe address: gitolite+subscribe@googlegroups.com
+</li>
 </ul></li>
 <li><p>mailing list for announcements and notices:</p>
 
 <ul>
-<li>subscribe address: gitolite-announce+subscribe@googlegroups.com</li>
+<li>subscribe address: gitolite-announce+subscribe@googlegroups.com
+</li>
 </ul></li>
 <li><p>IRC: #git and #gitolite on freenode.  Note that I live in India (UTC+0530
 time zone).  <strong>Please do not ask questions on IRC if you cannot stay
@@ -245,8 +280,10 @@ suite requires git 1.7.8 or later.</p>
 <p>Make sure:</p>
 
 <ul>
-<li><code>$HOME/bin</code> is in <code>$PATH</code></li>
-<li>sshd allows incoming ssh to this userid, at least from localhost</li>
+<li><code>$HOME/bin</code> is in <code>$PATH</code>
+</li>
+<li>sshd allows incoming ssh to this userid, at least from localhost
+</li>
 </ul>
 
 <p>Gitolite's test suite is mostly written using <a href="http://github.com/sitaramc/tsh">tsh</a> -- the "testing shell".
@@ -277,13 +314,15 @@ like that, there are <a href="gitolite.html#install-install">other install metho
 
 <ul>
 <li>Also, this key does not already have shell access to this gitolite
-<a href="gitolite.html#install-nnc">hosting user</a>.</li>
+<a href="gitolite.html#install-nnc">hosting user</a>.
+</li>
 </ul></li>
 <li><p>The setup command does not generate any warnings.</p>
 
 <ul>
 <li>If it does, please see <a href="gitolite.html#emergencies-ce">common errors</a> and fix things before
-continuing, or read the more complete <a href="gitolite.html#setup-setup">setup</a> page.</li>
+continuing, or read the more complete <a href="gitolite.html#setup-setup">setup</a> page.
+</li>
 </ul></li>
 </ul>
 
@@ -346,15 +385,18 @@ work.  The only things to note are:</p>
 
 <ul>
 <li>in ssh mode, you <em>must</em> use key-based authentication (i.e., passwords
-won't work; see the <a href="gitolite.html#ssh-ssh">ssh</a> documents for why)</li>
+won't work; see the <a href="gitolite.html#ssh-ssh">ssh</a> documents for why)
+</li>
 <li>the path of the repo is what you put into the conf file (e.g., "testing",
 and not "repositories/testing" or "/home/git/repositories/testing" or
 such).  A good rule of thumb is to use the exact name the <code>info</code> command
-(see below) shows you.</li>
+(see below) shows you.
+</li>
 <li>the ".git" at the end is optional for <strong>git</strong> commands (i.e., you can use
 "testing.git" instead of "testing" for clone, fetch, push, etc., if you
 like) but <strong>gitolite</strong> commands in general (see below) will not like the
-additional ".git" at the end.</li>
+additional ".git" at the end.
+</li>
 </ul>
 
 <p><font color="gray">(*): A curious, but decidedly non-scientific, observation:
@@ -448,13 +490,13 @@ authentication, so here's some info on adding and removing users.</p>
 
 <blockquote>
   <hr />
-
-<p><em>WARNING: Do NOT add new repos or users manually on the server.  Gitolite
-  users, repos, and access rules are maintained by making changes to a
-  special repo called 'gitolite-admin' and pushing those changes to the
-  server.</em></p>
-
-<hr />
+  
+  <p><em>WARNING: Do NOT add new repos or users manually on the server.  Gitolite
+    users, repos, and access rules are maintained by making changes to a
+    special repo called 'gitolite-admin' and pushing those changes to the
+    server.</em></p>
+  
+  <hr />
 </blockquote>
 
 <p>All operations are in a clone of the gitolite-admin repo.</p>
@@ -521,13 +563,13 @@ repos into gitolite control, click <a href="gitolite.html#rare-existing">here</a
 
 <blockquote>
   <hr />
-
-<p><em>WARNING: Do NOT add new repos or users manually on the server.  Gitolite
-  users, repos, and access rules are maintained by making changes to a
-  special repo called 'gitolite-admin' and pushing those changes to the
-  server.</em></p>
-
-<hr />
+  
+  <p><em>WARNING: Do NOT add new repos or users manually on the server.  Gitolite
+    users, repos, and access rules are maintained by making changes to a
+    special repo called 'gitolite-admin' and pushing those changes to the
+    server.</em></p>
+  
+  <hr />
 </blockquote>
 
 <p>Just as for <a href="gitolite.html#users-users">users</a>, all operations are in a clone of the gitolite-admin
@@ -574,8 +616,10 @@ server and do what you need to.</p>
 is important):</p>
 
 <ul>
-<li>Go to the server and rename the repo at the Unix command line.</li>
-<li>Change the name in the conf/gitolite.conf file and add/commit/push.</li>
+<li>Go to the server and rename the repo at the Unix command line.
+</li>
+<li>Change the name in the conf/gitolite.conf file and add/commit/push.
+</li>
 </ul>
 
 <hr />
@@ -702,7 +746,7 @@ use the same key to get shell access as well as access gitolite repos.</p>
 
 <p>Solution: use a different keypair for gitolite.  There's a slightly longer
 discussion in the <a href="gitolite.html#setup-setup">setup</a> page.  Also see <a href="gitolite.html#sts-ybpfail">why bypassing causes a
-problem</a> and both the documents in <a href="gitolite.html#sts-ybpfail">ssh</a> and both the documents in [ssh] for background.</p></li>
+problem</a> and both the documents in <a href="gitolite.html#ssh-ssh">ssh</a> for background.</p></li>
 <li><p><code>Empty compile time value given to use lib at hooks/update line 6</code></p>
 
 <p>(followed by <code>Can't locate Gitolite/Hooks/Update.pm in @INC</code> a couple of
@@ -727,6 +771,13 @@ don't need gitolite!</p></li>
 <h3><a name="emergencies-nonstd"></a> non-standard configs that'll trip you up</h3>
 
 <ul>
+<li><p>if your 'git' binary is in a non-PATH location, or you have more than one
+version and want a specific one to be picked up, you will have to add a
+line like this at the end of the rc file (outside the <code>%RC</code> hash, but
+before the<code>1;</code> line):</p>
+
+<pre><code>$ENV{PATH} = "/your/git/path:$ENV{PATH}";
+</code></pre></li>
 <li><p>having sshd setup to put the authorized_keys file somewhere other than
 the default (which is in .ssh in the <a href="gitolite.html#install-nnc">hosting user</a>'s home directory).</p></li>
 <li><p>having sshd setup to not allow incoming ssh for the hosting user.  Check
@@ -747,13 +798,20 @@ lot more patience than I do, bless 'em!)</p>
 <li><p><strong>Client side software</strong></p>
 
 <ul>
-<li>putty/plink</li>
-<li>jgit/Eclipse</li>
-<li>Mac OS client <strong>or</strong> server</li>
-<li>putty/plink</li>
-<li>windows as a server</li>
-<li>...probably some more I forgot; will update this list as I remember...</li>
-<li>did I mention putty/plink?</li>
+<li>putty/plink
+</li>
+<li>jgit/Eclipse
+</li>
+<li>Mac OS client <strong>or</strong> server
+</li>
+<li>putty/plink
+</li>
+<li>windows as a server
+</li>
+<li>...probably some more I forgot; will update this list as I remember...
+</li>
+<li>did I mention putty/plink?
+</li>
 </ul></li>
 <li><p><strong>Ssh</strong></p>
 
@@ -894,12 +952,15 @@ as this "hosting user"</strong>.</p>
 <p>Notes:</p>
 
 <ul>
-<li>Any unix user can be a hosting user.</li>
-<li>Which also means you can have several hosting users on the same machine.</li>
+<li>Any unix user can be a hosting user.
+</li>
+<li>Which also means you can have several hosting users on the same machine.
+</li>
 <li>The URLs used will be of the form <code>git@host:reponame</code> (or its longer
 equivalent starting with <code>ssh://</code>).  The <code>.git</code> at the end is optional.  I
 recommend you leave it out, so your reponames are consistent with what the
-conf file uses.</li>
+conf file uses.
+</li>
 </ul>
 
 <h3><a name="install-req"></a> requirements</h3>
@@ -922,15 +983,20 @@ familiarity is not necessary to do <em>basic</em> access control.</p></li>
 <h4>server</h4>
 
 <ul>
-<li>Any Unix system with a posix compatible "sh" and a <strong>sane</strong> file system.</li>
+<li>Any Unix system with a posix compatible "sh" and a <strong>sane</strong> file system.
+</li>
 <li>Git version 1.6.6 or later.  (Git 1.7.8 or later if you want to run the
-test suite).</li>
-<li>Perl 5.8.8 or later.</li>
+test suite).
+</li>
+<li>Perl 5.8.8 or later.
+</li>
 <li>Openssh (almost any version).  Optional if you're using <a href="gitolite.html#http-http">smart
-http</a>.</li>
+http</a>.
+</li>
 <li>A dedicated Unix userid to be the hosting user, usually "git" but it can
 be any user, even your own normal one.  (If you're using an RPM/DEB the
-install probably created one called "gitolite").</li>
+install probably created one called "gitolite").
+</li>
 </ul>
 
 <p>Also see the <a href="gitolite.html#WARNINGS-WARNINGS">WARNINGS</a> page for more on what gitolite expects on the server
@@ -939,9 +1005,11 @@ side.</p>
 <h4>client</h4>
 
 <ul>
-<li>Openssh client.</li>
+<li>Openssh client.
+</li>
 <li>Git 1.6.6 or later.  Almost any git client will work, as long as it knows
-how to use ssh keys and send the right one along.</li>
+how to use ssh keys and send the right one along.
+</li>
 </ul>
 
 <h3>getting the software</h3>
@@ -962,11 +1030,14 @@ case you run it with the full path.</p>
 
 <ol>
 <li>Keep the sources anywhere and use the full path to run the <code>gitolite</code>
-command.</li>
+command.
+</li>
 <li>Keep the sources anywhere and symlink <em>just</em> the <code>gitolite</code> program to
-some directory on your <code>$PATH</code>.</li>
+some directory on your <code>$PATH</code>.
+</li>
 <li>Copy the sources somewhere and use that path to run the <code>gitolite</code>
-command.</li>
+command.
+</li>
 </ol>
 
 <p>Option 2 is the best for general use.</p>
@@ -1002,10 +1073,13 @@ gitolite/install -to /usr/local/gitolite/bin
 <h3>upgrading</h3>
 
 <ul>
-<li>Update your clone of the gitolite source.</li>
+<li>Update your clone of the gitolite source.
+</li>
 <li>Repeat the install command you used earlier (make sure you use the same
-arguments as before).</li>
-<li>Run <code>gitolite setup</code>.</li>
+arguments as before).
+</li>
+<li>Run <code>gitolite setup</code>.
+</li>
 </ul>
 
 <h3><a name="install-package"></a> packaging gitolite</h3>
@@ -1108,13 +1182,16 @@ where you put them.</p></li>
 <li><p>The <strong>rc file</strong></p>
 
 <ul>
-<li>Rename <code>~/.gitolite.rc</code> to something else.</li>
+<li>Rename <code>~/.gitolite.rc</code> to something else.
+</li>
 </ul></li>
 <li><p>The <strong>admin repo</strong></p>
 
 <ul>
-<li>clone <code>~/repositories/gitolite-admin.git</code> to someplace safe</li>
-<li>then delete <code>~/repositories/gitolite-admin.git</code></li>
+<li>clone <code>~/repositories/gitolite-admin.git</code> to someplace safe
+</li>
+<li>then delete <code>~/repositories/gitolite-admin.git</code>
+</li>
 </ul>
 
 <p>(Make sure you do not delete any other repos!)</p></li>
@@ -1172,19 +1249,19 @@ server.  That won't work.</p>
 
 <blockquote>
   <hr />
-
-<p>Normally, gitolite is hosted on a user that no one accesses directly --
-  you log on to the server using some other userid, and then <code>su - git</code>.  In
-  this scenario, there <em>is</em> no key being used for shell access, so there is
-  no conflict.</p>
-
-<p>An alternative method is to use two different keys, and a <a href="gitolite.html#sts-ssh-ha">host
-  alias</a> to distinguish the two.</p>
-
-<p><a href="gitolite.html#emergencies-ce">common errors</a> has some links to background information on this
-  issue.</p>
-
-<hr />
+  
+  <p>Normally, gitolite is hosted on a user that no one accesses directly --
+    you log on to the server using some other userid, and then <code>su - git</code>.  In
+    this scenario, there <em>is</em> no key being used for shell access, so there is
+    no conflict.</p>
+  
+  <p>An alternative method is to use two different keys, and a <a href="gitolite.html#sts-ssh-ha">host
+    alias</a> to distinguish the two.</p>
+  
+  <p><a href="gitolite.html#emergencies-ce">common errors</a> has some links to background information on this
+    issue.</p>
+  
+  <hr />
 </blockquote>
 
 <p>The 'setup' command has other uses, so you will be running it at other times
@@ -1288,9 +1365,12 @@ related to <code>include</code>, is documented <a href="gitolite.html#deleg-subc
 usually one-time or rarely done activities.</p>
 
 <ul>
-<li>Changing anything in the <a href="gitolite.html#rc-rc">rc</a> file.</li>
-<li>Installing custom <a href="gitolite.html#cust-hooks">hooks</a>, whether to all repos or just some repos.</li>
-<li>Moving <a href="gitolite.html#rare-existing">existing</a> repos into gitolite control.</li>
+<li>Changing anything in the <a href="gitolite.html#rc-rc">rc</a> file.
+</li>
+<li>Installing custom <a href="gitolite.html#cust-hooks">hooks</a>, whether to all repos or just some repos.
+</li>
+<li>Moving <a href="gitolite.html#rare-existing">existing</a> repos into gitolite control.
+</li>
 </ul>
 
 <p>Please read the <a href="gitolite.html#WARNINGS-WARNINGS">WARNINGS</a> page first.</p>
@@ -1300,9 +1380,12 @@ usually one-time or rarely done activities.</p>
 <p>Most day-to-day administration of a gitolite site happens like this:</p>
 
 <ul>
-<li><a href="gitolite.html#clone-clone">clone</a> the gitolite-admin repo to your workstation</li>
-<li>make appropriate changes</li>
-<li>add, commit, and push</li>
+<li><a href="gitolite.html#clone-clone">clone</a> the gitolite-admin repo to your workstation
+</li>
+<li>make appropriate changes
+</li>
+<li>add, commit, and push
+</li>
 </ul>
 
 <h4><a name="admin-conf"></a> the conf/gitolite.conf file</h4>
@@ -1328,14 +1411,22 @@ happens from this file.</p>
 <p>Use the following links to learn more:</p>
 
 <ul>
-<li>The basic <a href="gitolite.html#syntax-syntax">syntax</a> -- comments, whitespace, include files, etc.</li>
-<li>Defining <a href="gitolite.html#groups-groups">groups</a>, as in lines 1 and 2.</li>
-<li>Adding and removing <a href="gitolite.html#users-users">users</a>.</li>
-<li>Adding and removing <a href="gitolite.html#repos-repos">repos</a>, as in line 3.</li>
-<li>Defining access <a href="gitolite.html#rules-rules">rules</a>, as in lines 4, 5, 6, and 7.</li>
-<li>Gitolite <a href="gitolite.html#options-options">options</a>.</li>
-<li><a href="gitolite.html#git-config-git-config">Git config</a> keys and values, as in line 8.</li>
-<li><a href="gitolite.html#wild-wild">"Wild"</a> repos -- ad hoc, user-created, repos.</li>
+<li>The basic <a href="gitolite.html#syntax-syntax">syntax</a> -- comments, whitespace, include files, etc.
+</li>
+<li>Defining <a href="gitolite.html#groups-groups">groups</a>, as in lines 1 and 2.
+</li>
+<li>Adding and removing <a href="gitolite.html#users-users">users</a>.
+</li>
+<li>Adding and removing <a href="gitolite.html#repos-repos">repos</a>, as in line 3.
+</li>
+<li>Defining access <a href="gitolite.html#rules-rules">rules</a>, as in lines 4, 5, 6, and 7.
+</li>
+<li>Gitolite <a href="gitolite.html#options-options">options</a>.
+</li>
+<li><a href="gitolite.html#git-config-git-config">Git config</a> keys and values, as in line 8.
+</li>
+<li><a href="gitolite.html#wild-wild">"Wild"</a> repos -- ad hoc, user-created, repos.
+</li>
 </ul>
 
 <hr />
@@ -1369,11 +1460,15 @@ repo foo
 <p>The most commonly used permissions are:</p>
 
 <ul>
-<li>R, for read only</li>
-<li>RW, for push existing ref or create new ref</li>
+<li>R, for read only
+</li>
+<li>RW, for push existing ref or create new ref
+</li>
 <li>RW+, for  "push -f" or ref deletion allowed (i.e., destroy
-information)</li>
-<li><code>-</code> (the minus sign), to <strong>deny</strong> access.</li>
+information)
+</li>
+<li><code>-</code> (the minus sign), to <strong>deny</strong> access.
+</li>
 </ul>
 
 <p>There are also other, less commonly used, <a href="gitolite.html#write-types-write-types">types of permissions</a>.</p>
@@ -1441,11 +1536,14 @@ examined <em>in the sequence</em> they appear in the conf file</p></li>
 <li><p>for each rule:</p>
 
 <ul>
-<li>If the ref does not match the <a href="gitolite.html#refex-refex">refex</a>, the rule is skipped.</li>
-<li>If it's a deny rule, access is denied and the matching stops.</li>
+<li>If the ref does not match the <a href="gitolite.html#refex-refex">refex</a>, the rule is skipped.
+</li>
+<li>If it's a deny rule, access is denied and the matching stops.
+</li>
 <li>If the permission field matches the specific <a href="gitolite.html#write-types-write-types">type of
 write</a> operation, access is allowed and the matching
-stops.</li>
+stops.
+</li>
 </ul></li>
 <li><p>If no rule ends with a decision, ("fallthru"), access is denied.</p></li>
 </ul>
@@ -1626,8 +1724,10 @@ several types of writes.</p>
 <p>The most common are:</p>
 
 <ul>
-<li><code>RW</code> -- create a ref or fast-forward push a ref.  No rewinds or deletes.</li>
-<li><code>RW+</code> -- create, fast-forward push, rewind push, or delete a ref.</li>
+<li><code>RW</code> -- create a ref or fast-forward push a ref.  No rewinds or deletes.
+</li>
+<li><code>RW+</code> -- create, fast-forward push, rewind push, or delete a ref.
+</li>
 </ul>
 
 <p>Sometimes you want to allow people to push, but not <em>create</em> a ref.  Or
@@ -1651,7 +1751,8 @@ straight line of commits).  The <code>M</code> qualifier helps here:</p>
 <ul>
 <li>When a rule has <code>M</code> appended to the permissions, <em>rules that do NOT have
 it will reject a commit sequence that contains a merge commit</em> (i.e., they
-only accept a straight line series of commits).</li>
+only accept a straight line series of commits).
+</li>
 </ul>
 
 <hr />
@@ -1679,9 +1780,12 @@ sure the brackets and braces stay matched up!</p>
 gitolite.  As you can see there are 3 types of variables in it:</p>
 
 <ul>
-<li>simple variables (like <code>UMASK</code>)</li>
-<li>lists (like <code>POST_COMPILE</code>, <code>POST_CREATE</code>)</li>
-<li>hashes (like <code>ROLES</code>, <code>COMMANDS</code>)</li>
+<li>simple variables (like <code>UMASK</code>)
+</li>
+<li>lists (like <code>POST_COMPILE</code>, <code>POST_CREATE</code>)
+</li>
+<li>hashes (like <code>ROLES</code>, <code>COMMANDS</code>)
+</li>
 </ul>
 
 <p>While some of the variables are documented in this file, many of them are not.
@@ -1778,11 +1882,11 @@ require the '@' to be escaped:</p>
 
 <blockquote>
   <hr />
-
-<p><strong>Note</strong>: this won't work unless the rc file has the right settings;
-  please see <code>$GIT_CONFIG_KEYS</code> in the <a href="gitolite.html#rc-rc">rc file doc</a>.</p>
-
-<hr />
+  
+  <p><strong>Note</strong>: this won't work unless the rc file has the right settings;
+    please see <code>$GIT_CONFIG_KEYS</code> in the <a href="gitolite.html#rc-rc">rc file doc</a>.</p>
+  
+  <hr />
 </blockquote>
 
 <h3>basic syntax</h3>
@@ -1809,13 +1913,13 @@ example).  Other forms of the <code>git config</code> command (<code>--add</code
 
 <blockquote>
   <hr />
-
-<p><strong>WARNING</strong>: simply deleting the config line from the <code>conf/gitolite.conf</code>
-  file will <em>not</em> delete the variable from <code>repo.git/config</code>.  You have to
-  use the syntax in the last example to make gitolite execute a
-  <code>--unset-all</code> operation on the given key.</p>
-
-<hr />
+  
+  <p><strong>WARNING</strong>: simply deleting the config line from the <code>conf/gitolite.conf</code>
+    file will <em>not</em> delete the variable from <code>repo.git/config</code>.  You have to
+    use the syntax in the last example to make gitolite execute a
+    <code>--unset-all</code> operation on the given key.</p>
+  
+  <hr />
 </blockquote>
 
 <h3>substituting the repo name and the creator name</h3>
@@ -1954,21 +2058,21 @@ repo r2
 
 <blockquote>
   <hr />
-
-<p><strong>Note</strong>: The old gitolite (v1.x, v2.x) used to tie itself into knots
-  dealing with gitweb and daemon.  One of the goals of g3 was to get out of
-  that game, which your author does not play anyway.  This means statements
-  like "...special user called 'gitweb'..." really apply to the <a href="gitolite.html#non-core-non-core">non-core</a>
-  programs that gitolite ships with, not to "core" gitolite, and any or all
-  of this functionality can be disabled by commenting out certain lines in
-  the <a href="gitolite.html#rc-rc">rc</a> file.</p>
-
-<hr />
-
-<p>Also, <strong>note</strong> that gitolite does <strong>not</strong> install or configure
-  gitweb/git-daemon -- that is a one-time setup you must do separately.</p>
-
-<hr />
+  
+  <p><strong>Note</strong>: The old gitolite (v1.x, v2.x) used to tie itself into knots
+    dealing with gitweb and daemon.  One of the goals of g3 was to get out of
+    that game, which your author does not play anyway.  This means statements
+    like "...special user called 'gitweb'..." really apply to the <a href="gitolite.html#non-core-non-core">non-core</a>
+    programs that gitolite ships with, not to "core" gitolite, and any or all
+    of this functionality can be disabled by commenting out certain lines in
+    the <a href="gitolite.html#rc-rc">rc</a> file.</p>
+  
+  <hr />
+  
+  <p>Also, <strong>note</strong> that gitolite does <strong>not</strong> install or configure
+    gitweb/git-daemon -- that is a one-time setup you must do separately.</p>
+  
+  <hr />
 </blockquote>
 
 <h3>gitweb</h3>
@@ -1976,7 +2080,8 @@ repo r2
 <p>The following repos are deemed to be readable by gitweb:</p>
 
 <ul>
-<li>any repos readable by the special user <code>gitweb</code></li>
+<li>any repos readable by the special user <code>gitweb</code>
+</li>
 <li><p>any repos containing one or more of the following types of lines:
 (actually, any config variable starting with <code>gitweb.</code>).</p>
 
@@ -2149,18 +2254,18 @@ metacharacters.</p>
 
 <blockquote>
   <hr />
-
-<p><em>Side-note: contrast with refexes</em></p>
-
-<p>Just for interest, note that this is in contrast to the refexes for the
-  normal "branch" permissions, as described in <code>doc/gitolite.conf.mkd</code> and
-  elsewhere.  These "refexes" are only anchored at the start; a pattern like
-  <code>refs/heads/master</code> actually can match <code>refs/heads/master01/bar</code> as well,
-  even if no one will actually push such a branch!  You can anchor both
-  sides if you really care, by using <code>master$</code> instead of <code>master</code>, but that
-  is <em>not</em> the default for refexes.</p>
-
-<hr />
+  
+  <p><em>Side-note: contrast with refexes</em></p>
+  
+  <p>Just for interest, note that this is in contrast to the refexes for the
+    normal "branch" permissions, as described in <code>doc/gitolite.conf.mkd</code> and
+    elsewhere.  These "refexes" are only anchored at the start; a pattern like
+    <code>refs/heads/master</code> actually can match <code>refs/heads/master01/bar</code> as well,
+    even if no one will actually push such a branch!  You can anchor both
+    sides if you really care, by using <code>master$</code> instead of <code>master</code>, but that
+    is <em>not</em> the default for refexes.</p>
+  
+  <hr />
 </blockquote>
 
 <h3>roles</h3>
@@ -2238,12 +2343,17 @@ world they are at best read-only.</p>
 
 <ul>
 <li>Use the server closest to <em>most</em> of its developers as the master for
-that repo.</li>
-<li>Not mirror a repo at all to some servers.</li>
-<li>Have repos that are purely local to a server (not mirrored at all).</li>
-<li>Negotiate mirroring with servers that are not even under your control.</li>
+that repo.
+</li>
+<li>Not mirror a repo at all to some servers.
+</li>
+<li>Have repos that are purely local to a server (not mirrored at all).
+</li>
+<li>Negotiate mirroring with servers that are not even under your control.
+</li>
 <li>Push to a slave on demand or via cron (helps deal with bandwidth or
-connectivity constraints).</li>
+connectivity constraints).
+</li>
 </ul></li>
 <li><p>Pushes to a slave can be transparently forwarded to the real master.</p>
 
@@ -2292,25 +2402,80 @@ Mirroring checks also will not work -- for example, you can push to a
 slave, which is not usually a good idea.  So don't bypass gitolite if the
 repo is mirrored!</p></li>
 </ul>
+
 <h3>setting up mirroring</h3>
 
-This is in two parts: the initial setup and the rc file, followed by the conf
-file settings and syntax.
+<p>This is in two parts: the initial setup and the rc file, followed by the conf
+file settings and syntax.</p>
 
 <h4>the initial setup and the rc file</h4>
 
-On **each** server:
+<p>On <strong>each</strong> server:</p>
+
+<ul>
+<li><p>Install gitolite normally.  Make clones of the server's 'gitolite-admin'
+repo on your workstation so you can admin them all from one place.</p></li>
+<li><p>Give the server a short, simple, "hostname" and set the HOSTNAME in the
+rc file to this name, for example 'mars'.  <em>Note: this has nothing to do
+with the hostname of the server in networking or DNS terms, or in OS
+terms.  This is internal to gitolite</em>.</p></li>
+<li><p>Run ssh-keygen if needed and get an ssh key pair for the server.  Copy the
+public key to a common area and name it after the host, but with 'server-'
+prefixed.  For example, the pubkey for server 'mars' must be stored as
+'server-mars.pub'.</p></li>
+<li><p>Copy all keys to all the admin repo clones on your workstation and and add
+them as usual.  This is an <code>O(N^2)</code> operation ;-)</p>
+
+<p>You may have guessed that the prefix 'server-' is special, and
+distinguishes a human user from a mirroring peer.</p></li>
+<li><p>Create "host" aliases to refer to all other machines.  See <a href="gitolite.html#sts-ssh-ha">here</a>
+for what/how.</p>
+
+<p>The host alias for a host (in all other machines' <code>~/.ssh/config</code> files)
+MUST be the same as the <code>HOSTNAME</code> in the referred host's
+<code>~/.gitolite.rc</code>.  Gitolite mirroring <strong>requires</strong> this consistency in
+naming; things will NOT work otherwise.</p>
+
+<p>Normally you should be able to build one common file and append it to all
+the servers' <code>~/.ssh/config</code> files.</p></li>
+<li><p>The following <strong>MUST</strong> work for <strong>each pair</strong> of servers that must talk to
+each other:</p>
+
+<pre><code># on server mars
+ssh phobos info
+# the response MUST start with "hello, server-mars..."
+</code></pre>
+
+<p>Note the exact syntax used; variations like "ssh git@phobos.example.com
+info" are NOT sufficient.  That is why you need the ssh host aliases.</p>
+
+<p>Check this command from <em>everywhere to everywhere else</em>, and make sure you
+get expected results.  <strong>Do NOT proceed otherwise.</strong></p></li>
+<li><p>Setup the gitolite.conf file on all the servers.  If the slaves are to be
+exact copies of the master, you need to do the complete configuration only
+on the master; the slaves can have just this:</p>
+
+<pre><code>repo gitolite-admin
+    RW+     =   &lt;some local admin&gt;
 
 
+<pre><code>option mirror.master    =   mars
+option mirror.slaves    =   phobos
+</code></pre>
 
-883edf1e527488df0df5e1209ce61989
+</code></pre>
 
+<p>because on the first push to the master it will update all the slaves
+anyway.</p></li>
+<li><p>When that is all done and tested, <strong>enable mirroring</strong> by going through
+the rc file and uncommenting all the lines mentioning <code>Mirroring</code>.</p></li>
+</ul>
 
 <h4>conf file settings and syntax</h4>
 
-Mirroring is defined by the following [options][options-options].  You can have different
+<p>Mirroring is defined by the following <a href="gitolite.html#options-options">options</a>.  You can have different
 settings for different repos, and of course some repos may not have any mirror
-options at all -- they are then purely local.
+options at all -- they are then purely local.</p>
 
 <pre><code>repo foo
     ...access rules...
@@ -2320,54 +2485,54 @@ options at all -- they are then purely local.
     option mirror.redirectOK    =   all
 </code></pre>
 
-The first line is easy, since a repo can have only one master.
+<p>The first line is easy, since a repo can have only one master.</p>
 
-The second is a space separated list of hosts that are all slaves.  You can
+<p>The second is a space separated list of hosts that are all slaves.  You can
 have several slave lists, as long as the config key starts with
-'mirror.slaves' and is unique.  For example.
+'mirror.slaves' and is unique.  For example.</p>
 
 <pre><code>    option mirror.slaves-1   =   phobos deimos
     option mirror.slaves-2   =   io europa
     option mirror.slaves-3   =   ganymede callisto
 </code></pre>
 
-Do not repeat a key; then only the last line for that key will be effective.
+<p>Do not repeat a key; then only the last line for that key will be effective.</p>
 
 <h3>redirected pushes</h3>
 
-**Please read carefully; there are security implications if you enable this
-for mirrors NOT under your control**.
+<p><strong>Please read carefully; there are security implications if you enable this
+for mirrors NOT under your control</strong>.</p>
 
-Normally, a master, (and *only* a master), pushes to a slave, and the slaves
-are "read-only" to the users.  Gitolite allows a *slave* to receive pushes
-from a user and transparently redirect them to the *master*.
+<p>Normally, a master, (and <em>only</em> a master), pushes to a slave, and the slaves
+are "read-only" to the users.  Gitolite allows a <em>slave</em> to receive pushes
+from a user and transparently redirect them to the <em>master</em>.</p>
 
-This simplifies things for users in complex setups, letting them use their
-local mirror for both fetch and push access to all repos.
+<p>This simplifies things for users in complex setups, letting them use their
+local mirror for both fetch and push access to all repos.</p>
 
-Just remember that if you do this, **authentication** happens on the slave,
-but **authorisation** is on the master.  The master is trusting the slave to
-authenticate the user correctly, *and* use the same authentication data (i.e.,
+<p>Just remember that if you do this, <strong>authentication</strong> happens on the slave,
+but <strong>authorisation</strong> is on the master.  The master is trusting the slave to
+authenticate the user correctly, <em>and</em> use the same authentication data (i.e.,
 user alice on the slave should be guaranteed to be the same as user alice on
-the master).
+the master).</p>
 
-The syntax for enabling this is one of these:
+<p>The syntax for enabling this is one of these:</p>
 
 <pre><code>option mirror.redirectOK    =   all
 option mirror.redirectOK    =   phobos deimos
 </code></pre>
 
-The first syntax trusts all valid slaves to redirect user pushes, while the
-second one trusts only some slaves.
+<p>The first syntax trusts all valid slaves to redirect user pushes, while the
+second one trusts only some slaves.</p>
 
-Note that you cannot redirect gitolite commands (like perms, etc).
+<p>Note that you cannot redirect gitolite commands (like perms, etc).</p>
 
 <h3><a name="mirroring-sync"></a> manually synchronising a slave repo</h3>
 
-You can use the `gitolite mirror push` command on a master to manually
-synchronise any of its slaves.  Try it with `-h` to get usage info.
+<p>You can use the <code>gitolite mirror push</code> command on a master to manually
+synchronise any of its slaves.  Try it with <code>-h</code> to get usage info.</p>
 
-Tip: if you want to do this to all the slaves, try this:
+<p>Tip: if you want to do this to all the slaves, try this:</p>
 
 <pre><code>for s in `gitolite git-config -r reponame mirror.slave | cut -f3`
 do
@@ -2375,50 +2540,49 @@ do
 done
 </code></pre>
 
-This command can also be run remotely; run `ssh git@host mirror -h` for
-details.
+<p>This command can also be run remotely; run <code>ssh git@host mirror -h</code> for
+details.</p>
 
 <h3><a name="mirroring-HOSTNAME"></a> appendix A: HOSTNAME substitution</h3>
 
-Wherever gitolite sees the word `%HOSTNAME`, it will replace it with the
+<p>Wherever gitolite sees the word <code>%HOSTNAME</code>, it will replace it with the
 HOSTNAME supplied in the rc file, if one was supplied.  This lets you maintain
 configurations for all servers in one repo, yet havethem act differently on
-different servers, by saying something like:
+different servers, by saying something like:</p>
 
 <pre><code>subconf "%HOSTNAME/*.conf"
 </code></pre>
 
-You can use it in other places also, for example:
+<p>You can use it in other places also, for example:</p>
 
 <pre><code>RW+     VREF/NAME/subs/%HOSTNAME/       =   @%HOSTNAME-admins
 </code></pre>
 
-(you still have to define @mars-admins, @phobos-admins, etc., but the actual
-VREF is now one line instead of one for each server!)
+<p>(you still have to define @mars-admins, @phobos-admins, etc., but the actual
+VREF is now one line instead of one for each server!)</p>
 
 <h3>appendix B: efficiency versus paranoia</h3>
 
-If you're paranoid enough to use mirrors, you should be paranoid enough to
-set this on each server, despite the possible CPU overhead:
+<p>If you're paranoid enough to use mirrors, you should be paranoid enough to
+set this on each server, despite the possible CPU overhead:</p>
 
 <pre><code>git config --global receive.fsckObjects true
 </code></pre>
 
 <hr />
 
-
 <h2><a name="deleg-deleg"></a> delegating access control responsibilities</h2>
 
-Delegation allows you to divide up a large conf file into smaller groups of
-repos (called **subconf**s) and hand over responsibility to manage them to
-**sub-admin**s.  Gitolite can prevent one sub-admin from being able to set
-access rules for any other sub-admin's repos.
+<p>Delegation allows you to divide up a large conf file into smaller groups of
+repos (called <strong>subconf</strong>s) and hand over responsibility to manage them to
+<strong>sub-admin</strong>s.  Gitolite can prevent one sub-admin from being able to set
+access rules for any other sub-admin's repos.</p>
 
-Delegation is achieved by combining two gitolite features: [subconf][deleg-subconf] and the
-[NAME VREF][vref-NAME].
+<p>Delegation is achieved by combining two gitolite features: <a href="gitolite.html#deleg-subconf">subconf</a> and the
+<a href="gitolite.html#vref-NAME">NAME VREF</a>.</p>
 
-To understand delegation, read both those links then come back to this
-example.
+<p>To understand delegation, read both those links then come back to this
+example.</p>
 
 <h3>example</h3>
 
@@ -2438,162 +2602,177 @@ repo gitolite-admin
     -   VREF/NAME/                          = alice bob mallory
 </code></pre>
 
-Finally, you tell gitolite to pull in these files using the "subconf" command
+<p>Finally, you tell gitolite to pull in these files using the "subconf" command</p>
 
 <pre><code>subconf "subs/*.conf"
 </code></pre>
 
-And that's it.
+<p>And that's it.</p>
 
 <h3><a name="deleg-subconf"></a> the subconf command</h3>
 
-Subconf is exactly like the include command in syntax:
+<p>Subconf is exactly like the include command in syntax:</p>
 
 <pre><code>subconf "foo.conf"
 </code></pre>
 
-but while reading the included file (as well as anything included from it),
-gitolite sets the "subconf name" to "foo".
+<p>but while reading the included file (as well as anything included from it),
+gitolite sets the "subconf name" to "foo".</p>
 
-A "subconf" imposes some restrictions on what repos can be managed.
+<p>A "subconf" imposes some restrictions on what repos can be managed.</p>
 
-For example, while the subconf name is "foo", as in the above example,
-gitolite will only process "repo" lines for:
+<p>For example, while the subconf name is "foo", as in the above example,
+gitolite will only process "repo" lines for:</p>
 
+<ul>
+<li>A repo called "foo".
+</li>
+<li>A group called "@foo", as long as the group is defined in the main conf
+file (i.e., <em>outside</em> "foo.conf").
+</li>
+<li>A member of a group called "@foo" (again, defined outside).
+</li>
+<li>A repo that matches a member of a group called "@foo" if that member is a
+regular expression pattern.
+</li>
+</ul>
 
-
-1faf89ca0f1d16062926478f5a51ff72
-
-
-Here's an example.  If the main conf file contains
+<p>Here's an example.  If the main conf file contains</p>
 
 <pre><code>@foo    =   aa bb cc/..*
 </code></pre>
 
-then the subconf can only accept repo statements that refer to 'foo', '@foo',
-'aa', 'bb', or any repo whose name starts with 'cc/'.
+<p>then the subconf can only accept repo statements that refer to 'foo', '@foo',
+'aa', 'bb', or any repo whose name starts with 'cc/'.</p>
 
-**Note**: the subconf name "master" is special; it is the default subconf in
-effect for the main conf file and has no restrictions.
+<p><strong>Note</strong>: the subconf name "master" is special; it is the default subconf in
+effect for the main conf file and has no restrictions.</p>
 
 <h4>how the "subconf name" is derived</h4>
 
-For subconf lines that look just like include statements, i.e.,
+<p>For subconf lines that look just like include statements, i.e.,</p>
 
 <pre><code>subconf "foo/bar.conf"
 subconf "frob/*.conf"
     # assume frob has files aa.conf, bb.conf
 </code></pre>
 
-the subconf name as each file is being processed is the base name of the file.
+<p>the subconf name as each file is being processed is the base name of the file.
 This means it would be "bar" for the first line, "aa" when processing
-"frob/aa.conf", and "bb" when processing "frob/bb.conf".
+"frob/aa.conf", and "bb" when processing "frob/bb.conf".</p>
 
-A variation of subconf exists that can explicitly state the subconf name:
+<p>A variation of subconf exists that can explicitly state the subconf name:</p>
 
 <pre><code>subconf foo "frob/*.conf"
 </code></pre>
 
-In this variation, regardless of what file in "frob/" is being read, the
-subconf name in effect is "foo".
+<p>In this variation, regardless of what file in "frob/" is being read, the
+subconf name in effect is "foo".</p>
 
 <h3>security notes</h3>
 
 <h4>group names</h4>
 
-You can use "@group"s defined in the main config file but do not attempt to
+<p>You can use "@group"s defined in the main config file but do not attempt to
 redefine or extend them in your own subconf file.  If you must extend a group
-(say `@foo`) defined in the main config file, do this:
+(say <code>@foo</code>) defined in the main config file, do this:</p>
 
 <pre><code>@myfoo  =   @foo
 # now do whatever you want with @myfoo
 </code></pre>
 
-Group names you define in your subconf will not clash even if the exact same
-name is used in another subconf file, so you need not worry about that.
+<p>Group names you define in your subconf will not clash even if the exact same
+name is used in another subconf file, so you need not worry about that.</p>
 
 <h4>delegating pubkeys</h4>
 
-Short answer: not gonna happen.
+<p>Short answer: not gonna happen.</p>
 
-The delegation feature is meant only for access control rules, not pubkeys.
+<p>The delegation feature is meant only for access control rules, not pubkeys.
 Adding/removing pubkeys is a much more significant event than changing branch
 level permissions for people already on staff, and only the main admin should
-be allowed to do it.
+be allowed to do it.</p>
 
-Gitolite's "userids" all live in the same namespace.  This is unlikely to
+<p>Gitolite's "userids" all live in the same namespace.  This is unlikely to
 change, so please don't ask -- it gets real complicated to do otherwise.
 Allowing sub-admins to add users means username collisions, which also means
 security problems (admin-A creates a pubkey for Admin-B, thus gaining access
-to all of Admin-B's stuff).
+to all of Admin-B's stuff).</p>
 
-If you feel the need to delegate even that, please just go the whole hog and
+<p>If you feel the need to delegate even that, please just go the whole hog and
 give them separate gitolite instances (i.e., running under different gitolite
-hosting users)!
-
-
+hosting users)!</p>
 
 <hr />
-
 
 <h2><a name="special-special"></a> special features and setups</h2>
 
 <h3><a name="special-elsewhere"></a> putting 'repositories' and '.gitolite' somewhere else</h3>
 
-Gitolite insists that the "repositories" and ".gitolite" directories be in
-`$HOME`.  If you want them somewhere else:
+<p>Gitolite insists that the "repositories" and ".gitolite" directories be in
+<code>$HOME</code>.  If you want them somewhere else:</p>
 
-
-
-a641c689069d043c09981fd7303e2edb
-
+<ul>
+<li>do the install as normal,
+</li>
+<li><em>then</em> move those directories to wherever you want and replace them with
+symlinks pointing to the new location.
+</li>
+</ul>
 
 <h3><a name="special-writable"></a> disabling pushes to take backups</h3>
 
-The `writable` command allows you to disable pushes to all repos or just the
+<p>The <code>writable</code> command allows you to disable pushes to all repos or just the
 named repo, in order to do file-system level things to the repo directory that
-require it not to change, like using normal backup software.
+require it not to change, like using normal backup software.</p>
 
-Run `gitolite writable -h` for more info.
+<p>Run <code>gitolite writable -h</code> for more info.</p>
 
 <h3><a name="special-pers"></a> "personal" branches</h3>
 
-"personal" branches are great for environments where developers need to share
+<p>"personal" branches are great for environments where developers need to share
 work but can't directly pull from each other (usually due to either a
-networking or authentication related reason, both common in corporate setups).
+networking or authentication related reason, both common in corporate setups).</p>
 
-Personal branches exist **in a namespace** of their own.  The syntax is
+<p>Personal branches exist <strong>in a namespace</strong> of their own.  The syntax is</p>
 
 <pre><code>    RW+ personal/USER/  =   @userlist
 </code></pre>
 
-where the "personal" can be anything you like (but cannot be empty), and the
-"/USER/" part is **necessary (including both slashes)**.
+<p>where the "personal" can be anything you like (but cannot be empty), and the
+"/USER/" part is <strong>necessary (including both slashes)</strong>.</p>
 
-A user "alice" (if she's in the userlist) can then push any branches inside
-`personal/alice/`.  Which means she can push `personal/alice/foo` and
-`personal/alice/bar`, but NOT `personal/alice`.
+<p>A user "alice" (if she's in the userlist) can then push any branches inside
+<code>personal/alice/</code>.  Which means she can push <code>personal/alice/foo</code> and
+<code>personal/alice/bar</code>, but NOT <code>personal/alice</code>.</p>
 
-(Background: at runtime the "USER" component will be replaced by the name of
-the invoking user.  Access is determined by the right hand side, as usual).
+<p>(Background: at runtime the "USER" component will be replaced by the name of
+the invoking user.  Access is determined by the right hand side, as usual).</p>
 
-Compared to using arbitrary branch names on the same server, this:
+<p>Compared to using arbitrary branch names on the same server, this:</p>
 
-
-
-e5f2cc7fd97665afbd4358203a87e073
-
+<ul>
+<li>Reduces namespace pollution by corralling all these ad hoc branches into
+the "personal/" namespace.
+</li>
+<li>Reduces branch name collision by giving each developer her own
+sub-hierarchy within that.
+</li>
+<li>Removes the need to think about access control, because a user can push
+only to his own sub-hierarchy.
+</li>
+</ul>
 
 <h3>delegating access control responsibilities</h3>
 
-See [this][deleg-deleg].
+<p>See <a href="gitolite.html#deleg-deleg">this</a>.</p>
 
 <h3><a name="special-keysonly"></a> using pubkeys obtained from elsewhere</h3>
 
-If you're not managing keys via the gitolite-admin repo, but getting them from
-somewhere else, you'll want to periodically "update" the keys.
+<p>If you're not managing keys via the gitolite-admin repo, but getting them from
+somewhere else, you'll want to periodically "update" the keys.</p>
 
-To do that, first edit your rc file and add something like this:
+<p>To do that, first edit your rc file and add something like this:</p>
 
 <pre><code>SSH_AUTHKEYS                =&gt;
     [
@@ -2601,21 +2780,22 @@ To do that, first edit your rc file and add something like this:
     ],
 </code></pre>
 
-Then write a script that
+<p>Then write a script that</p>
 
+<ul>
+<li><p>gets all the keys and dumps them into <code>$HOME/.gitolite/keydir</code> (or into a
+subdirectory of it).</p></li>
+<li><p>runs <code>gitolite trigger SSH_AUTHKEYS</code>.</p></li>
+</ul>
 
-
-d08d5b8461923c7bc45c675d46280a8b
-
-
-Run this from cron or however you want.
+<p>Run this from cron or however you want.</p>
 
 <h3><a name="special-gh"></a> giving users their own repos</h3>
 
-(Please see [this][wild-wild] for background on the ideas in this section).
+<p>(Please see <a href="gitolite.html#wild-wild">this</a> for background on the ideas in this section).</p>
 
-It's very easy to give users their own set of repos to create, with the
-username at the top level.  The simplest setup is:
+<p>It's very easy to give users their own set of repos to create, with the
+username at the top level.  The simplest setup is:</p>
 
 <pre><code>repo CREATOR/..*
     C   =   @all
@@ -2624,112 +2804,136 @@ username at the top level.  The simplest setup is:
     R   =   READERS
 </code></pre>
 
-Now users can create any repo under their own name simply by cloning it or
-pushing to it, then use the [perms][user-perms] command to add other users to their
-WRITERS and READERS lists.
+<p>Now users can create any repo under their own name simply by cloning it or
+pushing to it, then use the <a href="gitolite.html#user-perms">perms</a> command to add other users to their
+WRITERS and READERS lists.</p>
 
-Of course you can get much more creative if you add a few more roles (see
-"roles" in [this][wild-wild] page).
+<p>Of course you can get much more creative if you add a few more roles (see
+"roles" in <a href="gitolite.html#wild-wild">this</a> page).</p>
 
-<font color="gray">(I prefer using some prefix, say "u", as in `repo
-u/CREATOR/..*`.  This helps to keep user-created repos separate, and avoid
-name clashes in some far-fetched scenarios).</font>
-
-
+<p><font color="gray">(I prefer using some prefix, say "u", as in <code>repo
+u/CREATOR/..*</code>.  This helps to keep user-created repos separate, and avoid
+name clashes in some far-fetched scenarios).</font></p>
 
 <hr />
-
 
 <h2><a name="rare-rare"></a> rare or one-time activities</h2>
 
 <h3><a name="rare-existing"></a> moving existing repos into gitolite</h3>
 
-On the server:
+<p>On the server:</p>
 
+<ul>
+<li><p>Move the repos to <code>$HOME/repositories</code>.</p></li>
+<li><p>Make sure that:</p>
 
+<ul>
+<li>They are all <em>bare</em> repos.
+</li>
+<li>All the repo names end in ".git".
+</li>
+<li>All the files and directories are owned and writable by the gitolite
+<a href="gitolite.html#install-nnc">hosting user</a> (especially true if you copied them as root).
+</li>
+</ul></li>
+<li><p>Run <code>gitolite setup</code>.  <strong>If you forget this step, you can also forget
+about write access control!</strong></p></li>
+</ul>
 
-212148f7953a4d792c7a27a96f575ff4
+<p>Back on your workstation:</p>
 
+<ul>
+<li><p><a href="gitolite.html#repos-repos">Add them</a> to conf/gitolite.conf in your clone of the admin repo,
+then commit and push the change.</p>
 
-Back on your workstation:
-
-
-
-593c8f55dbf883865a4b993e909979c0
-
+<p>If the repos are already covered by some <a href="gitolite.html#wild-wild">wild</a> pattern, this is
+optional.</p></li>
+</ul>
 
 <h3><a name="rare-moving"></a> moving servers</h3>
 
-This is adapted from the "migrating" section of the [install][install-install] page; if
-you're actually *migrating* from g2 please go there!
+<p>This is adapted from the "migrating" section of the <a href="gitolite.html#install-install">install</a> page; if
+you're actually <em>migrating</em> from g2 please go there!</p>
 
-Nothing in any of the gitolite install/setup/etc will ever touch the *data* in
+<p>Nothing in any of the gitolite install/setup/etc will ever touch the <em>data</em> in
 any repository except the gitolite-admin repo.  The only thing it will
-normally touch is the `update` hook.  So one fool-proof way of "moving"
-servers is this (untested but should work; feedback appreciated):
+normally touch is the <code>update</code> hook.  So one fool-proof way of "moving"
+servers is this (untested but should work; feedback appreciated):</p>
 
-
-
-cb0957cab3b43f4d0cbc6ce189a70698
-
+<ol>
+<li><p>Install gitolite on the new server, using the same key for the admin as
+for the old server.</p></li>
+<li><p>Copy the <a href="gitolite.html#rc-rc">rc</a> file from the old server, overwriting this one.</p></li>
+<li><p><a href="gitolite.html#special-writable">Disable</a> the old server so people won't push to it.</p></li>
+<li><p>Copy all the repos over from the old server, including gitolite-admin.
+Make sure the files end up with the right ownership and permissions; if
+not, chown/chmod them.</p></li>
+<li><p>Run <code>gitolite setup</code>.</p></li>
+<li><p>On a clone of the old gitolite-admin, add a new remote (or change an
+existing one) to point to the new server.  Then <code>git push -f</code> to this
+remote.</p></li>
+</ol>
 
 <hr />
-
-
 
 <h1><a name="s5"></a> smart http</h1>
 
 <h2><a name="http-http"></a> how to setup gitolite to use smart http mode</h2>
 
-**Note**: "smart http" refers to the feature that came with git 1.6.6, late
-2009 or so.  The base documentation for this is `man git-http-backend`.  Do
-**NOT** read `Documentation/howto/setup-git-server-over-http.txt` and think
+<p><strong>Note</strong>: "smart http" refers to the feature that came with git 1.6.6, late
+2009 or so.  The base documentation for this is <code>man git-http-backend</code>.  Do
+<strong>NOT</strong> read <code>Documentation/howto/setup-git-server-over-http.txt</code> and think
 that is the same or even relevant -- that is from 2006 and is quite different
-(and arguably obsolete).
+(and arguably obsolete).</p>
 
 <h3>WARNINGS and important notes</h3>
 
-
-
-c386e696ab6abedfbc04f9f7a18e9974
-
+<ul>
+<li><p>Please read <a href="gitolite.html#auth-auth">authentication versus authorisation</a> first, and make
+sure you understand what is gitolite's responsibility and what isn't.</p></li>
+<li><p>I have tested this only on stock Fedora 16; YDMV.</p></li>
+</ul>
 
 <h3>assumptions:</h3>
 
-
-
-d765aa6d4f4692b458e59cdebdb5a064
-
+<ul>
+<li>Apache 2.x and git installed.
+</li>
+<li>Httpd runs under the "apache" userid; adjust instructions below if not.
+</li>
+<li>Similarly for "/var/www" and other file names/locations.
+</li>
+</ul>
 
 <h3>instructions</h3>
 
-The detailed instructions I used to have in g2 have now been replaced by a
-script called `t/smart-http.root-setup`.  **Do NOT run this script as is -- it
-is actually meant for my testing setup and deletes stuff**.  However, it does
+<p>The detailed instructions I used to have in g2 have now been replaced by a
+script called <code>t/smart-http.root-setup</code>.  <strong>Do NOT run this script as is -- it
+is actually meant for my testing setup and deletes stuff</strong>.  However, it does
 provide an excellent (and working!) narration of what you need to do to
-install gitolite in smart http mode.
+install gitolite in smart http mode.</p>
 
-Make a copy of the script, go through it carefully, (possibly removing lines
-that delete files etc.), change values per your system, and only then run it.
+<p>Make a copy of the script, go through it carefully, (possibly removing lines
+that delete files etc.), change values per your system, and only then run it.</p>
 
-<font color="gray">Note that the `GIT_PROJECT_ROOT` variable (see "man
+<p><font color="gray">Note that the <code>GIT_PROJECT_ROOT</code> variable (see "man
 git-http-backend") is no longer optional.  Make sure you set it to some place
-outside apache's `DOCUMENT_ROOT`.</font>
+outside apache's <code>DOCUMENT_ROOT</code>.</font></p>
 
 <h3>Making repositories available to both ssh and http mode clients</h3>
 
-This section has been contributed by Thomas Hager (duke at sigsegv dot at),
-and is available [here][ssh-and-http-ssh-and-http].
+<p>This section has been contributed by Thomas Hager (duke at sigsegv dot at),
+and is available <a href="gitolite.html#ssh-and-http-ssh-and-http">here</a>.</p>
 
 <h3>usage</h3>
 
 <h4>client side</h4>
 
-Git URLs look like `http://user:password@server/git/reponame.git`.
+<p>Git URLs look like <code>http://user:password@server/git/reponame.git</code>.</p>
 
-The custom commands, like "info", "expand" should be handled as follows.  The
-command name will come just after the `/git/`, followed by a `?`, followed by
-the arguments, with `+` representing a space.  Here are some examples:
+<p>The custom commands, like "info", "expand" should be handled as follows.  The
+command name will come just after the <code>/git/</code>, followed by a <code>?</code>, followed by
+the arguments, with <code>+</code> representing a space.  Here are some examples:</p>
 
 <pre><code># ssh git@server info
 curl http://user:password@server/git/info
@@ -2739,50 +2943,61 @@ curl http://user:password@server/git/info?repopatt
 curl http://user:password@server/git/info?repopatt+user1+user2
 </code></pre>
 
-With a few nice shell aliases, you won't even notice the horrible convolutions
-here ;-)  See t/smart-http for a couple of useful ones.
+<p>With a few nice shell aliases, you won't even notice the horrible convolutions
+here ;-)  See t/smart-http for a couple of useful ones.</p>
 
 <h4>server side</h4>
 
-The 'gitolite' command (for example, 'gitolite compile', 'gitolite query-rc',
-and so on) *can* be run on the server, but it's not straightforward.  Assuming
-you installed exactly as given in this document, you should
+<p>The 'gitolite' command (for example, 'gitolite compile', 'gitolite query-rc',
+and so on) <em>can</em> be run on the server, but it's not straightforward.  Assuming
+you installed exactly as given in this document, you should</p>
 
+<ul>
+<li>get a shell by using, say, <code>su -s /bin/bash - apache</code>
+</li>
+<li>run <code>export HOME=$HOME/gitolite-home</code>
+</li>
+<li>run <code>export PATH=$PATH:$HOME/bin</code>
+</li>
+</ul>
 
-
-173428bd81e0ebdffc54bb0bc45c0647
-
-
-and *then* you can run `gitolite <subcommand>`
-
-
-
+<p>and <em>then</em> you can run <code>gitolite &lt;subcommand&gt;</code></p>
 
 <hr />
 
-
 <h2><a name="ssh-and-http-ssh-and-http"></a> Making repositories available to both ssh and http mode clients</h2>
 
-Copyright Thomas Hager (duke at sigsegv dot at).  Licensed under CC-BY-NC-SA
-unported 3.0, http://creativecommons.org/licenses/by-nc-sa/3.0/
+<p>Copyright Thomas Hager (duke at sigsegv dot at).  Licensed under CC-BY-NC-SA
+unported 3.0, http://creativecommons.org/licenses/by-nc-sa/3.0/</p>
 
-Assumptions:
+<p>Assumptions:</p>
 
+<ul>
+<li>Apache 2.x with CGI and Suexec support installed.
+</li>
+<li>Git and Gitolite installed with user "git" and group "git", and pubkey SSH
+access configured and working.
+</li>
+<li>Git plumbing installed to /usr/libexec/git-core
+</li>
+<li>Gitolite base located at /opt/git
+</li>
+<li>Apache <code>DOCUMENT_ROOT</code> set to /var/www
+</li>
+<li>Apache runs with user www and group www
+</li>
+</ul>
 
+<p>Please adjust the instructions below to reflect your setup (users and paths).</p>
 
-fdb4e8af86351a2de9de684ad4f82140
-
-
-Please adjust the instructions below to reflect your setup (users and paths).
-
-Edit your .gitolite.rc and add
+<p>Edit your .gitolite.rc and add</p>
 
 <pre><code>$ENV{PATH} .= ":/opt/git/bin";
 </code></pre>
 
-at the very top (as described in `t/smart-http.root-setup`).
+<p>at the very top (as described in <code>t/smart-http.root-setup</code>).</p>
 
-Next, check which document root your Apache's suexec accepts:
+<p>Next, check which document root your Apache's suexec accepts:</p>
 
 <pre><code># suexec -V
  -D AP_DOC_ROOT="/var/www"
@@ -2794,18 +3009,18 @@ Next, check which document root your Apache's suexec accepts:
  -D AP_USERDIR_SUFFIX="public_html"
 </code></pre>
 
-We're interested in `AP_DOC_ROOT`, which is set to `/var/www` in our case.
+<p>We're interested in <code>AP_DOC_ROOT</code>, which is set to <code>/var/www</code> in our case.</p>
 
-Create a `bin` and a `git` directory in `AP_DOC_ROOT`:
+<p>Create a <code>bin</code> and a <code>git</code> directory in <code>AP_DOC_ROOT</code>:</p>
 
 <pre><code>install -d -m 0755 -o git -g git /var/www/bin
 install -d -m 0755 -o www -g www /var/www/git
 </code></pre>
 
-`/var/www/git` is just a dummy directory used as Apache's document root (see below).
+<p><code>/var/www/git</code> is just a dummy directory used as Apache's document root (see below).</p>
 
-Next, create a shell script inside `/var/www/bin` named `gitolite-suexec-wrapper.sh`,
-with mode **0700** and owned by user and group **git**. Add the following content:
+<p>Next, create a shell script inside <code>/var/www/bin</code> named <code>gitolite-suexec-wrapper.sh</code>,
+with mode <strong>0700</strong> and owned by user and group <strong>git</strong>. Add the following content:</p>
 
 <pre><code>#!/bin/bash
 #
@@ -2818,8 +3033,8 @@ export GITOLITE_HTTP_HOME="/opt/git"
 exec ${GITOLITE_HTTP_HOME}/gitolite-source/src/gitolite-shell
 </code></pre>
 
-Edit your Apache's config to add http pull/push support, preferably in
-a dedicated `VirtualHost` section:
+<p>Edit your Apache's config to add http pull/push support, preferably in
+a dedicated <code>VirtualHost</code> section:</p>
 
 <pre><code>&lt;VirtualHost *:80&gt;
     ServerName        git.example.com
@@ -2847,444 +3062,654 @@ a dedicated `VirtualHost` section:
 &lt;/VirtualHost&gt;
 </code></pre>
 
-This Apache config is just an example, you probably should adapt the authentication
-section and use https instead of http!
+<p>This Apache config is just an example, you probably should adapt the authentication
+section and use https instead of http!</p>
 
-Finally, add an `R = daemon` access rule to all repositories you want to
-make available via http.
-
-
-
+<p>Finally, add an <code>R = daemon</code> access rule to all repositories you want to
+make available via http.</p>
 
 <hr />
-
-
 
 <h1><a name="s6"></a> customising gitolite</h1>
 
 <h2><a name="cust-cust"></a> customising gitolite</h2>
 
-Much of gitolite (g3)'s functionality comes from programs and scripts that are
+<p>Much of gitolite (g3)'s functionality comes from programs and scripts that are
 not considered "core".  This keeps the core simpler, and allows you to enhance
 gitolite for your own purposes without too much fuss.  (As an extreme example,
-even mirroring is not in core now!)
+even mirroring is not in core now!)</p>
 
-Here's how to find out more:
+<p>Here's how to find out more:</p>
 
-
-
-1d07c58fbce0375d809050be6babd437
-
+<ul>
+<li><p>this document describes the types of non-core programs and how/where to
+install your own</p></li>
+<li><p>the <a href="gitolite.html#dev-notes-dev-notes">developer notes</a> page tells you how to write your own
+non-core programs</p></li>
+<li><p>the <a href="gitolite.html#non-core-non-core">list of non-core programs</a> talks about what's already
+shipped with gitolite, with a brief description of each</p></li>
+</ul>
 
 <h3><a name="cust-ncintro"></a> introduction</h3>
 
-There are 5 basic types of non-core programs.
+<p>There are 5 basic types of non-core programs.</p>
 
-
-
-61b7ec9d4ce9192dffa1deeb8415be39
-
+<ul>
+<li><em>Commands</em> can be run from the shell command line.  Among those, the ones
+listed in the COMMANDS hash of the rc file can also be run remotely.
+</li>
+<li><em>Hooks</em> are standard git hooks.
+</li>
+<li><em>Sugar scripts</em> change the conf language for your convenience.  The word
+sugar comes from "syntactic sugar".
+</li>
+<li><em>Triggers</em> are to gitolite what hooks are to git.  I just chose a
+different name to avoid confusion and constant disambiguation in the docs.
+</li>
+<li><strong>VREFs</strong> are extensions to the access control check part of gitolite.
+</li>
+</ul>
 
 <h3><a name="cust-ncloc"></a> locations</h3>
 
 <h4>default/primary location of non-core programs</h4>
 
-Regardless of how you installed gitolite, `gitolite query-rc GL_BINDIR` will
+<p>Regardless of how you installed gitolite, <code>gitolite query-rc GL_BINDIR</code> will
 tell you where the programs reside.  Within that directory, the locations of
-non-core programs are:
+non-core programs are:</p>
 
-
-
-0fc81b6211fb7152076b31af8cf2f67f
-
+<ul>
+<li><code>commands</code> for commands.
+</li>
+<li><code>syntactic-sugar</code> for sugar scripts.
+</li>
+<li><code>triggers</code> and <code>lib/Gitolite/Triggers</code> for triggers (<a href="gitolite.html#triggers-triggers">this</a> will
+explain the difference).
+</li>
+<li><code>VREF</code> for <a href="gitolite.html#vref-vref">VREFs</a>.
+</li>
+</ul>
 
 <h4><a name="cust-localcode"></a> alternate location -- the <code>LOCAL_CODE</code> rc variable</h4>
 
-If you want to add new non-core programs to your installation, or override the
+<p>If you want to add new non-core programs to your installation, or override the
 shipped non-core programs with your own versions, it's easy enough to simply
 copy your programs to the appropriate directory above, but then they'd get
-wiped out on the next upgrade.
+wiped out on the next upgrade.</p>
 
-A simple, "git-ish", method is to maintain a "local" branch in your clone of
+<p>A simple, "git-ish", method is to maintain a "local" branch in your clone of
 the gitolite source repo and make your changes there.  Maintain them using
 rebase or merge when you 'git pull' gitolite itself, then use the rebased or
 merged "local" as the source for your gitolite upgrades.  Works very nicely,
-and uses nothing but your git knowledge.
+and uses nothing but your git knowledge.</p>
 
-Sadly, it doesn't work for people installing from RPMs/DEBs; their "primary
+<p>Sadly, it doesn't work for people installing from RPMs/DEBs; their "primary
 location" has already been setup, so any site-local customisations have to be
-done elsewhere.
+done elsewhere.</p>
 
-This is where `LOCAL_CODE` comes in.  If you define the `LOCAL_CODE` rc
-variable, then its value (**please use a FULL path**) describes a location
-where you can have any or all of these subdirectories:
+<p>This is where <code>LOCAL_CODE</code> comes in.  If you define the <code>LOCAL_CODE</code> rc
+variable, then its value (<strong>please use a FULL path</strong>) describes a location
+where you can have any or all of these subdirectories:</p>
 
+<ul>
+<li><code>commands</code>
+</li>
+<li><code>hooks/common</code>
+</li>
+<li><code>syntactic-sugar</code>
+</li>
+<li><code>triggers</code> and <code>lib/Gitolite/Triggers</code>
+</li>
+<li><code>VREF</code>
+</li>
+</ul>
 
-
-0b241023b8fdd4393bf1d749a69bddcd
-
-
-You might have noticed there's a new `hooks/common` directory here so you can
+<p>You might have noticed there's a new <code>hooks/common</code> directory here so you can
 add hooks also using this mechanism.  Unlike the rest of the directories,
-adding new hooks to `hooks/common` requires that you follow up with `gitolite
-setup`, or at least `gitolite setup --hooks-only`.
+adding new hooks to <code>hooks/common</code> requires that you follow up with <code>gitolite
+setup</code>, or at least <code>gitolite setup --hooks-only</code>.</p>
 
 <h4><a name="cust-pushcode"></a> managing custom code via the gitolite-admin repo</h4>
 
-The location given in `LOCAL_CODE` could be anywhere on disk.
+<p>The location given in <code>LOCAL_CODE</code> could be anywhere on disk.</p>
 
-However, if you point it to someplace inside `$GL_ADMIN_BASE` (i.e.,
-`$HOME/.gitolite`), then you can version those programs using the
-gitolite-admin repo.
+<p>However, if you point it to someplace inside <code>$GL_ADMIN_BASE</code> (i.e.,
+<code>$HOME/.gitolite</code>), then you can version those programs using the
+gitolite-admin repo.</p>
 
-I suggest using a directory called "local-code" within the gitolite-admin repo
+<p>I suggest using a directory called "local-code" within the gitolite-admin repo
 that contains as much of the above directory structure you need.  If you do
-that, then this is what you'd have in the rc file:
+that, then this is what you'd have in the rc file:</p>
 
 <pre><code>LOCAL_CODE                  =&gt;  "$ENV{HOME}/.gitolite/local-code",
 </code></pre>
 
-When you do this, gitolite takes care of everything automatically, including
-running `gitolite setup --hooks-only` when you change any hooks and push.
-**However, if you do this, anyone who can push changes to the admin repo will
-effectively be able to run any arbitrary command on the server.**
+<p>When you do this, gitolite takes care of everything automatically, including
+running <code>gitolite setup --hooks-only</code> when you change any hooks and push.
+<strong>However, if you do this, anyone who can push changes to the admin repo will
+effectively be able to run any arbitrary command on the server.</strong></p>
 
 <h3><a name="cust-nctypes"></a> types of non-core programs</h3>
 
 <h4><a name="cust-commands"></a> gitolite "commands"</h4>
 
-Gitolite comes with several commands that users can run.  Remote users run
-commands by saying:
+<p>Gitolite comes with several commands that users can run.  Remote users run
+commands by saying:</p>
 
 <pre><code>ssh git@host command-name [args...]
 </code></pre>
 
-while on the server you can run
+<p>while on the server you can run</p>
 
 <pre><code>gitolite command [args...]
 </code></pre>
 
-Very few commands are designed to be run both ways, but it can be done, by
-checking for the presence of env var `GL_USER`.
+<p>Very few commands are designed to be run both ways, but it can be done, by
+checking for the presence of env var <code>GL_USER</code>.</p>
 
-All commands respond to a single `-h` option with a suitable message.
+<p>All commands respond to a single <code>-h</code> option with a suitable message.</p>
 
-You can get a **list of available commands** by using the `help` command.
-Naturally, a remote user will see a much smaller list than the server user.
+<p>You can get a <strong>list of available commands</strong> by using the <code>help</code> command.
+Naturally, a remote user will see a much smaller list than the server user.</p>
 
-You allow a command to be run from remote clients by adding its name to (or
+<p>You allow a command to be run from remote clients by adding its name to (or
 uncommenting it if it's already added but commented out) the COMMANDS hash in
-the [rc][rc-rc] file.
+the <a href="gitolite.html#rc-rc">rc</a> file.</p>
 
 <h4><a name="cust-hooks"></a> hooks and gitolite</h4>
 
-You can install any hooks except these:
+<p>You can install any hooks except these:</p>
 
+<ul>
+<li><p>(all repos) gitolite reserves the <code>update</code> hook.  See the "update hook"
+section in <a href="gitolite.html#dev-notes-dev-notes">dev-notes</a> if you want additional update hook functionality.</p></li>
+<li><p>(gitolite-admin repo only) gitolite reserves the <code>post-update</code> hook.</p></li>
+</ul>
 
+<p><strong>NOTE</strong>: if you want to install a hook in only a few specific repositories,
+do it directly on the server.</p>
 
-d9c3c5f11d9968a5dbdc938796632e13
-
-
-**NOTE**: if you want to install a hook in only a few specific repositories,
-do it directly on the server.
-
-How/where to install them is described in detail in the "locations" section
-above, especially [this][cust-localcode] and [this][cust-pushcode].  The summary is that
+<p>How/where to install them is described in detail in the "locations" section
+above, especially <a href="gitolite.html#cust-localcode">this</a> and <a href="gitolite.html#cust-pushcode">this</a>.  The summary is that
 you put them in the "hooks/common" sub-directory within the directory whose
-name is given in the `LOCAL_CODE` rc variable, then run `gitolite setup`.
+name is given in the <code>LOCAL_CODE</code> rc variable, then run <code>gitolite setup</code>.</p>
 
 <h4><a name="cust-sugar"></a> syntactic sugar</h4>
 
-Sugar scripts help you change the perceived syntax of the conf language.  The
+<p>Sugar scripts help you change the perceived syntax of the conf language.  The
 base syntax of the language is very simple, so sugar scripts take something
-*else* and convert it into that.
+<em>else</em> and convert it into that.</p>
 
-That way, the admin sees additional features (like allowing continuation
-lines), while the parser in the core gitolite engine does not change.
+<p>That way, the admin sees additional features (like allowing continuation
+lines), while the parser in the core gitolite engine does not change.</p>
 
-If you want to write your own sugar scripts, please read the "your own sugar"
-section in [dev-notes][dev-notes-dev-notes] first then email me.
+<p>If you want to write your own sugar scripts, please read the "your own sugar"
+section in <a href="gitolite.html#dev-notes-dev-notes">dev-notes</a> first then email me.</p>
 
-You enable a sugar script by adding it to the `SYNTACTIC_SUGAR` list in the rc
-file.
+<p>You enable a sugar script by adding it to the <code>SYNTACTIC_SUGAR</code> list in the rc
+file.</p>
 
 <h4>triggers</h4>
 
-Triggers have their own [document][triggers-triggers].
+<p>Triggers have their own <a href="gitolite.html#triggers-triggers">document</a>.</p>
 
 <h4>VREFs</h4>
 
-VREFs also have their own [document][vref-vref].
-
-
+<p>VREFs also have their own <a href="gitolite.html#vref-vref">document</a>.</p>
 
 <hr />
-
 
 <h2><a name="non-core-non-core"></a> non-core features shipped with gitolite</h2>
 
-**Important Notes on "non-core" features**:
+<p><strong>Important Notes on "non-core" features</strong>:</p>
 
+<ol>
+<li><p>The <a href="gitolite.html#cust-cust">customisation</a> document is the starting point for all
+information about customising gitolite.</p></li>
+<li><p>If a non-core feature is shipped with gitolite, but information about it
+is not found in this document, it can be found within the source code;
+please look there.</p>
 
+<p><a href="cust.html#commands">Commands</a>, however, have some extra magic, which is not available to
+the other types of non-core programs:</p>
 
-411630636c01892f1165153c5ea38487
-
+<ul>
+<li><p>running the command with a single <code>-h</code> option (i.e., <code>gitolite
+&lt;command&gt; -h</code> or <code>ssh git@host &lt;command&gt; -h</code>), will display a suitable
+message.  Please report a bug to me if one of them doesn't.</p></li>
+<li><p>running 'help', (either as <code>gitolite help</code> on the server, or <code>ssh
+git@host help</code> remotely), will give you a list of commands you are
+allowed to run.</p></li>
+</ul></li>
+<li><p>Non-core code is <strong>meant</strong> to be <a href="gitolite.html#cust-localcode">localised for your site</a> if
+you don't like what the shipped version does.  You can even maintain it
+<a href="gitolite.html#cust-pushcode">within your gitolite-admin repo</a> if you wish.</p></li>
+</ol>
 
 <h3>commands</h3>
 
-This is a list of commands that are available in gitolite, with brief
+<p>This is a list of commands that are available in gitolite, with brief
 descriptions and, if available, a link to more detailed information.  Note
-that in most cases running it with `-h` will give you enough to work with.
+that in most cases running it with <code>-h</code> will give you enough to work with.</p>
 
-Also note that not all of these commands are available remotely.
+<p>Also note that not all of these commands are available remotely.</p>
 
-(The more common/important commands are in bold).
+<p>(The more common/important commands are in bold).</p>
 
-
-
-9555dba370d2d3c9f2230738690feb23
-
+<ul>
+<li><em>access</em> -- print or test access rights for repo/user
+</li>
+<li><em>create</em> -- create a wild repo
+</li>
+<li><em>creator</em> -- print or test creator name for wild repo
+</li>
+<li><em>D</em> -- lets you <em>D</em>elete wild repos created using the <em>C</em> permission :)
+</li>
+<li><strong>desc</strong> -- show/set description for wild repo
+</li>
+<li><em>fork</em> -- fork a repo on the server.  This uses the <code>-l</code> option to git
+clone, so it runs really fast
+</li>
+<li><em>git-config</em> -- print (or text existence of) 'config' values in the repo.
+(Don't forget that <code>option foo.bar = 1</code> is merely syntactic sugar for
+<code>config gitolite-options.foo.bar = 1</code>, so this can be used to query
+gitolite options also
+</li>
+<li><strong>help</strong> -- see note 1 at the top of this document
+</li>
+<li><em>htpasswd</em> -- sets your htpasswd
+</li>
+<li><strong><a href="gitolite.html#user-info">info</a></strong> -- print git/gitolite version, list repos you have access to
+</li>
+<li><em><a href="locking.html">lock</a></em> -- lock binary files for exclusive use (in combination
+with the 'lock' VREF)
+</li>
+<li><em><a href="gitolite.html#mirroring-sync">mirror</a></em> -- manually mirror a repo to a slave
+</li>
+<li><strong><a href="gitolite.html#user-perms">perms</a></strong> -- list or set permissions for wild repo
+</li>
+<li><em><a href="gitolite.html#emergencies-bypass">push</a></em> -- push a gitolite repo locally, bypassing gitolite
+</li>
+<li><em>rsync</em> -- bundling support for gitolite
+</li>
+<li><em>sshkeys-lint</em> -- look for potential problems in ssh keys
+</li>
+<li><em><a href="sskm.html">sskm</a></em> -- self-service key management
+</li>
+<li><em>sudo</em> -- allows an admin (i.e., someone who has push rights to the
+'gitolite-admin' repo) to run any remote command as some other user.  This
+is useful, for example, when a user claims he is unable to access a repo,
+and you need to check the 'info' output for him, etc.  However, it does
+not work the other way, sorry!
+</li>
+<li><em>symbolic-ref</em> -- run <code>git symbolic-ref</code> on a repo, remotely
+</li>
+<li><em>who-pushed</em> -- determine who pushed a given commit
+</li>
+<li><em>writable</em> -- disable/enable writes to specific repo (or all repos, if
+you're an admin)
+</li>
+</ul>
 
 <h3>syntactic sugar</h3>
 
-The following "sugar" programs are available:
+<p>The following "sugar" programs are available:</p>
 
-
-
-70f1de3bacb3da45353bbb58fcb0afcd
-
+<ul>
+<li><em>continuation-lines</em> -- allow C-style backslash escaped continuation lines
+in the conf file
+</li>
+<li><em>keysubdirs-as-groups</em> -- use the last component of the sub-directory name
+within keydir as a group name
+</li>
+<li><strong>macros</strong> -- simple line-wise macro processor
+</li>
+</ul>
 
 <h3>triggers</h3>
 
-Here's a list of **features** that are enabled by [triggers][triggers-triggers], or a
-combination of a trigger and something else, like a command.
+<p>Here's a list of <strong>features</strong> that are enabled by <a href="gitolite.html#triggers-triggers">triggers</a>, or a
+combination of a trigger and something else, like a command.</p>
 
+<ul>
+<li><em>Alias</em> -- allow repos to have aliases
+</li>
+<li><em>AutoCreate</em> -- deny auto-create of wild repos on R or RW access
+</li>
+<li><em>bg</em> -- allow long running post-compile/post-create jobs to be
+backgrounded
+</li>
+<li><em>CpuTime</em> -- CPU and elapsed times for gitolite+git
+</li>
+<li><strong><a href="gitolite.html#mirroring-mirroring">Mirroring</a></strong> -- mirroring all or some repos
+</li>
+<li><em><a href="gitolite.html#non-core-partial-copy">partial-copy</a></em> -- simulated read control for branches (in combination
+with the partial-copy VREF)
+</li>
+<li><em>RefexExpr</em> -- (in combination with VREF/refex-expr) logical expressions
+over refexes, like "refex-1 and not refex-2".  (Example: changing file
+'foo' but not on 'master' branch)
+</li>
+<li><em>renice</em> -- renice the git operation
+</li>
+<li><em>RepoUmask</em> -- repo-specific umask settings
+</li>
+<li><em>Shell</em> -- see "giving shell access to gitolite users" in the <a href="gitolite.html#sts-sts">ssh
+troubleshooting and tips</a> page.  This also need the
+'ssh-authkeys-shell-users' trigger to be enabled.
+</li>
+<li><em>ssh-authkeys-shell-users</em> -- see 'Shell' entry just above
+</li>
+<li><em>ssh-authkeys-split</em> -- split pubkey files with multiple keys into
+separate files with one pubkey each
+</li>
+<li><em>update-description-file</em> -- if you want the 'description' file to be
+updated instead of the 'gitweb.description' config entry (e.g. cgit users)
+</li>
+<li><em>upstream</em> -- manage local, gitolite-controlled, copies of read-only
+upstream repos
+</li>
+</ul>
 
-
-8238482562ddf0779ad461cf291e45ae
-
-
-In addition, the following post-compile trigger scripts are enabled by
+<p>In addition, the following post-compile trigger scripts are enabled by
 default, so are included here only for completeness and in case you wish to
-disable them:
+disable them:</p>
 
-
-
-19c616a1ba10820564db3e46d6fb977d
-
+<ul>
+<li>ssh-authkeys -- process keys in keydir/ and add/update appropriate lines
+to the authorized keys file
+</li>
+<li>update-git-configs -- run <code>git config</code> in each repo to add/update entries
+as needed
+</li>
+<li>update-git-daemon-access-list -- create/delete the 'git-daemon-export-ok'
+files in each repo as needed
+</li>
+<li>update-gitweb-access-list -- create the "projects.list" file that gitweb
+uses to determine what repos to show/not show
+</li>
+</ul>
 
 <h3>VREFs</h3>
 
-VREFs are a complex topic and have their [own page][vref-vref] with lots more
-details.  However, here's a list of VREFs shipped with gitolite:
+<p>VREFs are a complex topic and have their <a href="gitolite.html#vref-vref">own page</a> with lots more
+details.  However, here's a list of VREFs shipped with gitolite:</p>
 
-
-
-081b6b16776e6ec6ff88ca92af7dbff8
-
+<ul>
+<li><em><a href="gitolite.html#vref-COUNT">COUNT</a></em> -- restrict pushes by number of changed or new files pushed
+</li>
+<li><em>EMAIL-CHECK</em> -- check if all new commits are authored by the person pushing
+</li>
+<li><em><a href="locking.html">lock</a></em> -- lock binary files for exclusive use (in combination
+with the 'lock' command)
+</li>
+<li><em>MAX_NEWBIN_SIZE</em> -- restrict by size of new binary files (helps catch
+people checking in random PDFs, JARs, WARs, etc.)
+</li>
+<li><strong><a href="gitolite.html#vref-NAME">NAME</a></strong> -- restrict pushes by dir/file name
+</li>
+<li><a href="gitolite.html#non-core-partial-copy">partial-copy</a> -- simulated read control for branches (in combination
+with the partial-copy trigger)
+</li>
+<li><em>refex-expr</em> -- (in combination with the refex-expr trigger) logical
+expressions over refexes, like "refex-1 and not refex-2".  (Example:
+changing file 'foo' but not on 'master' branch)
+</li>
+<li><em><a href="gitolite.html#vref-votes">VOTES</a></em> -- voting on commits a la gerrit
+</li>
+</ul>
 
 <h3>details on some non-core programs</h3>
 
-These non-core programs needed more detail than could be provided in the
-source code, but did not fit anywhere else neatly enough.
+<p>These non-core programs needed more detail than could be provided in the
+source code, but did not fit anywhere else neatly enough.</p>
 
 <h4><a name="non-core-partial-copy"></a> partial-copy: selective read control for branches</h4>
 
-Git (and therefore gitolite) cannot do selective read control -- allowing
-someone to read branch A but not branch B.  It's the entire repo or nothing.
+<p>Git (and therefore gitolite) cannot do selective read control -- allowing
+someone to read branch A but not branch B.  It's the entire repo or nothing.</p>
 
-<font color="gray">(Side note: Gerrit Code Review can do that, but that is
+<p><font color="gray">(Side note: Gerrit Code Review can do that, but that is
 because they have their own git stack (and their own sshd, and so on) all in
-one big Java program.  Gerrit is *really* useful if you want code review to be
-part of the access control decision) </font>
+one big Java program.  Gerrit is <em>really</em> useful if you want code review to be
+part of the access control decision) </font></p>
 
-Gitolite can now help you do this.  Note that this is only for branches; you
-can't do this for files and directories.
+<p>Gitolite can now help you do this.  Note that this is only for branches; you
+can't do this for files and directories.</p>
 
-Here's how:
+<p>Here's how:</p>
+
+<ol>
+<li><p>enable 'partial-copy' in the <code>PRE_GIT</code> section in the rc file.</p></li>
+<li><p>for each repo "foo" which has secret branches that a certain set of
+developers (we'll use a group called <code>@temp-emp</code> as an example) are not
+supposed to see, do this:</p>
+
+<pre><code>repo foo
+    # rules should allow @temp-emp NO ACCESS
 
 
-
-9fa00b25678dcca8f83e4a36ffab1bed
-
-
-And that should be it.  **Please test it and let me know if it doesn't work!**
-
-WARNINGS:
+repo foo-partialcopy-1
+    -   secret-branch               =   @temp-emp
 
 
+<pre><code># other rules; see notes below
 
-3d969535239a0c2c99e1e514a289a6e3
 
+-   VREF/partial-copy           =   @all
+config gitolite.partialCopyOf   =   foo
+</code></pre>
+
+</code></pre>
+
+<p><strong>IMPORTANT NOTES</strong>:</p>
+
+<ul>
+<li><p>if you're using other VREFs, <strong>make sure</strong> this one is placed at the
+end, after all the others.</p></li>
+<li><p>remember that any change allowed to be made to the partial-copy repo
+will propagate to the main repo so make sure you use other rules to
+restrict pushes to other branches and tags as needed.</p></li>
+</ul></li>
+</ol>
+
+<p>And that should be it.  <strong>Please test it and let me know if it doesn't work!</strong></p>
+
+<p>WARNINGS:</p>
+
+<ul>
+<li><p>If you change the config to disallow something that used to be allowed,
+you should delete the partial repo on the server and then run <code>gitolite
+compile; gitolite trigger POST_COMPILE</code> to let it build again.</p></li>
+<li><p>Not tested with smart http; probably won't work.</p></li>
+<li><p>Also not tested with mirroring, or with wild card repos.</p></li>
+</ul>
 
 <hr />
 
-
 <h2><a name="dev-notes-dev-notes"></a> notes for developers</h2>
 
-Gitolite has a huge bunch of existing features that gradually need to moved
-over.  Plus you may want to write your own programs to interact with it.
+<p>Gitolite has a huge bunch of existing features that gradually need to moved
+over.  Plus you may want to write your own programs to interact with it.</p>
 
-**This document is about *writing* hooks, commands, triggers, VREFS, and sugar
-scripts.  *Installing* them, including "where and how", is described
-[here][cust-localcode]**.
+<p><strong>This document is about <em>writing</em> hooks, commands, triggers, VREFS, and sugar
+scripts.  <em>Installing</em> them, including "where and how", is described
+<a href="gitolite.html#cust-localcode">here</a></strong>.</p>
 
-Note: the [customisation][cust-cust] document is the starting point for all
-information about customising gitolite.
+<p>Note: the <a href="gitolite.html#cust-cust">customisation</a> document is the starting point for all
+information about customising gitolite.</p>
 
 <h3>environment variables and other inputs</h3>
 
-In general, the following environment variables should always be available:
+<p>In general, the following environment variables should always be available:</p>
 
 <pre><code>GL_BINDIR
 GL_REPO_BASE
 GL_ADMIN_BASE
 </code></pre>
 
-Commands invoked by a remote client will also have `GL_USER` set.  Hooks will
-have `GL_REPO` also set.
+<p>Commands invoked by a remote client will also have <code>GL_USER</code> set.  Hooks will
+have <code>GL_REPO</code> also set.</p>
 
-Finally, note that triggers get a lot of relevant information from gitolite as
-arguments; see [here][triggers-triggers] for details.
+<p>Finally, note that triggers get a lot of relevant information from gitolite as
+arguments; see <a href="gitolite.html#triggers-triggers">here</a> for details.</p>
 
 <h3>APIs</h3>
 
 <h4>the shell API</h4>
 
-The following commands exist to help you write shell scripts that interact
-easily with gitolite.  Each of them responds to `-h` so please run that for
-more info.
+<p>The following commands exist to help you write shell scripts that interact
+easily with gitolite.  Each of them responds to <code>-h</code> so please run that for
+more info.</p>
 
+<ul>
+<li><p><code>gitolite access</code> to check access rights given repo, user, type of access
+(R, W, ...) and refname (optional).  Example use: src/commands/desc.</p></li>
+<li><p><code>gitolite creator</code> to get/check the creator of a repo.  Example use:
+src/commands/desc.</p></li>
+<li><p><code>gitolite git-config</code> to check gitolite options or git config variables
+directly from gitolite's "compiled" output, (i.e., without looking at the
+actual <code>repo.git/config</code> file or using the <code>git config</code> command).  Example
+use: src/triggers/post-compile/update-gitweb-access-list.</p></li>
+<li><p><code>gitolite query-rc</code> to check the value of an RC variable.  Example use:
+src/commands/desc.</p></li>
+</ul>
 
-
-31008f3d73adcb6398d8b00e55bb7b75
-
-
-In addition, you can also look at the comments in src/lib/Gitolite/Easy.pm
-(the perl API module) for ideas.
+<p>In addition, you can also look at the comments in src/lib/Gitolite/Easy.pm
+(the perl API module) for ideas.</p>
 
 <h4>the perl API</h4>
 
-...is implemented by Gitolite::Easy; the comments in src/lib/Gitolite/Easy.pm
-serve as documentation.
+<p>...is implemented by Gitolite::Easy; the comments in src/lib/Gitolite/Easy.pm
+serve as documentation.</p>
 
-Note that some of the perl functions called by Easy.pm will change the current
+<p>Note that some of the perl functions called by Easy.pm will change the current
 directory to something else, without saving and restoring the directory.
-Patches (to Easy.pm *only*) welcome.
+Patches (to Easy.pm <em>only</em>) welcome.</p>
 
 <h3>writing your own...</h3>
 
 <h4>...commands</h4>
 
-Commands are standalone programs, in any language you like.  They simply
-receive the arguments you append.  In addition, the env var `GL_USER` is
+<p>Commands are standalone programs, in any language you like.  They simply
+receive the arguments you append.  In addition, the env var <code>GL_USER</code> is
 available if it is being run remotely.  src/commands/desc is the best example
-at present.
+at present.</p>
 
 <h4>...hooks</h4>
 
 <h5>anything but the update hook</h5>
 
-If you want to add any hook other than the update hook, 'man githooks' is all
-you need.
+<p>If you want to add any hook other than the update hook, 'man githooks' is all
+you need.</p>
 
 <h5>update hook</h5>
 
-If you want to add additional `update` hook functionality, do this:
+<p>If you want to add additional <code>update</code> hook functionality, do this:</p>
 
+<ul>
+<li><p>Write and test your update hook separately from gitolite.</p></li>
+<li><p>Now add the code as a VREF (see <a href="gitolite.html#cust-localcode">here</a> for details).  Let's say
+you called it "foo".</p>
 
+<p>NOTE: if you don't care about all the extra stuff that VREFs give you over
+a normal update hook, you don't have to read that document at all; just
+put the code in the right place and go to the next step.</p></li>
+<li><p>To call your new update hook to all accesses for all repos, add this to
+the end of your conf file:</p>
 
-441dfed9f967731291b9d9598cfcbdc8
+<pre><code>repo @all
+    -       VREF/foo        =   @all
+</code></pre></li>
+</ul>
 
+<p>As you probably guessed, you can make your additional update hooks more
+selective, applying them only to some repos / users / combinations.</p>
 
-As you probably guessed, you can make your additional update hooks more
-selective, applying them only to some repos / users / combinations.
-
-Note: a normal update hook expects 3 arguments (ref, old SHA, new SHA).  A
+<p>Note: a normal update hook expects 3 arguments (ref, old SHA, new SHA).  A
 VREF will get those three, followed by at least 4 more.  Your VREF should just
-ignore the extra args.
+ignore the extra args.</p>
 
 <h4>...trigger programs</h4>
 
-Trigger programs run at specific points in gitolite's execution, with specific
-arguments being passed to them.  See the [triggers][triggers-triggers] page for details.
+<p>Trigger programs run at specific points in gitolite's execution, with specific
+arguments being passed to them.  See the <a href="gitolite.html#triggers-triggers">triggers</a> page for details.</p>
 
-You can write programs that are both manually runnable as well as callable by
-trigger events, especially if they don't *need* any arguments.
+<p>You can write programs that are both manually runnable as well as callable by
+trigger events, especially if they don't <em>need</em> any arguments.</p>
 
 <h4>..."sugar"</h4>
 
-Syntactic sugar helpers are NOT complete, standalone, programs.  They must
-include a perl sub called `sugar_script` that takes in a listref, and returns
+<p>Syntactic sugar helpers are NOT complete, standalone, programs.  They must
+include a perl sub called <code>sugar_script</code> that takes in a listref, and returns
 a listref.  The listrefs point to a list that contains the entire conf file
-(with all [include][syntax-include] processing already done).  You create a new list with
-contents modified as you like and return a ref to it.
+(with all <a href="gitolite.html#syntax-include">include</a> processing already done).  You create a new list with
+contents modified as you like and return a ref to it.</p>
 
-There are a couple of examples in src/syntactic-sugar.
+<p>There are a couple of examples in src/syntactic-sugar.</p>
 
 <h3>appendix 1: notes on the INPUT trigger</h3>
 
-Note: some of this won't make sense if you haven't read about [triggers][triggers-triggers].
+<p>Note: some of this won't make sense if you haven't read about <a href="gitolite.html#triggers-triggers">triggers</a>.</p>
 
-The INPUT trigger sequence is designed to set or change environment variables
+<p>The INPUT trigger sequence is designed to set or change environment variables
 or the argument list.  (Side note: this means INPUT triggers have to be
 written as perl modules; they cannot be standalone scripts).  This is a very
-powerful idea so an extended description may be useful.
+powerful idea so an extended description may be useful.</p>
 
-Sshd invokes gitolite-shell with the SSH\_ORIGINAL\_COMMAND env var containing
-the git/gitolite command and one argument: the gitolite username.
+<p>Sshd invokes gitolite-shell with the SSH_ORIGINAL_COMMAND env var containing
+the git/gitolite command and one argument: the gitolite username.</p>
 
+<ul>
+<li>see <a href="gitolite.html#glssh-glssh">this</a> for details on the latter
+</li>
+<li>the <em>first</em> thing gitolite does in smart http mode is to use the
+REMOTE_USER and the CGI variables that apache provides to <em>construct</em>
+a fake argument list and a fake SSH_ORIGINAL_COMMAND env var, so the
+rest of the code can stay the same
+</li>
+</ul>
 
-
-7a055e5497bb761869a6db542beb9160
-
-
-The INPUT trigger is then run.  The purpose of the input trigger is to ensure
-that the first argument *is* the gitolite username, and that the
-SSH\_ORIGINAL\_COMMAND env var contains the actual command to execute.  It can
+<p>The INPUT trigger is then run.  The purpose of the input trigger is to ensure
+that the first argument <em>is</em> the gitolite username, and that the
+SSH_ORIGINAL_COMMAND env var contains the actual command to execute.  It can
 also be used to set up any other environment variables that you may decide you
-need.
+need.</p>
 
-Wait... didn't we say that's what gitolite-shell gets anyway, just now?
+<p>Wait... didn't we say that's what gitolite-shell gets anyway, just now?</p>
 
-Well, we lied a bit there; it's not always true!
+<p>Well, we lied a bit there; it's not always true!</p>
 
-For example, if [this][sts-giving-shell] feature is used, the first argument *may*
-be "-s", with the username in the *second* argument.  Shell.pm deals with
+<p>For example, if <a href="gitolite.html#sts-giving-shell">this</a> feature is used, the first argument <em>may</em>
+be "-s", with the username in the <em>second</em> argument.  Shell.pm deals with
 that.  <font color="gray">(Order matters.  If you use this feature, put the
-`'Shell::input',` line ahead of the others, since it is the only one prepared
-to deal with username not being the first argument).</font>
+<code>'Shell::input',</code> line ahead of the others, since it is the only one prepared
+to deal with username not being the first argument).</font></p>
 
-If you look at CpuTime.pm, you'll see that it's `input()` function doesn't set
+<p>If you look at CpuTime.pm, you'll see that it's <code>input()</code> function doesn't set
 or change anything, but does set a package variable to record the start time.
-Later, when the same module's `post_git()` function is invoked, it uses this
-variable to determine elapsed time.
+Later, when the same module's <code>post_git()</code> function is invoked, it uses this
+variable to determine elapsed time.</p>
 
-*(This is a very nice and simple example of how you can implement features by
-latching onto multiple events and sharing data to do something)*.
+<p><em>(This is a very nice and simple example of how you can implement features by
+latching onto multiple events and sharing data to do something)</em>.</p>
 
-You can even change the reponame the user sees, behind his back.  Alias.pm
-handles that.
+<p>You can even change the reponame the user sees, behind his back.  Alias.pm
+handles that.</p>
 
-Finally, as an exercise for the reader, consider how you would create a brand
-new env var that contains the *comment* field of the ssh pubkey that was used
-to gain access, using the information [here][sts-kfn].
-
-
+<p>Finally, as an exercise for the reader, consider how you would create a brand
+new env var that contains the <em>comment</em> field of the ssh pubkey that was used
+to gain access, using the information <a href="gitolite.html#sts-kfn">here</a>.</p>
 
 <hr />
 
-
 <h2><a name="vref-vref"></a> virtual refs</h2>
 
-**IMPORTANT**: fallthru is success in VREFs, unlike the normal refs.  That
+<p><strong>IMPORTANT</strong>: fallthru is success in VREFs, unlike the normal refs.  That
 won't make sense until you read further, but I had to put it up here for folks
-who stop reading halfway!
+who stop reading halfway!</p>
 
-
-
-
-Here's an example to start you off.
+<p>Here's an example to start you off.</p>
 
 <pre><code>repo    r1
     RW+                         =   lead_dev dev2 dev3
@@ -3292,32 +3717,31 @@ Here's an example to start you off.
     -   VREF/COUNT/3/NEWFILES   =   dev2 dev3
 </code></pre>
 
-Now dev2 and dev3 cannot push changes that affect more than 9 files at a time,
-nor those that have more than 3 new files.
-
+<p>Now dev2 and dev3 cannot push changes that affect more than 9 files at a time,
+nor those that have more than 3 new files.</p>
 
 <h3>rule matching recap</h3>
 
-You won't get any joy out of this if you don't understand at least
-[refex][refex-refex]es and how [rules][rules-rules] are processed.
+<p>You won't get any joy out of this if you don't understand at least
+<a href="gitolite.html#refex-refex">refex</a>es and how <a href="gitolite.html#rules-rules">rules</a> are processed.</p>
 
-But VREFs have one **very important difference** from normal rules.  With
-VREFs, a **fallthru results in success**.  You'll see why this is more
-convenient as you read on.
+<p>But VREFs have one <strong>very important difference</strong> from normal rules.  With
+VREFs, a <strong>fallthru results in success</strong>.  You'll see why this is more
+convenient as you read on.</p>
 
 <h3>what is a virtual ref?</h3>
 
-We know that "refs/heads/master" and such are normal git refs that are matched
-against the [rules][rules-rules] to decide if the push is to be allowed or denied.
+<p>We know that "refs/heads/master" and such are normal git refs that are matched
+against the <a href="gitolite.html#rules-rules">rules</a> to decide if the push is to be allowed or denied.</p>
 
-A VREF is just another ref that is checked against the rules.  For example,
+<p>A VREF is just another ref that is checked against the rules.  For example,
 VREF/COUNT/5 means "this push has more than 5 changed files".  Or
-VREF/NAME/Makefile means "the file called Makefile was changed in this push".
+VREF/NAME/Makefile means "the file called Makefile was changed in this push".</p>
 
 <h3>how do I use a VREF?</h3>
 
-Simple.  To disallow junior developers from changing more than five files, or
-from touching the Makefile, you do this:
+<p>Simple.  To disallow junior developers from changing more than five files, or
+from touching the Makefile, you do this:</p>
 
 <pre><code>repo foo
     RW+                     =   @all-devs
@@ -3327,67 +3751,68 @@ from touching the Makefile, you do this:
 
 <h3>where do VREFs come from?</h3>
 
-From a VREF-maker of course!
+<p>From a VREF-maker of course!</p>
 
 <h3>ok who calls the VREF-maker?</h3>
 
-Gitolite.  It looks at each rule that contains a VREF rule (there are 2 in the
-above example) and calls VREF-makers for each of them.
+<p>Gitolite.  It looks at each rule that contains a VREF rule (there are 2 in the
+above example) and calls VREF-makers for each of them.</p>
 
 <h3>how does a VREF-maker work?</h3>
 
-We'll take the COUNT example rule above.
+<p>We'll take the COUNT example rule above.</p>
 
-When gitolite sees that rule, it calls the "COUNT" VREF-maker.  Specifically,
-the `VREF/COUNT` program (See [here][cust-cust] for actual locations on disk).
+<p>When gitolite sees that rule, it calls the "COUNT" VREF-maker.  Specifically,
+the <code>VREF/COUNT</code> program (See <a href="gitolite.html#cust-cust">here</a> for actual locations on disk).</p>
 
-Gitolite passes it the string "5" as an argument (actually, as the *eighth*
-argument; details later).
+<p>Gitolite passes it the string "5" as an argument (actually, as the <em>eighth</em>
+argument; details later).</p>
 
-The program (which can be written in any language) is expected to do one of
-two things:
+<p>The program (which can be written in any language) is expected to do one of
+two things:</p>
 
+<ul>
+<li><p>if the condition is satisfied (i.e., there <em>are</em> more than 5 files in this
+push), it should print <code>VREF/COUNT/5</code> to STDOUT.</p></li>
+<li><p>otherwise it should print nothing.</p></li>
+</ul>
 
-
-7960ea0137b0d373e4af1c9e97f0283e
-
-
-It should exit with an exit code of zero in either case.  See next section for
-more.
+<p>It should exit with an exit code of zero in either case.  See next section for
+more.</p>
 
 <h3>mimicking a plain old update hook</h3>
 
-If it exists with a non-zero exit code, then regardless of what it prints or
-does not, the push dies.
+<p>If it exists with a non-zero exit code, then regardless of what it prints or
+does not, the push dies.</p>
 
-This is just like a plain 'update' hook.  Since the first 3 arguments (see
+<p>This is just like a plain 'update' hook.  Since the first 3 arguments (see
 later) are also the same that a plain 'update' hook receives, you can actually
-use any existing update hook as a VREF-maker.
+use any existing update hook as a VREF-maker.</p>
 
-To repurpose an existing update hook as a VREF-maker, just copy it to the VREF
-directory (again, see [here][cust-cust] for actual locations on disk).  Then add
-this rule to your repos:
+<p>To repurpose an existing update hook as a VREF-maker, just copy it to the VREF
+directory (again, see <a href="gitolite.html#cust-cust">here</a> for actual locations on disk).  Then add
+this rule to your repos:</p>
 
 <pre><code>repo foo    # or maybe even 'repo @all'
     -   VREF/my-update-hook     =   @all
 </code></pre>
 
-That's it.
+<p>That's it.</p>
 
 <h3>details</h3>
 
 <h4>what if the VREF-maker prints a different VREF?</h4>
 
-Unless you know what you're upto, don't do that.
+<p>Unless you know what you're upto, don't do that.</p>
 
-But it's allowed and the behaviour is defined.  The VREF-maker for the NAME
+<p>But it's allowed and the behaviour is defined.  The VREF-maker for the NAME
 VREF is a good example.  It ignores the arguments and just makes VREFs out of
-the name of every file that was changed in the push.
+the name of every file that was changed in the push.</p>
 
-Here's another example.  Consider the problem of not allowing pushes at
+<p>Here's another example.  Consider the problem of not allowing pushes at
 specific times.  Let's say repo 'foo' cannot be pushed between 4 and 7pm, and
 repo 'bar' can only be pushed before 9am.  And of course all this only applies
-to the junior developers, the poor guys!
+to the junior developers, the poor guys!</p>
 
 <pre><code>repo foo
     RW+                         =   @all
@@ -3402,87 +3827,108 @@ repo bar
     -   VREF/Hour/2[0-9]        =   @junior-devs
 </code></pre>
 
-In this example, we write the "Hour" VREF-maker to *ignore the argument
-passed* and just print `VREF/Hour/NN` where NN can be between 00 to 23
-inclusive and of course represents the current hour.
+<p>In this example, we write the "Hour" VREF-maker to <em>ignore the argument
+passed</em> and just print <code>VREF/Hour/NN</code> where NN can be between 00 to 23
+inclusive and of course represents the current hour.</p>
 
-if foo is pushed at 6:30pm, the VREF-maker prints VREF/Hour/18, which
-satisfies the third rule and is rejected.
+<p>if foo is pushed at 6:30pm, the VREF-maker prints VREF/Hour/18, which
+satisfies the third rule and is rejected.</p>
 
-If bar is pushed at, say, 7:20am, the vref printed is VREF/Hour/07, which does
-not match any of the rules.  And fallthru is success so it passes.
+<p>If bar is pushed at, say, 7:20am, the vref printed is VREF/Hour/07, which does
+not match any of the rules.  And fallthru is success so it passes.</p>
 
 <h4><a name="vref-vref-fallthru"></a> why is fallthru considered success with VREFs</h4>
 
-Virtual refs are **best used** (1) as additional "deny" rules, performing
+<p>Virtual refs are <strong>best used</strong> (1) as additional "deny" rules, performing
 extra checks that core gitolite cannot.  You usually want such extra checks
-only for some people.
+only for some people.</p>
 
-When fallthru is success, you can simply *ignore* all the other users (for
-whom such additional checks are not needed).
+<p>When fallthru is success, you can simply <em>ignore</em> all the other users (for
+whom such additional checks are not needed).</p>
 
-If fallthru were to be considered 'failure', you'd be forced to add a "success
-rule" like this for *every* vref you used in this repo, in each case listing
-every user who was not already mentioned in the context of that vref:
+<p>If fallthru were to be considered 'failure', you'd be forced to add a "success
+rule" like this for <em>every</em> vref you used in this repo, in each case listing
+every user who was not already mentioned in the context of that vref:</p>
 
 <pre><code>RW+ VREF/VREFNAME   =   @userlist   # uggh! what a pain!
 </code></pre>
 
-Worse, since every virtual ref involves calling an external program, many of
-these calls may be wasted.
+<p>Worse, since every virtual ref involves calling an external program, many of
+these calls may be wasted.</p>
 
-<font color="gray">(1) "best used as..." does not mean "only used as...".  For
+<p><font color="gray">(1) "best used as..." does not mean "only used as...".  For
 example it's perfectly easy to turn this around if, instead of having a list
-of people who *do* need extra checks, all you have is the complementary
-list:
+of people who <em>do</em> need extra checks, all you have is the complementary
+list:</p>
 
 <pre><code>RW+ VREF/NAME/Makefile      =   @senior-devs
 -   VREF/NAME/Makefile      =   @all
 </code></pre>
 
-</font>
+<p></font></p>
 
 <h4>what if the VREF-maker prints something that's not even a VREF?</h4>
 
-The VREF-maker can print anything it wants to STDOUT.  Lines not starting with
-`VREF/` are printed as is (so your VREF-maker can do mostly-normal printing to
+<p>The VREF-maker can print anything it wants to STDOUT.  Lines not starting with
+<code>VREF/</code> are printed as is (so your VREF-maker can do mostly-normal printing to
 STDOUT).  This is especially useful if you've turned an existing update hook
-into a VREF-maker, and it prints stuff but you don't want to touch the code.
+into a VREF-maker, and it prints stuff but you don't want to touch the code.</p>
 
-For lines starting with `VREF/`, the first word in each such line will be
+<p>For lines starting with <code>VREF/</code>, the first word in each such line will be
 treated as a virtual ref, while the rest, if any, is a message to be added to
 the standard "...DENIED..." message that gitolite will print if that refex
-matches and the rule is a deny rule.
+matches and the rule is a deny rule.</p>
 
 <h4>in what order are VREF-makers called?</h4>
 
-VREF-makers are called in the sequence in which they appear in the conf file.
+<p>VREF-makers are called in the sequence in which they appear in the conf file.</p>
 
-There are some optimisations to prevent calling the same VREF-maker with the
+<p>There are some optimisations to prevent calling the same VREF-maker with the
 same arguments more than once, and the VREF-maker code for the NAME VREF
 (which is special) is called only once regardless of how many times it appears
-but these details should not concern anyone but a developer.
+but these details should not concern anyone but a developer.</p>
 
 <h4><a name="vref-vref-args"></a> what arguments are passed to the vref-maker?</h4>
 
+<ul>
+<li><p>Arguments <strong>1, 2, 3</strong>: the 'ref', 'oldsha', and 'newsha' that git passed
+to the update hook (see 'man githooks').</p>
 
+<p>This, combined with the fact that non-zero exits are detected, mean that
+you can simply use an existing update.secondary as a VREF-maker as-is, no
+changes needed.</p></li>
+<li><p>Arguments <strong>4 and 5</strong>: the 'oldtree' and 'newtree' SHAs.  These are the
+same as the oldsha and newsha values, except if one of them is all-0.
+(indicating a ref creation or deletion).  In that case the corresponding
+'tree' SHA is set (by gitolite, as a courtesy) to the special SHA
+<code>4b825dc642cb6eb9a060e54bf8d69288fbee4904</code>, which is the hash of an empty
+tree.</p>
 
-ec00028a0d601ccf74a9c0e89665f4cd
+<p>(None of these shenanigans would have been needed if <code>git diff $oldsha
+$newsha</code> would not error out when passed an all-0 SHA.)</p></li>
+<li><p>Argument <strong>6</strong>: the attempted access flag.  Typically <code>W</code> or <code>+</code>, but
+could also be <code>C</code>, <code>D</code>, or any of these 4 followed by <code>M</code>.  If you have to
+ask what they mean, you haven't read enough gitolite documentation to be
+able to make virtual refs work.</p></li>
+<li><p>Argument <strong>7</strong>: is the entire refex; say <code>VREF/COUNT/3/NEWFILES</code>.</p></li>
+<li><p>Arguments <strong>8 onward</strong>: are the split out (by <code>/</code>) portions of the refex,
+excluding the first two components.  In our example they would be <code>3</code>
+followed by <code>NEWFILES</code>.</p></li>
+</ul>
 
-
-Yes, argument 7 is redundant if you have 8 and 9.  It's meant to make it easy
-to write vref-maker scripts in any language.  See script examples in source.
+<p>Yes, argument 7 is redundant if you have 8 and 9.  It's meant to make it easy
+to write vref-maker scripts in any language.  See script examples in source.</p>
 
 <h3>VREF-makers shipped with gitolite</h3>
 
 <h4><a name="vref-NAME"></a> restricting pushes by dir/file name</h4>
 
-The "NAME" VREF allows you to restrict pushes by the names of dirs and files
+<p>The "NAME" VREF allows you to restrict pushes by the names of dirs and files
 changed.  (Side note: the NAME VREF is the only one directly implemented
-within the update hook, so you won't find it in the VREF directory).
+within the update hook, so you won't find it in the VREF directory).</p>
 
-Here's an example.  Say you don't want junior developers pushing changes to
-the Makefile, because it's quite complex:
+<p>Here's an example.  Say you don't want junior developers pushing changes to
+the Makefile, because it's quite complex:</p>
 
 <pre><code>repo foo
         RW+                             =   @senior_devs
@@ -3491,22 +3937,22 @@ the Makefile, because it's quite complex:
         -   VREF/NAME/Makefile          =   @junior_devs
 </code></pre>
 
-When a senior dev pushes, the VREF is not invoked at all.  But when a junior
-dev pushes, the VREF is invoked, and it returns a list of files changed **as
-refs**, looking like this:
+<p>When a senior dev pushes, the VREF is not invoked at all.  But when a junior
+dev pushes, the VREF is invoked, and it returns a list of files changed <strong>as
+refs</strong>, looking like this:</p>
 
 <pre><code>VREF/NAME/file-1
 VREF/NAME/dir-2/file-3
 ...etc...
 </code></pre>
 
-Each of these refs is matched against the access rules.  If one of them
+<p>Each of these refs is matched against the access rules.  If one of them
 happens to be the Makefile, then the ref returned (VREF/NAME/Makefile) will
-match the deny rule and kill the push.
+match the deny rule and kill the push.</p>
 
-Another way to use this is when you know what is allowed instead of what is
+<p>Another way to use this is when you know what is allowed instead of what is
 not allowed.  Let's say the QA person is only allowed to touch a file called
-CHANGELOG and any files in a directory called ReleaseNotes:
+CHANGELOG and any files in a directory called ReleaseNotes:</p>
 
 <pre><code>repo foo
         RW+                             =   @senior_devs
@@ -3520,105 +3966,114 @@ CHANGELOG and any files in a directory called ReleaseNotes:
 
 <h4><a name="vref-COUNT"></a> number of changed or new files</h4>
 
-The COUNT VREF is used like this:
+<p>The COUNT VREF is used like this:</p>
 
 <pre><code>-   VREF/COUNT/9                    =   @junior-developers
 </code></pre>
 
-In response, if anyone in the user list pushes a commit series that
+<p>In response, if anyone in the user list pushes a commit series that
 changes more than 9 files, a vref of "VREF/COUNT/9" is returned.  Gitolite
 uses that as a "ref" to match against all the rules, hits the same rule
-that invoked it, and denies the request.
+that invoked it, and denies the request.</p>
 
-If the user did not push more than 9 files, the VREF code returns nothing,
-and nothing happens.
+<p>If the user did not push more than 9 files, the VREF code returns nothing,
+and nothing happens.</p>
 
-COUNT can take one more argument:
+<p>COUNT can take one more argument:</p>
 
 <pre><code>-   VREF/COUNT/9/NEWFILES           =   @junior-developers
 </code></pre>
 
-This is the same as before, but have to be more than 9 *new* files not
-just changed files.
+<p>This is the same as before, but have to be more than 9 <em>new</em> files not
+just changed files.</p>
 
 <h4>advanced filetype detection</h4>
 
-Note: this is more for illustration than use; it's rather specific to one of
-the projects I manage but the idea is the important thing.
+<p>Note: this is more for illustration than use; it's rather specific to one of
+the projects I manage but the idea is the important thing.</p>
 
-Sometimes a file has a standard extension (that cannot be 'gitignore'd), but
-it is actually automatically generated.  Here's one way to catch it:
+<p>Sometimes a file has a standard extension (that cannot be 'gitignore'd), but
+it is actually automatically generated.  Here's one way to catch it:</p>
 
 <pre><code> -   VREF/FILETYPE/AUTOGENERATED     =   @all
 </code></pre>
 
-You can look at `src/VREF/FILETYPE` to see how it handles the
+<p>You can look at <code>src/VREF/FILETYPE</code> to see how it handles the
 'AUTOGENERATED' option.  You could also have a more generic option, like
-perhaps BINARY, and handle that in the FILETYPE vref too.
+perhaps BINARY, and handle that in the FILETYPE vref too.</p>
 
 <h4>checking author email</h4>
 
-Some people want to ensure that "you can only push your own commits".
+<p>Some people want to ensure that "you can only push your own commits".</p>
 
-If you force it on everyone, this is a very silly idea (see "Philosophical
-Notes" section of `src/VREF/EMAIL-CHECK`).
+<p>If you force it on everyone, this is a very silly idea (see "Philosophical
+Notes" section of <code>src/VREF/EMAIL-CHECK</code>).</p>
 
-But there may be value in enforcing it just for the junior developers.
+<p>But there may be value in enforcing it just for the junior developers.</p>
 
-The neat thing is that the existing `contrib/update.email-check` was just
-copied to `src/VREF/EMAIL-CHECK` and it works, because VREFs get
+<p>The neat thing is that the existing <code>contrib/update.email-check</code> was just
+copied to <code>src/VREF/EMAIL-CHECK</code> and it works, because VREFs get
 the same first 3 arguments and those are all that it cares about.  (Note: you
-have to change one subroutine in that script if you want to use it)
+have to change one subroutine in that script if you want to use it)</p>
 
 <h4><a name="vref-votes"></a> voting on commits</h4>
 
-Although gitolite can't/won't do the whole "code review + workflow
+<p>Although gitolite can't/won't do the whole "code review + workflow
 enforcement" thing that Gerrit Code Review does, a basic implementation of
 voting on a commit is surprisingly easy.  See src/VREF/VOTES for details (and
-note that the actual *code* is just 2-3 lines; the rest is inline
-documentation).
+note that the actual <em>code</em> is just 2-3 lines; the rest is inline
+documentation).</p>
 
 <h3>other ideas -- code welcome!</h3>
 
 <h4>"no non-merge first-parents"</h4>
 
-Shruggar on #gitolite wanted this.  Possible code to implement it would be
-something like this (untested)
+<p>Shruggar on #gitolite wanted this.  Possible code to implement it would be
+something like this (untested)</p>
 
 <pre><code>[ -z "$(git rev-list --first-parent --no-merges $2..$3)" ]
 </code></pre>
 
-This can be implemented using `src/VREF/MERGE-CHECK` as a model.  That script
+<p>This can be implemented using <code>src/VREF/MERGE-CHECK</code> as a model.  That script
 does what the 'M' qualifier does in access rules (see last part of
-[this][write-types-write-types]), although the syntax to be used in conf/gitolite will be
-quite different.
+<a href="gitolite.html#write-types-write-types">this</a>), although the syntax to be used in conf/gitolite will be
+quite different.</p>
 
 <h4>other ideas for VREFs</h4>
 
-Here are some more ideas:
+<p>Here are some more ideas:</p>
 
+<ul>
+<li>Number of commits (<code>git rev-list --count $old $new</code>).
+</li>
+<li>Number of binary files in commit (currently I only know to count
+occurrences of <code>Bin</code> in the output of <code>git diff --stat</code>.
+</li>
+<li>Number of <em>new</em> binary files (count <code>Bin 0 -&gt;</code> in <code>git diff --stat</code>
+output).
+</li>
+<li>Time of day/day of week (see example snippet somewhere above).
+</li>
+<li>IP address.
+</li>
+<li>Phase of the moon.
+</li>
+</ul>
 
-
-dfe493e3e491b7c9741cfa3f4cd25cca
-
-
-Note that pretty much anything that involves `$oldsha..$newsha` will have to
+<p>Note that pretty much anything that involves <code>$oldsha..$newsha</code> will have to
 deal with the issue that when you push a new tag or branch, the "old" part
-is all 0's, and unless you consider `--all` existing branches and tags it
-becomes meaningless in terms of "number of new files" etc.
-
-
+is all 0's, and unless you consider <code>--all</code> existing branches and tags it
+becomes meaningless in terms of "number of new files" etc.</p>
 
 <hr />
-
 
 <h2><a name="triggers-triggers"></a> gitolite triggers</h2>
 
 <h3>intro and sample rc excerpt</h3>
 
-Gitolite fires off external commands at 7 different times.  The [rc][rc-rc] file
+<p>Gitolite fires off external commands at 7 different times.  The <a href="gitolite.html#rc-rc">rc</a> file
 specifies what commands to run at each trigger point, but for illustration,
-here's an excerpt:
+here's an excerpt:</p>
 
 <pre><code>%RC = (
 
@@ -3644,61 +4099,87 @@ here's an excerpt:
         ],
 </code></pre>
 
-(As you can see, post-create runs 3 programs that also run from post-compile.
-This is perfectly fine, by the way)
+<p>(As you can see, post-create runs 3 programs that also run from post-compile.
+This is perfectly fine, by the way)</p>
 
 <h3>types of trigger programs</h3>
 
-There are two types of trigger programs.  Standalone scripts are placed in
+<p>There are two types of trigger programs.  Standalone scripts are placed in
 src/triggers or its subdirectories.  They are invoked by being added to a
 trigger list (using the path after "src/triggers/", as you can see).  Such
-scripts are quick and easy to write in any language of your choice.
+scripts are quick and easy to write in any language of your choice.</p>
 
-Triggers written as perl modules are placed in src/lib/Gitolite/Triggers.
+<p>Triggers written as perl modules are placed in src/lib/Gitolite/Triggers.
 They are invoked by being listed with the package+function name, although even
 here the 'Gitolite::Triggers' part is skipped.  Perl modules have to follow
 some conventions (see some of the shipped modules to ideas) but the advantage
 is that they can set environment variables and change the argument list of the
-gitolite-shell program that invokes them.
+gitolite-shell program that invokes them.</p>
 
-If this does not make sense, please examine a default install of gitolite,
-paying attention to:
+<p>If this does not make sense, please examine a default install of gitolite,
+paying attention to:</p>
 
-
-
-bd0aaeadbc33871240c325dced1b3025
-
+<ul>
+<li>the path names in various trigger lists in the rc file
+</li>
+<li>corresponding path names in the src/ directory in gitolite source
+</li>
+<li>and for perl modules, the package names and function names within.
+</li>
+</ul>
 
 <h3>manually firing triggers</h3>
 
-...from the server command line is easy.  For example:
+<p>...from the server command line is easy.  For example:</p>
 
 <pre><code>gitolite trigger POST_COMPILE
 </code></pre>
 
-However if the triggered code depends on arguments (see next section) this
-won't work.  (The `POST_COMPILE` trigger programs all just happen to not
-require any arguments, so it works).
+<p>However if the triggered code depends on arguments (see next section) this
+won't work.  (The <code>POST_COMPILE</code> trigger programs all just happen to not
+require any arguments, so it works).</p>
 
 <h3>common arguments</h3>
 
-Triggers receive the following arguments:
+<p>Triggers receive the following arguments:</p>
 
-
-
-8a8935a5705dd453adb17864b0ab7164
-
+<ol>
+<li><p>any arguments mentioned in the rc file (for an example, see the renice
+command in the PRE_GIT trigger sequence),</p></li>
+<li><p>the name of the trigger as a string (example, <code>"POST_COMPILE"</code>), so you
+can call the same program from multiple triggers and it can know where it
+was called from,</p></li>
+<li><p>followed by zero or more arguments specific to the trigger, as given in
+the next section.</p></li>
+</ol>
 
 <h3>trigger-specific arguments and other details</h3>
 
-Here are the **rest of** the arguments for each trigger, plus a brief
-description of when the trigger runs:
+<p>Here are the <strong>rest of</strong> the arguments for each trigger, plus a brief
+description of when the trigger runs:</p>
 
+<ul>
+<li><p><code>INPUT</code> runs before pretty much anything else.  INPUT trigger scripts
+<em>must</em> be in perl, since they manipulate the arguments to and the
+environment of the 'gitolite-shell' program itself.  Most commonly they
+will read/change <code>@ARGV</code>, and/or <code>$ENV{SSH_ORIGINAL_COMMAND}</code>.</p>
 
+<p>There are certain conventions to adhere to; please see some of the shipped
+samples or ask me if you need help writing your own.</p></li>
+<li><p><code>ACCESS_1</code> runs after the first access check.  Extra arguments:</p>
 
-3ead3e16e102f4ac00861c2c9a8221fa
-
-
+<ul>
+<li>repo
+</li>
+<li>user
+</li>
+<li>'R' or 'W'
+</li>
+<li>'any'
+</li>
+<li>result (see notes below)
+</li>
+</ul>
 
 <p>'result' is the return value of the access() function.  If it contains the
 uppercase word "DENIED", the access was rejected.  Otherwise it is the
@@ -3710,13 +4191,20 @@ as it returns from the trigger</em>.</p></li>
 update hook to check the ref.  Extra arguments:</p>
 
 <ul>
-<li>repo</li>
-<li>user</li>
-<li>any of W, +, C, D, WM, +M, CM, DM</li>
-<li>the ref being updated (e.g., 'refs/heads/master')</li>
-<li>result</li>
-<li>old SHA</li>
-<li>new SHA</li>
+<li>repo
+</li>
+<li>user
+</li>
+<li>any of W, +, C, D, WM, +M, CM, DM
+</li>
+<li>the ref being updated (e.g., 'refs/heads/master')
+</li>
+<li>result
+</li>
+<li>old SHA
+</li>
+<li>new SHA
+</li>
 </ul>
 
 <p><code>ACCESS_2</code> also runs on each <a href="gitolite.html#vref-vref">VREF</a> that gets checked.  In this case
@@ -3731,32 +4219,46 @@ trigger <em>will</em> run.</p></li>
 Extra arguments:</p>
 
 <ul>
-<li>repo</li>
-<li>user</li>
-<li>'R' or 'W'</li>
-<li>'any'</li>
+<li>repo
+</li>
+<li>user
+</li>
+<li>'R' or 'W'
+</li>
+<li>'any'
+</li>
 <li>the git command ('git-receive-pack', 'git-upload-pack', or
-'git-upload-archive') being invoked.</li>
+'git-upload-archive') being invoked.
+</li>
 </ul></li>
 <li><p><code>PRE_CREATE</code> and <code>POST_CREATE</code> run just before and after a new "<a href="gitolite.html#wild-wild">wild</a>"
-repo is created by user action.  Extra arguments:</p>
+repo is created by user action.  In addition, any command that creates a
+repo (like 'fork') or potentially changes permissions (like 'perms') may
+choose to run <code>POST_CREATE</code>.  Extra arguments:</p>
 
 <ul>
-<li>repo</li>
-<li>user</li>
+<li>repo
+</li>
+<li>user
+</li>
 <li>invoking operation
 <ul>
-<li>'R' for fetch/clone/ls-remote, 'W' for push</li>
+<li>'R' for fetch/clone/ls-remote, 'W' for push
+</li>
 <li>can also be anything set by the external command running the
-trigger (e.g., see the perms and fork commands).</li>
-</ul></li>
+trigger (e.g., see the perms and fork commands).  This lets the
+trigger code know how it was invoked.
+</li>
+</ul>
+</li>
 </ul>
 
 <p>They are also run when a <em>normal</em> repo is created (say by adding a "repo
 foo" line to the conf file).  This case has only one extra argument:</p>
 
 <ul>
-<li>repo</li>
+<li>repo
+</li>
 </ul></li>
 <li><p><code>POST_COMPILE</code> runs after an admin push has successfully "compiled" the
 config file.  By default, the next thing is to update the ssh authkeys
@@ -3809,12 +4311,12 @@ authentication.  It only does authorisation</strong>.</font></p>
 
 <blockquote>
   <p><strong>Authentication</strong> is the process of verifying that you are who you claim
-  to be.  An authentication system will establish that I am the user
-  "sitaram" on my work system.  The one behind gmail will similarly
-  establish that I am "sitaramc".  And so on...</p>
-
-<p><strong>Authorisation</strong> is the process of asking what you want to do and
-  deciding if you're allowed to do it or not.</p>
+    to be.  An authentication system will establish that I am the user
+    "sitaram" on my work system.  The one behind gmail will similarly
+    establish that I am "sitaramc".  And so on...</p>
+  
+  <p><strong>Authorisation</strong> is the process of asking what you want to do and
+    deciding if you're allowed to do it or not.</p>
 </blockquote>
 
 <p>Now, if you managed to read about <a href="gitolite.html#glssh-glssh">gitolite and ssh</a>, you
@@ -3951,7 +4453,8 @@ key.  This public key is usually just one long line of text.</p>
 <li>On Windows machines with msysgit installed, you should do this from
 within a "git bash" window.  The command will report the full path where
 the files have been written; make a note of this, and use those files in
-any of the description that follows.</li>
+any of the description that follows.
+</li>
 </ul></li>
 <li><p><strong>Adding your public key to the server</strong>'s <code>~/.ssh/authorized_keys</code>
 file is how ssh uses pubkeys to authenticate users.  Let's say
@@ -3977,7 +4480,8 @@ the server!</p>
 <li><strong>Troubleshooting pubkey authentication failures</strong>: if you are unable to
 get ssh access to the server after doing all this, you'll have to look
 in <code>/var/log/secure</code> or <code>/var/log/auth.log</code> or some such file on the
-server to see what specific error <code>sshd</code> is complaining about.</li>
+server to see what specific error <code>sshd</code> is complaining about.
+</li>
 </ul></li>
 <li><p><strong>Restricting users to specific commands</strong> is very important for gitolite.
 If you read <code>man sshd</code> and look for <code>authorized_keys file format</code>, you'll
@@ -4004,8 +4508,10 @@ understand this</strong>.</p></li>
 
 <ul>
 <li>How does it distinguish between me and someone else, since we're all
-logging in as the same remote user "git".</li>
-<li>How does it restrict what I can do within a repository.</li>
+logging in as the same remote user "git".
+</li>
+<li>How does it restrict what I can do within a repository.
+</li>
 </ul>
 
 <h4>restricting shell access/distinguishing one user from another</h4>
@@ -4162,7 +4668,8 @@ with the other appendices in sequence.</p>
 <ul>
 <li>Running any git clone/fetch/ls-remote or just <code>ssh git@server info</code> asks
 you for a password.  (Or, if your sshd is set to use keys only, it just
-disconnects without doing anything).</li>
+disconnects without doing anything).
+</li>
 </ul>
 
 <p>The following problem(s) indicate that your pubkey is bypassing gitolite and
@@ -4326,9 +4833,9 @@ putty/plink, including environment variables, etc., and then try again.</p>
 
 <blockquote>
   <p><strong>NOTE</strong>: This section should be useful to anyone trying to get
-  password-less access working.  It is not necessarily specific to gitolite,
-  so keep that in mind if the wording feels a little more general than you
-  were expecting.</p>
+    password-less access working.  It is not necessarily specific to gitolite,
+    so keep that in mind if the wording feels a little more general than you
+    were expecting.</p>
 </blockquote>
 
 <p>You have generated a keypair on your workstation (<code>ssh-keygen</code>) and copied the
@@ -4344,7 +4851,7 @@ try, you are being asked for a password.</p>
 <p>This is a quick checklist:</p>
 
 <ul>
-<li><p>Make sure you're being asked for a password and not a pass<em>phrase</em>.  Do
+<li><p>Make sure you're being asked for a password and not a pass*phrase*.  Do
 not confuse or mistake a prompt saying <code>Enter passphrase for key
 '/home/sitaram/.ssh/id_rsa':</code> for a password prompt from the remote
 server!</p>
@@ -4930,13 +5437,17 @@ and facls.  But you can't do example 2 -- git is not designed to allow that!</p>
 <p>Here are some other disadvantages of the Unix ACL method:</p>
 
 <ul>
-<li>Every user needs a userid and password on the server.</li>
+<li>Every user needs a userid and password on the server.
+</li>
 <li>Changing access rights involves complex <code>usermod -G ...</code> mumblings
-(I.e., the "pain" mentioned above is not a one-time pain!)</li>
+(I.e., the "pain" mentioned above is not a one-time pain!)
+</li>
 <li><em>Viewing</em> the current set of permissions requires running multiple
 commands to list directories and their permissions/ownerships, users and
-their group memberships, and then correlating all these manually.</li>
-<li>Auditing historical permissions or permission changes is impossible.</li>
+their group memberships, and then correlating all these manually.
+</li>
+<li>Auditing historical permissions or permission changes is impossible.
+</li>
 </ul>
 
 <h4><a name="why-gcr"></a> Gerrit Code Review</h4>
@@ -5000,12 +5511,11 @@ reason to upgrade, and I still support v2 at least for critical issues].</p>
 
 <blockquote>
   <blockquote>
-  <p>If you're using gitolite and find it very useful in some way, I would
-  love to describe your use of it or add a link to your own description
-  of it here.  Of course, you can anonymise it as much as you need to.</p>
+    <p>If you're using gitolite and find it very useful in some way, I would
+      love to describe your use of it or add a link to your own description
+      of it here.  Of course, you can anonymise it as much as you need to.</p>
+  </blockquote>
 </blockquote>
-
-<p></blockquote></p>
 
 <p>The <strong>Fedora Project</strong> controls access to over 10,000 package management
 repositories accessed by over 1,000 package maintainers <a href="http://lists.fedoraproject.org/pipermail/devel-announce/2010-July/000647.html">using
@@ -5173,42 +5683,60 @@ could have done this with the old code.</p>
 <ul>
 <li>mechanism for ADCs using unchecked arguments -- this is not just a matter
 of writing it; I have to think about <em>how</em> it will be done.  (AFAIK the
-only tool affected is git-annexe; if there are more let me know)</li>
+only tool affected is git-annexe; if there are more let me know)
+</li>
 </ul>
 
 <p>Help needed:</p>
 
 <ul>
 <li>I'd like distro packagers to play with it and help with migration advice
-for distro-upgrades</li>
-<li>rsync</li>
-<li>git-annexe support (but this has a pre-requisite in the previous list)</li>
+for distro-upgrades
+</li>
+<li>rsync
+</li>
+<li>git-annexe support (but this has a pre-requisite in the previous list)
+</li>
 </ul>
 
 <p>Won't be done unless someone asks (saw no evidence that anyone used them in g2
 anyway!):</p>
 
 <ul>
-<li>mob branches</li>
-<li>password access</li>
-<li>some of the more arcane rc variables!</li>
+<li>mob branches
+</li>
+<li>password access
+</li>
+<li>some of the more arcane rc variables!
+</li>
 <li>specific ADCs -- there are too many for me to bother without applying
-Pareto somewhere, so I choose to not do any and wait for people to ask :-)</li>
+Pareto somewhere, so I choose to not do any and wait for people to ask :-)
+</li>
 </ul>
 
 <p>Done:</p>
 
 <ul>
-<li>core code</li>
-<li>test suite</li>
-<li>mirroring</li>
-<li>documentation</li>
-<li>migration documentation</li>
-<li>distro packaging instructions</li>
-<li>migration advice for common cases</li>
-<li>smart http</li>
-<li>svnserve</li>
-<li>htpasswd</li>
+<li>core code
+</li>
+<li>test suite
+</li>
+<li>mirroring
+</li>
+<li>documentation
+</li>
+<li>migration documentation
+</li>
+<li>distro packaging instructions
+</li>
+<li>migration advice for common cases
+</li>
+<li>smart http
+</li>
+<li>svnserve
+</li>
+<li>htpasswd
+</li>
 </ul>
 
 <hr />
@@ -5295,18 +5823,24 @@ $ ls -aF .ssh
 
 <ul>
 <li><code>~/bin/gitolite</code> -- a symlink to <code>~/gitolite/src/gitolite</code>.  The target of
-this symlink tells gitolite where the rest of the code is.</li>
-<li><code>~/gitolite/src</code> -- the rest of the code.</li>
+this symlink tells gitolite where the rest of the code is.
+</li>
+<li><code>~/gitolite/src</code> -- the rest of the code.
+</li>
 <li><code>~/.gitolite</code> -- the gitolite "admin" directory.  The only thing you
 should directly touch here are the [log][log] files and <a href="gitolite.html#cust-hooks">hooks</a>.  (I.e., do
 NOT change the conf or keydir contents here; see adding <a href="gitolite.html#users-users">users</a> and
-<a href="gitolite.html#repos-repos">repos</a> for how to do that.</li>
-<li><code>~/.gitolite.rc</code> -- the <a href="gitolite.html#rc-rc">rc</a> file.</li>
+<a href="gitolite.html#repos-repos">repos</a> for how to do that.
+</li>
+<li><code>~/.gitolite.rc</code> -- the <a href="gitolite.html#rc-rc">rc</a> file.
+</li>
 <li><code>~/repositories</code> -- which contains all the repositories that gitolite will
-be managing.</li>
+be managing.
+</li>
 <li><code>~/.ssh</code> -- which contains (at least) the <code>authorized_keys</code> file that
 provides access to users.  You can look inside that file and correlate it
-with what the <a href="gitolite.html#ssh-ssh">ssh</a> docs tell you, if you wish.</li>
+with what the <a href="gitolite.html#ssh-ssh">ssh</a> docs tell you, if you wish.
+</li>
 </ul>
 
 <hr />
@@ -5350,6 +5884,12 @@ it longer.  <code>(foo)+</code> matches one or more "foo", (like "foo", "foofoo"
 
 <h2><a name="perf-perf"></a> gitolite performance</h2>
 
+<p>TOP TIP: If you have more than 2000 or so repos, then you should be using v3.2
+or later; there was a bit of code that went in there that makes a <em>huge</em>
+difference for really large sites.</p>
+
+<h3>tips for performance worriers</h3>
+
 <p>Gitolite is pretty efficient in most cases, and generally nothing needs to be
 done.  If you think you have a performance problem, let me know on the mailing
 list.  Meanwhile, here are some tips:</p>
@@ -5365,7 +5905,9 @@ corresponding lines in the POST_CREATE and POST_COMPILE trigger lists in
 the rc file.</p></li>
 <li><p>If you can't get rid of those scripts, and they are still taking too long,
 you can make them run in the background.  They'll eventually finish but
-the user doesn't have to wait.  See src/triggers/bg.</p></li>
+the user doesn't have to wait.  See src/triggers/bg.  <em>This should not
+normally be needed; if you feel you need it, please talk to me so I can
+understand why and maybe help</em>.</p></li>
 <li><p>If you're more concerned about your users' time when they create a new
 wild repo (and not so much about the admin push taking time), you can fix
 a couple of scripts and send me a patch :)</p>
@@ -5382,6 +5924,65 @@ the other two programs.</p>
 may be a little more tricky, since it may involve <em>deleting</em> lines from
 the "projects.list" file.)</p></li>
 </ul>
+
+<h3>why there's really no need to worry!</h3>
+
+<p>In general, gitolite has a constant overhead of about 0.2 seconds on my
+laptop.  There really is nothing to optimise, but you can comment out some
+triggers as the previous section said.</p>
+
+<p>Here's the big-O stuff:</p>
+
+<ul>
+<li>N = number of normal repos, each with its own set of rules.  In "repo r1
+r2 r3", N = 3.  Add up all such lines.
+</li>
+<li>G = number of groups or wild patterns.  In "repo @g1 @g2 foo/[a-z]*", G =
+3.
+</li>
+<li>M = number of members.  In "@g1 = r1 r2 <nl> @g2 = r3 r4 r5", M = 5.
+</li>
+<li>A = average number of rule lines in each "repo" block.  Usually about 5,
+maybe 10 sometimes.  You may have more.
+</li>
+</ul>
+
+<p>Gitolite overheads compared to a normal ssh push are:</p>
+
+<ol>
+<li>perl startup time.  Fairly constant and fairly small.  I have generally
+found it pretty hard to measure, especially with a hot cache.
+</li>
+<li>rule parse time.  Details below
+</li>
+<li>rule interpretation time.  Fairly constant, or at least subject to much
+smaller variations than #2.
+</li>
+</ol>
+
+<p>"rule parse time" is where it makes a difference.  There are 2 files gitolite
+parses on each "access": <code>~/.gitolite/conf/gitolite.conf-compiled.pm</code> and
+<code>~/repositories/your_repo.git/gl-conf</code>.  The former contains O(N + M + G*A)
+lines.  In addition, the gl-conf files contains about "A" lines (remember we
+called it an average), which is negligible.</p>
+
+<p>In practice, you can't measure this at a scale that a developer running a "git
+push" might even pretend to notice, unless you have more than, say, 5000 repos
+or so.  On my testbed of 11,100 repos, where the compiled.pm is almost 0.7 MB,
+it takes less than 0.2 seconds to do this.</p>
+
+<p>And on a busy system, when that file will be pretty much always in cache, it's
+even less.</p>
+
+<h3>the only thing that will take more time</h3>
+
+<p>Literally, the only thing that will take time is something like "ssh git@host
+info" because it finds all possible repos and for each of them it tries to
+check the access.  On that same test bed, therefore, this ends up reading all
+11,100 "gl-conf" files.</p>
+
+<p>On my laptop this takes about 14 seconds.  In contrast, a normal git operation
+(clone, pull, push, etc) is so small it is hard to measure without software.</p>
 
 <hr />
 
@@ -5426,7 +6027,7 @@ line.  As the <a href="gitolite.html#vref-vref">vref documentation</a> says:</p>
 
 <blockquote>
   <p><strong>Virtual refs are best used as additional "deny" rules</strong>, performing
-  extra checks that core gitolite cannot.</p>
+    extra checks that core gitolite cannot.</p>
 </blockquote>
 
 <p>The second part explicitly says when and where to include the subconf files.
@@ -5806,15 +6407,15 @@ differences are in the rc file, mirroring, "NAME/" rules, and delegation.</p>
 
 <blockquote>
   <hr />
-
-<p><strong>Presetting the rc file</strong></p>
-
-<p>Some rc settings in the older gitolite are such that you cannot directly
-  run <code>gitolite setup</code> when you're ready to migrate.  <strong>Doing that will
-  clobber something important</strong>.  See <a href="gitolite.html#g2migr-rc-preset">presetting the rc file</a>
-  for details.</p>
-
-<hr />
+  
+  <p><strong>Presetting the rc file</strong></p>
+  
+  <p>Some rc settings in the older gitolite are such that you cannot directly
+    run <code>gitolite setup</code> when you're ready to migrate.  <strong>Doing that will
+    clobber something important</strong>.  See <a href="gitolite.html#g2migr-rc-preset">presetting the rc file</a>
+    for details.</p>
+  
+  <hr />
 </blockquote>
 
 <p>The <code>check-g2-compat</code> program attempts to identify any <em>big</em> issues you will
@@ -5951,8 +6552,10 @@ should be shot but no one listens to me anyway.</p></li>
 looks for settings and status that might:</p>
 
 <ul>
-<li>make g3 unusable for lots of users</li>
-<li>make g3 give <em>more</em> access than g2 under some conditions</li>
+<li>make g3 unusable for lots of users
+</li>
+<li>make g3 give <em>more</em> access than g2 under some conditions
+</li>
 </ul>
 
 <p>It does NOT look for or warn about anything else; you're expected to read (and
@@ -6099,7 +6702,7 @@ instructions are to be read as "on gitolite admin's workstation".</p>
 have a clone of the gitosis-admin repo so now you have both).</p></li>
 <li><p><strong>Convert</strong> your gitosis config file and append it to your gitolite config
 file.  Substitute the path for your gitosis-admin clone in <code>$GSAC</code> below,
-and similarly the path for your gito<strong>lite</strong>-admin clone in <code>$GLAC</code>.  (The
+and similarly the path for your gito*<em>lite</em>*-admin clone in <code>$GLAC</code>.  (The
 convert-gitosis-conf program is a standalone program that you can bring
 over from any gitolite clone; you don't have to install all of gitolite on
 your workstation to use this):</p>
@@ -6185,461 +6788,756 @@ the files to make sure this worked properly</em></p></li>
 <ul>
 <li><a href="gitolite.html#index-index">Hosting git repositories</a>
 <ul>
-<li><a href="gitolite.html#index-g2">(for older gitolite (v1.x and v2.x) users)</a></li>
-<li><a href="gitolite.html#index-ql">quick links</a></li>
-<li><a href="gitolite.html#index-what">What is gitolite?</a></li>
-<li><a href="gitolite.html#index-contact">contact and support</a></li>
-<li><a href="gitolite.html#index-license">license</a></li>
-</ul></li>
+<li><a href="gitolite.html#index-g2">(for older gitolite (v1.x and v2.x) users)</a>
+</li>
+<li><a href="gitolite.html#index-ql">quick links</a>
+</li>
+<li><a href="gitolite.html#index-what">What is gitolite?</a>
+</li>
+<li><a href="gitolite.html#index-contact">contact and support</a>
+</li>
+<li><a href="gitolite.html#index-license">license</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#testing-testing">trying out gitolite safely</a>
 <ul>
-<li><a href="gitolite.html#testing-trying">trying out gitolite</a></li>
-<li>testing gitolite</li>
-</ul></li>
+<li><a href="gitolite.html#testing-trying">trying out gitolite</a>
+</li>
+<li>testing gitolite
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#qi-qi">quick install, setup, and clone</a>
 <ul>
-<li>ASSUMPTIONS</li>
-<li>instructions</li>
-<li>next steps</li>
-</ul></li>
+<li>ASSUMPTIONS
+</li>
+<li>instructions
+</li>
+<li>next steps
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#user-user">what users (not admins) need to know about gitolite</a>
 <ul>
-<li>accessing gitolite</li>
-<li><a href="gitolite.html#user-info">the info command</a></li>
-<li>digression: two kinds of repos</li>
+<li>accessing gitolite
+</li>
+<li><a href="gitolite.html#user-info">the info command</a>
+</li>
+<li>digression: two kinds of repos
+</li>
 <li>other commands
 <ul>
-<li><a href="gitolite.html#user-perms">set/get additional permissions for repos you created</a></li>
-<li><a href="gitolite.html#user-desc">adding a description to repos you created</a></li>
-</ul></li>
-<li>"site-local" commands</li>
-</ul></li>
+<li><a href="gitolite.html#user-perms">set/get additional permissions for repos you created</a>
+</li>
+<li><a href="gitolite.html#user-desc">adding a description to repos you created</a>
+</li>
+</ul>
+</li>
+<li>"site-local" commands
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#users-users">adding and removing users</a>
 <ul>
 <li><a href="gitolite.html#users-multi-key">multiple keys per user</a>
 <ul>
-<li>old style multi-keys</li>
-</ul></li>
-</ul></li>
-<li><a href="gitolite.html#repos-repos">adding and removing repos</a></li>
+<li>old style multi-keys
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#repos-repos">adding and removing repos</a>
+</li>
 <li><a href="gitolite.html#groups-groups">group definitions</a>
 <ul>
-<li>special group <code>@all</code></li>
-</ul></li>
+<li>special group <code>@all</code>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#emergencies-emergencies">help for emergencies</a>
 <ul>
-<li>install/setup issues</li>
-<li><a href="gitolite.html#emergencies-lost-key">lost admin key/access</a></li>
-<li><a href="gitolite.html#emergencies-bypass">bypassing gitolite</a></li>
-<li><a href="gitolite.html#emergencies-clean">cleaning out a botched install</a></li>
-<li><a href="gitolite.html#emergencies-ce">common errors</a></li>
-<li><a href="gitolite.html#emergencies-ue">uncommon errors</a></li>
-<li><a href="gitolite.html#emergencies-nonstd">non-standard configs that'll trip you up</a></li>
-<li><a href="gitolite.html#emergencies-ngp">things that are not gitolite problems</a></li>
-</ul></li>
-<li><a href="gitolite.html#WARNINGS-WARNINGS">WARNINGS</a></li>
+<li>install/setup issues
+</li>
+<li><a href="gitolite.html#emergencies-lost-key">lost admin key/access</a>
+</li>
+<li><a href="gitolite.html#emergencies-bypass">bypassing gitolite</a>
+</li>
+<li><a href="gitolite.html#emergencies-clean">cleaning out a botched install</a>
+</li>
+<li><a href="gitolite.html#emergencies-ce">common errors</a>
+</li>
+<li><a href="gitolite.html#emergencies-ue">uncommon errors</a>
+</li>
+<li><a href="gitolite.html#emergencies-nonstd">non-standard configs that'll trip you up</a>
+</li>
+<li><a href="gitolite.html#emergencies-ngp">things that are not gitolite problems</a>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#WARNINGS-WARNINGS">WARNINGS</a>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">detailed installation and access rules</a></p>
 
 <ul>
 <li><a href="gitolite.html#install-install">installing gitolite</a>
 <ul>
-<li><a href="gitolite.html#install-nnc">notes and naming conventions</a></li>
+<li><a href="gitolite.html#install-nnc">notes and naming conventions</a>
+</li>
 <li><a href="gitolite.html#install-req">requirements</a>
 <ul>
-<li>your skills</li>
-<li>server</li>
-<li>client</li>
-</ul></li>
-<li>getting the software</li>
-<li>the actual install</li>
-<li>upgrading</li>
-<li><a href="gitolite.html#install-package">packaging gitolite</a></li>
+<li>your skills
+</li>
+<li>server
+</li>
+<li>client
+</li>
+</ul>
+</li>
+<li>getting the software
+</li>
+<li>the actual install
+</li>
+<li>upgrading
+</li>
+<li><a href="gitolite.html#install-package">packaging gitolite</a>
+</li>
 <li><a href="gitolite.html#install-migr">migrating</a>
 <ul>
-<li>pre-migration checks</li>
-<li>the actual migration</li>
-</ul></li>
-</ul></li>
-<li><a href="gitolite.html#setup-setup">setting up gitolite</a></li>
-<li><a href="gitolite.html#clone-clone">cloning the admin repo</a></li>
+<li>pre-migration checks
+</li>
+<li>the actual migration
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#setup-setup">setting up gitolite</a>
+</li>
+<li><a href="gitolite.html#clone-clone">cloning the admin repo</a>
+</li>
 <li><a href="gitolite.html#syntax-syntax">basic syntax</a>
 <ul>
-<li><a href="gitolite.html#syntax-include">include files</a></li>
-</ul></li>
+<li><a href="gitolite.html#syntax-include">include files</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#admin-admin">gitolite administration</a>
 <ul>
-<li><a href="gitolite.html#admin-server">server-side administration</a></li>
+<li><a href="gitolite.html#admin-server">server-side administration</a>
+</li>
 <li><a href="gitolite.html#admin-adminrepo">access control via the gitolite-admin repo</a>
 <ul>
-<li><a href="gitolite.html#admin-conf">the conf/gitolite.conf file</a></li>
-</ul></li>
+<li><a href="gitolite.html#admin-conf">the conf/gitolite.conf file</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#rules-rules">access rules</a>
 <ul>
-<li>what do rules look like</li>
+<li>what do rules look like
+</li>
 <li>how are the rules checked
 <ul>
-<li>read access -- clone, fetch, archive</li>
-<li>write access -- push</li>
-</ul></li>
-<li><a href="gitolite.html#rules-permsum">summary of permissions</a></li>
-</ul></li>
+<li>read access -- clone, fetch, archive
+</li>
+<li>write access -- push
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#rules-permsum">summary of permissions</a>
+</li>
+</ul>
+</li>
 <li>additional topics
 <ul>
-<li><a href="gitolite.html#rules-rule-accum">rule accumulation</a></li>
-<li><a href="gitolite.html#rules-deny-rules">applying deny rules during the first check</a></li>
-</ul></li>
-<li><a href="gitolite.html#refex-refex">matching a ref and a refex</a></li>
-<li><a href="gitolite.html#write-types-write-types">different types of write operations</a></li>
-</ul></li>
+<li><a href="gitolite.html#rules-rule-accum">rule accumulation</a>
+</li>
+<li><a href="gitolite.html#rules-deny-rules">applying deny rules during the first check</a>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#refex-refex">matching a ref and a refex</a>
+</li>
+<li><a href="gitolite.html#write-types-write-types">different types of write operations</a>
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">the rc file, git-config, and options</a></p>
 
 <ul>
 <li><a href="gitolite.html#rc-rc">the "rc" file (<code>$HOME/.gitolite.rc</code>)</a>
 <ul>
-<li>specific variables</li>
-</ul></li>
+<li>specific variables
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#git-config-git-config">"git-config" keys and values</a>
 <ul>
 <li>basic syntax
 <ul>
-<li>an important warning about <strong>deleting</strong> a config line</li>
-</ul></li>
-<li>substituting the repo name and the creator name</li>
-<li><a href="gitolite.html#git-config-override_conf">overriding config values</a></li>
-<li>compensating for <code>UNSAFE_PATT</code></li>
-</ul></li>
-<li><a href="gitolite.html#options-options">gitolite options</a></li>
+<li>an important warning about <strong>deleting</strong> a config line
+</li>
+</ul>
+</li>
+<li>substituting the repo name and the creator name
+</li>
+<li><a href="gitolite.html#git-config-override_conf">overriding config values</a>
+</li>
+<li>compensating for <code>UNSAFE_PATT</code>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#options-options">gitolite options</a>
+</li>
 <li><a href="gitolite.html#external-external">interfacing with external tools</a>
 <ul>
 <li>gitweb
 <ul>
-<li><a href="gitolite.html#external-umask">changing the UMASK</a></li>
-<li>repo-specific authorisation in gitweb</li>
-</ul></li>
-<li>git-daemon</li>
-<li>tips</li>
-</ul></li>
+<li><a href="gitolite.html#external-umask">changing the UMASK</a>
+</li>
+<li>repo-specific authorisation in gitweb
+</li>
+</ul>
+</li>
+<li>git-daemon
+</li>
+<li>tips
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">wild repos, mirroring, and other features</a></p>
 
 <ul>
 <li><a href="gitolite.html#wild-wild">"wild" repos (user created repos)</a>
 <ul>
-<li>quick introduction</li>
-<li>(admin) declaring wild repos in the conf file</li>
-<li><a href="gitolite.html#wild-create">(user) creating a specific repo</a></li>
-<li>a slightly different example</li>
+<li>quick introduction
+</li>
+<li>(admin) declaring wild repos in the conf file
+</li>
+<li><a href="gitolite.html#wild-create">(user) creating a specific repo</a>
+</li>
+<li>a slightly different example
+</li>
 <li>repo patterns
 <ul>
-<li>pattern versus normal repo</li>
-<li>line-anchored regexes</li>
-</ul></li>
-<li>roles</li>
+<li>pattern versus normal repo
+</li>
+<li>line-anchored regexes
+</li>
+</ul>
+</li>
+<li>roles
+</li>
 <li>adding other roles
-      * <a href="gitolite.html#wild-rolenamewarn"><strong>IMPORTANT WARNING ABOUT THIS FEATURE</strong></a></li>
-<li>listing wild repos</li>
-<li>deleting a wild repo</li>
-</ul></li>
+      * <a href="gitolite.html#wild-rolenamewarn"><strong>IMPORTANT WARNING ABOUT THIS FEATURE</strong></a>
+</li>
+<li>listing wild repos
+</li>
+<li>deleting a wild repo
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#mirroring-mirroring">mirroring using gitolite</a>
 <ul>
-<li>caveats</li>
+<li>caveats
+</li>
 <li>setting up mirroring
 <ul>
-<li>the initial setup and the rc file</li>
-<li>conf file settings and syntax</li>
-</ul></li>
-<li>redirected pushes</li>
-<li><a href="gitolite.html#mirroring-sync">manually synchronising a slave repo</a></li>
-<li><a href="gitolite.html#mirroring-HOSTNAME">appendix A: HOSTNAME substitution</a></li>
-<li>appendix B: efficiency versus paranoia</li>
-</ul></li>
+<li>the initial setup and the rc file
+</li>
+<li>conf file settings and syntax
+</li>
+</ul>
+</li>
+<li>redirected pushes
+</li>
+<li><a href="gitolite.html#mirroring-sync">manually synchronising a slave repo</a>
+</li>
+<li><a href="gitolite.html#mirroring-HOSTNAME">appendix A: HOSTNAME substitution</a>
+</li>
+<li>appendix B: efficiency versus paranoia
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#deleg-deleg">delegating access control responsibilities</a>
 <ul>
-<li>example</li>
+<li>example
+</li>
 <li><a href="gitolite.html#deleg-subconf">the subconf command</a>
 <ul>
-<li>how the "subconf name" is derived</li>
-</ul></li>
+<li>how the "subconf name" is derived
+</li>
+</ul>
+</li>
 <li>security notes
 <ul>
-<li>group names</li>
-<li>delegating pubkeys</li>
-</ul></li>
-</ul></li>
+<li>group names
+</li>
+<li>delegating pubkeys
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#special-special">special features and setups</a>
 <ul>
-<li><a href="gitolite.html#special-elsewhere">putting 'repositories' and '.gitolite' somewhere else</a></li>
-<li><a href="gitolite.html#special-writable">disabling pushes to take backups</a></li>
-<li><a href="gitolite.html#special-pers">"personal" branches</a></li>
-<li>delegating access control responsibilities</li>
-<li><a href="gitolite.html#special-keysonly">using pubkeys obtained from elsewhere</a></li>
-<li><a href="gitolite.html#special-gh">giving users their own repos</a></li>
-</ul></li>
+<li><a href="gitolite.html#special-elsewhere">putting 'repositories' and '.gitolite' somewhere else</a>
+</li>
+<li><a href="gitolite.html#special-writable">disabling pushes to take backups</a>
+</li>
+<li><a href="gitolite.html#special-pers">"personal" branches</a>
+</li>
+<li>delegating access control responsibilities
+</li>
+<li><a href="gitolite.html#special-keysonly">using pubkeys obtained from elsewhere</a>
+</li>
+<li><a href="gitolite.html#special-gh">giving users their own repos</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#rare-rare">rare or one-time activities</a>
 <ul>
-<li><a href="gitolite.html#rare-existing">moving existing repos into gitolite</a></li>
-<li><a href="gitolite.html#rare-moving">moving servers</a></li>
-</ul></li>
+<li><a href="gitolite.html#rare-existing">moving existing repos into gitolite</a>
+</li>
+<li><a href="gitolite.html#rare-moving">moving servers</a>
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">smart http</a></p>
 
 <ul>
 <li><a href="gitolite.html#http-http">how to setup gitolite to use smart http mode</a>
 <ul>
-<li>WARNINGS and important notes</li>
-<li>assumptions:</li>
-<li>instructions</li>
-<li>Making repositories available to both ssh and http mode clients</li>
+<li>WARNINGS and important notes
+</li>
+<li>assumptions:
+</li>
+<li>instructions
+</li>
+<li>Making repositories available to both ssh and http mode clients
+</li>
 <li>usage
 <ul>
-<li>client side</li>
-<li>server side</li>
-</ul></li>
-</ul></li>
-<li><a href="gitolite.html#ssh-and-http-ssh-and-http">Making repositories available to both ssh and http mode clients</a></li>
+<li>client side
+</li>
+<li>server side
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#ssh-and-http-ssh-and-http">Making repositories available to both ssh and http mode clients</a>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">customising gitolite</a></p>
 
 <ul>
 <li><a href="gitolite.html#cust-cust">customising gitolite</a>
 <ul>
-<li><a href="gitolite.html#cust-ncintro">introduction</a></li>
+<li><a href="gitolite.html#cust-ncintro">introduction</a>
+</li>
 <li><a href="gitolite.html#cust-ncloc">locations</a>
 <ul>
-<li>default/primary location of non-core programs</li>
-<li><a href="gitolite.html#cust-localcode">alternate location -- the <code>LOCAL_CODE</code> rc variable</a></li>
-<li><a href="gitolite.html#cust-pushcode">managing custom code via the gitolite-admin repo</a></li>
-</ul></li>
+<li>default/primary location of non-core programs
+</li>
+<li><a href="gitolite.html#cust-localcode">alternate location -- the <code>LOCAL_CODE</code> rc variable</a>
+</li>
+<li><a href="gitolite.html#cust-pushcode">managing custom code via the gitolite-admin repo</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#cust-nctypes">types of non-core programs</a>
 <ul>
-<li><a href="gitolite.html#cust-commands">gitolite "commands"</a></li>
-<li><a href="gitolite.html#cust-hooks">hooks and gitolite</a></li>
-<li><a href="gitolite.html#cust-sugar">syntactic sugar</a></li>
-<li>triggers</li>
-<li>VREFs</li>
-</ul></li>
-</ul></li>
+<li><a href="gitolite.html#cust-commands">gitolite "commands"</a>
+</li>
+<li><a href="gitolite.html#cust-hooks">hooks and gitolite</a>
+</li>
+<li><a href="gitolite.html#cust-sugar">syntactic sugar</a>
+</li>
+<li>triggers
+</li>
+<li>VREFs
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#non-core-non-core">non-core features shipped with gitolite</a>
 <ul>
-<li>commands</li>
-<li>syntactic sugar</li>
-<li>triggers</li>
-<li>VREFs</li>
+<li>commands
+</li>
+<li>syntactic sugar
+</li>
+<li>triggers
+</li>
+<li>VREFs
+</li>
 <li>details on some non-core programs
 <ul>
-<li><a href="gitolite.html#non-core-partial-copy">partial-copy: selective read control for branches</a></li>
-</ul></li>
-</ul></li>
+<li><a href="gitolite.html#non-core-partial-copy">partial-copy: selective read control for branches</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#dev-notes-dev-notes">notes for developers</a>
 <ul>
-<li>environment variables and other inputs</li>
+<li>environment variables and other inputs
+</li>
 <li>APIs
 <ul>
-<li>the shell API</li>
-<li>the perl API</li>
-</ul></li>
+<li>the shell API
+</li>
+<li>the perl API
+</li>
+</ul>
+</li>
 <li>writing your own...
 <ul>
-<li>...commands</li>
+<li>...commands
+</li>
 <li>...hooks
 <ul>
-<li>anything but the update hook</li>
-<li>update hook</li>
-</ul></li>
-<li>...trigger programs</li>
-<li>..."sugar"</li>
-</ul></li>
-<li>appendix 1: notes on the INPUT trigger</li>
-</ul></li>
+<li>anything but the update hook
+</li>
+<li>update hook
+</li>
+</ul>
+</li>
+<li>...trigger programs
+</li>
+<li>..."sugar"
+</li>
+</ul>
+</li>
+<li>appendix 1: notes on the INPUT trigger
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#vref-vref">virtual refs</a>
 <ul>
-<li>rule matching recap</li>
-<li>what is a virtual ref?</li>
-<li>how do I use a VREF?</li>
-<li>where do VREFs come from?</li>
-<li>ok who calls the VREF-maker?</li>
-<li>how does a VREF-maker work?</li>
-<li>mimicking a plain old update hook</li>
+<li>rule matching recap
+</li>
+<li>what is a virtual ref?
+</li>
+<li>how do I use a VREF?
+</li>
+<li>where do VREFs come from?
+</li>
+<li>ok who calls the VREF-maker?
+</li>
+<li>how does a VREF-maker work?
+</li>
+<li>mimicking a plain old update hook
+</li>
 <li>details
 <ul>
-<li>what if the VREF-maker prints a different VREF?</li>
-<li><a href="gitolite.html#vref-vref-fallthru">why is fallthru considered success with VREFs</a></li>
-<li>what if the VREF-maker prints something that's not even a VREF?</li>
-<li>in what order are VREF-makers called?</li>
-<li><a href="gitolite.html#vref-vref-args">what arguments are passed to the vref-maker?</a></li>
-</ul></li>
+<li>what if the VREF-maker prints a different VREF?
+</li>
+<li><a href="gitolite.html#vref-vref-fallthru">why is fallthru considered success with VREFs</a>
+</li>
+<li>what if the VREF-maker prints something that's not even a VREF?
+</li>
+<li>in what order are VREF-makers called?
+</li>
+<li><a href="gitolite.html#vref-vref-args">what arguments are passed to the vref-maker?</a>
+</li>
+</ul>
+</li>
 <li>VREF-makers shipped with gitolite
 <ul>
-<li><a href="gitolite.html#vref-NAME">restricting pushes by dir/file name</a></li>
-<li><a href="gitolite.html#vref-COUNT">number of changed or new files</a></li>
-<li>advanced filetype detection</li>
-<li>checking author email</li>
-<li><a href="gitolite.html#vref-votes">voting on commits</a></li>
-</ul></li>
+<li><a href="gitolite.html#vref-NAME">restricting pushes by dir/file name</a>
+</li>
+<li><a href="gitolite.html#vref-COUNT">number of changed or new files</a>
+</li>
+<li>advanced filetype detection
+</li>
+<li>checking author email
+</li>
+<li><a href="gitolite.html#vref-votes">voting on commits</a>
+</li>
+</ul>
+</li>
 <li>other ideas -- code welcome!
 <ul>
-<li>"no non-merge first-parents"</li>
-<li>other ideas for VREFs</li>
-</ul></li>
-</ul></li>
+<li>"no non-merge first-parents"
+</li>
+<li>other ideas for VREFs
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#triggers-triggers">gitolite triggers</a>
 <ul>
-<li>intro and sample rc excerpt</li>
-<li>types of trigger programs</li>
-<li>manually firing triggers</li>
-<li>common arguments</li>
-<li>trigger-specific arguments and other details</li>
-<li>tips</li>
-</ul></li>
+<li>intro and sample rc excerpt
+</li>
+<li>types of trigger programs
+</li>
+<li>manually firing triggers
+</li>
+<li>common arguments
+</li>
+<li>trigger-specific arguments and other details
+</li>
+<li>tips
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">ssh</a></p>
 
 <ul>
-<li><a href="gitolite.html#ssh-ssh">ssh</a></li>
+<li><a href="gitolite.html#ssh-ssh">ssh</a>
+</li>
 <li><a href="gitolite.html#auth-auth">authentication versus authorisation</a>
 <ul>
-<li>but... but... you have all that ssh stuff in gitolite!</li>
-<li>so you're basically saying you won't support "X"</li>
-<li><a href="gitolite.html#auth-otherauth">how to use other authentication systems with gitolite</a></li>
-<li><a href="gitolite.html#auth-ldap">getting user group info from LDAP</a></li>
-</ul></li>
+<li>but... but... you have all that ssh stuff in gitolite!
+</li>
+<li>so you're basically saying you won't support "X"
+</li>
+<li><a href="gitolite.html#auth-otherauth">how to use other authentication systems with gitolite</a>
+</li>
+<li><a href="gitolite.html#auth-ldap">getting user group info from LDAP</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#glssh-glssh">how gitolite uses ssh</a>
 <ul>
-<li>ssh basics</li>
+<li>ssh basics
+</li>
 <li>how does gitolite use all this ssh magic?
 <ul>
-<li>restricting shell access/distinguishing one user from another</li>
-<li>restricting branch level actions</li>
-</ul></li>
-</ul></li>
+<li>restricting shell access/distinguishing one user from another
+</li>
+<li>restricting branch level actions
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#sts-sts">ssh troubleshooting and tips</a>
 <ul>
 <li>IMPORTANT -- READ THIS FIRST
 <ul>
-<li>caveats</li>
-<li>naming conventions used</li>
-<li>taking stock -- relevant files and directories</li>
-<li>normal gitolite key handling</li>
-</ul></li>
-<li>common ssh problems</li>
-<li>step by step</li>
+<li>caveats
+</li>
+<li>naming conventions used
+</li>
+<li>taking stock -- relevant files and directories
+</li>
+<li>normal gitolite key handling
+</li>
+</ul>
+</li>
+<li>common ssh problems
+</li>
+<li>step by step
+</li>
 <li>random tips, tricks, and notes
 <ul>
-<li><a href="gitolite.html#sts-giving-shell">giving shell access to gitolite users</a></li>
-<li><a href="gitolite.html#sts-kfn">distinguishing one key from another</a></li>
-<li>simulating ssh-copy-id</li>
-<li>problems with using non-openssh public keys</li>
-<li>windows issues</li>
-</ul></li>
-<li><a href="gitolite.html#sts-stsapp1">appendix 1: ssh daemon asks for a password</a></li>
+<li><a href="gitolite.html#sts-giving-shell">giving shell access to gitolite users</a>
+</li>
+<li><a href="gitolite.html#sts-kfn">distinguishing one key from another</a>
+</li>
+<li>simulating ssh-copy-id
+</li>
+<li>problems with using non-openssh public keys
+</li>
+<li>windows issues
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#sts-stsapp1">appendix 1: ssh daemon asks for a password</a>
+</li>
 <li><a href="gitolite.html#sts-sshkeys-lint">appendix 2: which key is which -- running sshkeys-lint</a>
 <ul>
-<li>typical cause(s)</li>
-</ul></li>
-<li><a href="gitolite.html#sts-stsapp3">appendix 3: ssh client may not be offering the right key</a></li>
-<li><a href="gitolite.html#sts-ssh-ha">appendix 4: ssh host aliases</a></li>
-<li><a href="gitolite.html#sts-ybpfail">appendix 5: why bypassing gitolite causes a problem</a></li>
-</ul></li>
+<li>typical cause(s)
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#sts-stsapp3">appendix 3: ssh client may not be offering the right key</a>
+</li>
+<li><a href="gitolite.html#sts-ssh-ha">appendix 4: ssh host aliases</a>
+</li>
+<li><a href="gitolite.html#sts-ybpfail">appendix 5: why bypassing gitolite causes a problem</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#putty-putty">putty and msysgit</a>
 <ul>
-<li>msysgit setup</li>
-<li>Going back to OpenSSH</li>
+<li>msysgit setup
+</li>
+<li>Going back to OpenSSH
+</li>
 <li>Putty keys
 <ul>
-<li>Creating a new key</li>
-<li>Importing an existing key</li>
-<li>Loading an existing key</li>
-<li>Public key</li>
-<li>Putty ageant</li>
-</ul></li>
-<li>Sessionless or raw hostname usage</li>
-<li>Putty sessions</li>
-<li>Host key authentication</li>
-<li>Debugging multiple putty ageant keys</li>
-<li>Setperms and other commands</li>
-<li>About this document</li>
-</ul></li>
+<li>Creating a new key
+</li>
+<li>Importing an existing key
+</li>
+<li>Loading an existing key
+</li>
+<li>Public key
+</li>
+<li>Putty ageant
+</li>
+</ul>
+</li>
+<li>Sessionless or raw hostname usage
+</li>
+<li>Putty sessions
+</li>
+<li>Host key authentication
+</li>
+<li>Debugging multiple putty ageant keys
+</li>
+<li>Setperms and other commands
+</li>
+<li>About this document
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">odds and ends</a></p>
 
 <ul>
 <li><a href="gitolite.html#how-how">how does gitolite work</a>
 <ul>
-<li>what does a "gitolite repo" look like?</li>
-<li>conventions used</li>
-<li>git over plain ssh</li>
+<li>what does a "gitolite repo" look like?
+</li>
+<li>conventions used
+</li>
+<li>git over plain ssh
+</li>
 <li>git over gitolite
 <ul>
-<li>gitolite-shell</li>
-<li>update hook</li>
-</ul></li>
-</ul></li>
+<li>gitolite-shell
+</li>
+<li>update hook
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#why-why">why might you need gitolite</a>
 <ul>
-<li>basic use case</li>
+<li>basic use case
+</li>
 <li><a href="gitolite.html#why-alt">alternatives</a>
 <ul>
-<li>unix permissions and ACLs</li>
-<li><a href="gitolite.html#why-gcr">Gerrit Code Review</a></li>
-<li>gitorious</li>
-<li>gitlab</li>
-<li>others</li>
-</ul></li>
-</ul></li>
-<li><a href="gitolite.html#who-who">who uses gitolite</a></li>
+<li>unix permissions and ACLs
+</li>
+<li><a href="gitolite.html#why-gcr">Gerrit Code Review</a>
+</li>
+<li>gitorious
+</li>
+<li>gitlab
+</li>
+<li>others
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#who-who">who uses gitolite</a>
+</li>
 <li><a href="gitolite.html#g3why-g3why">why a completely new version?</a>
 <ul>
-<li><a href="gitolite.html#dev-status-dev-status">g3 development status</a></li>
-</ul></li>
+<li><a href="gitolite.html#dev-status-dev-status">g3 development status</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#files-files">files involved in gitolite</a>
 <ul>
-<li>install</li>
-<li>setup</li>
-</ul></li>
-<li><a href="gitolite.html#regex-regex">extremely brief regex overview</a></li>
-<li><a href="gitolite.html#perf-perf">gitolite performance</a></li>
+<li>install
+</li>
+<li>setup
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#regex-regex">extremely brief regex overview</a>
+</li>
+<li><a href="gitolite.html#perf-perf">gitolite performance</a>
+<ul>
+<li>tips for performance worriers
+</li>
+<li>why there's really no need to worry!
+</li>
+<li>the only thing that will take more time
+</li>
+</ul>
+</li>
 </ul></li>
 <li><p><a href="gitolite.html">migration</a></p>
 
 <ul>
 <li><a href="gitolite.html#g2incompat-g2incompat">incompatibility with g2</a>
 <ul>
-<li><a href="gitolite.html#g2incompat-g2i-name">NAME rules</a></li>
-<li><a href="gitolite.html#g2incompat-g2i-subconf">subconf command in admin repo</a></li>
-<li><a href="gitolite.html#g2incompat-g2i-gl-time">gl-time for performance measurement</a></li>
-<li><a href="gitolite.html#g2incompat-g2i-mirroring">changes in mirroring setup</a></li>
-</ul></li>
+<li><a href="gitolite.html#g2incompat-g2i-name">NAME rules</a>
+</li>
+<li><a href="gitolite.html#g2incompat-g2i-subconf">subconf command in admin repo</a>
+</li>
+<li><a href="gitolite.html#g2incompat-g2i-gl-time">gl-time for performance measurement</a>
+</li>
+<li><a href="gitolite.html#g2incompat-g2i-mirroring">changes in mirroring setup</a>
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#g2migr-example-g2migr-example">migration example</a>
 <ul>
-<li>existing setup</li>
+<li>existing setup
+</li>
 <li>preparing for the migration
 <ul>
-<li>getting g3</li>
-<li>run check-g2-compat</li>
-</ul></li>
+<li>getting g3
+</li>
+<li>run check-g2-compat
+</li>
+</ul>
+</li>
 <li>the actual migration
 <ul>
-<li>step 1</li>
-<li>step 2</li>
-<li>step 3</li>
-<li>step 4</li>
-<li>step 5</li>
-</ul></li>
-<li>checking things out</li>
-</ul></li>
+<li>step 1
+</li>
+<li>step 2
+</li>
+<li>step 3
+</li>
+<li>step 4
+</li>
+<li>step 5
+</li>
+</ul>
+</li>
+<li>checking things out
+</li>
+</ul>
+</li>
 <li><a href="gitolite.html#g2migr-g2migr">pre-migration checklist</a>
 <ul>
 <li>incompatible features
 <ul>
-<li>high impact</li>
-<li>medium impact</li>
-<li>low impact</li>
-</ul></li>
-<li><a href="gitolite.html#g2migr-cg2c">using the "check-g2-compat" program</a></li>
-<li><a href="gitolite.html#g2migr-rc-preset">presetting the rc file</a></li>
-</ul></li>
-<li><a href="gitolite.html#gsmigr-gsmigr">migrating from gitosis to gitolite</a></li>
+<li>high impact
+</li>
+<li>medium impact
+</li>
+<li>low impact
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#g2migr-cg2c">using the "check-g2-compat" program</a>
+</li>
+<li><a href="gitolite.html#g2migr-rc-preset">presetting the rc file</a>
+</li>
+</ul>
+</li>
+<li><a href="gitolite.html#gsmigr-gsmigr">migrating from gitosis to gitolite</a>
+</li>
 </ul></li>
 </ul>

@@ -55,13 +55,20 @@
 <ul>
 <li><a href="special.html">special features and setups</a>
 <ul>
-<li><a href="special.html#elsewhere">putting 'repositories' and '.gitolite' somewhere else</a></li>
-<li><a href="special.html#writable">disabling pushes to take backups</a></li>
-<li><a href="special.html#pers">"personal" branches</a></li>
-<li>delegating access control responsibilities</li>
-<li><a href="special.html#keysonly">using pubkeys obtained from elsewhere</a></li>
-<li><a href="special.html#gh">giving users their own repos</a></li>
-</ul></li>
+<li><a href="special.html#elsewhere">putting 'repositories' and '.gitolite' somewhere else</a>
+</li>
+<li><a href="special.html#writable">disabling pushes to take backups</a>
+</li>
+<li><a href="special.html#pers">"personal" branches</a>
+</li>
+<li>delegating access control responsibilities
+</li>
+<li><a href="special.html#keysonly">using pubkeys obtained from elsewhere</a>
+</li>
+<li><a href="special.html#gh">giving users their own repos</a>
+</li>
+</ul>
+</li>
 </ul>
 
 <hr />
@@ -72,9 +79,11 @@
 <code>$HOME</code>.  If you want them somewhere else:</p>
 
 <ul>
-<li>do the install as normal,</li>
+<li>do the install as normal,
+</li>
 <li><em>then</em> move those directories to wherever you want and replace them with
-symlinks pointing to the new location.</li>
+symlinks pointing to the new location.
+</li>
 </ul>
 
 <h2><a name="writable"></a> disabling pushes to take backups</h2>
@@ -110,11 +119,14 @@ the invoking user.  Access is determined by the right hand side, as usual).</p>
 
 <ul>
 <li>Reduces namespace pollution by corralling all these ad hoc branches into
-the "personal/" namespace.</li>
+the "personal/" namespace.
+</li>
 <li>Reduces branch name collision by giving each developer her own
-sub-hierarchy within that.</li>
+sub-hierarchy within that.
+</li>
 <li>Removes the need to think about access control, because a user can push
-only to his own sub-hierarchy.</li>
+only to his own sub-hierarchy.
+</li>
 </ul>
 
 <h2>delegating access control responsibilities</h2>

@@ -55,12 +55,18 @@
 <ul>
 <li>basic syntax
 <ul>
-<li>an important warning about <strong>deleting</strong> a config line</li>
-</ul></li>
-<li>substituting the repo name and the creator name</li>
-<li><a href="git-config.html#override_conf">overriding config values</a></li>
-<li>compensating for <code>UNSAFE_PATT</code></li>
-</ul></li>
+<li>an important warning about <strong>deleting</strong> a config line
+</li>
+</ul>
+</li>
+<li>substituting the repo name and the creator name
+</li>
+<li><a href="git-config.html#override_conf">overriding config values</a>
+</li>
+<li>compensating for <code>UNSAFE_PATT</code>
+</li>
+</ul>
+</li>
 </ul>
 
 <hr />
@@ -71,11 +77,11 @@
 
 <blockquote>
   <hr />
-
-<p><strong>Note</strong>: this won't work unless the rc file has the right settings;
-  please see <code>$GIT_CONFIG_KEYS</code> in the <a href="rc.html">rc file doc</a>.</p>
-
-<hr />
+  
+  <p><strong>Note</strong>: this won't work unless the rc file has the right settings;
+    please see <code>$GIT_CONFIG_KEYS</code> in the <a href="rc.html">rc file doc</a>.</p>
+  
+  <hr />
 </blockquote>
 
 <h2>basic syntax</h2>
@@ -102,13 +108,13 @@ example).  Other forms of the <code>git config</code> command (<code>--add</code
 
 <blockquote>
   <hr />
-
-<p><strong>WARNING</strong>: simply deleting the config line from the <code>conf/gitolite.conf</code>
-  file will <em>not</em> delete the variable from <code>repo.git/config</code>.  You have to
-  use the syntax in the last example to make gitolite execute a
-  <code>--unset-all</code> operation on the given key.</p>
-
-<hr />
+  
+  <p><strong>WARNING</strong>: simply deleting the config line from the <code>conf/gitolite.conf</code>
+    file will <em>not</em> delete the variable from <code>repo.git/config</code>.  You have to
+    use the syntax in the last example to make gitolite execute a
+    <code>--unset-all</code> operation on the given key.</p>
+  
+  <hr />
 </blockquote>
 
 <h2>substituting the repo name and the creator name</h2>

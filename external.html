@@ -52,21 +52,21 @@
 
 <blockquote>
   <hr />
-
-<p><strong>Note</strong>: The old gitolite (v1.x, v2.x) used to tie itself into knots
-  dealing with gitweb and daemon.  One of the goals of g3 was to get out of
-  that game, which your author does not play anyway.  This means statements
-  like "...special user called 'gitweb'..." really apply to the <a href="non-core.html">non-core</a>
-  programs that gitolite ships with, not to "core" gitolite, and any or all
-  of this functionality can be disabled by commenting out certain lines in
-  the <a href="rc.html">rc</a> file.</p>
-
-<hr />
-
-<p>Also, <strong>note</strong> that gitolite does <strong>not</strong> install or configure
-  gitweb/git-daemon -- that is a one-time setup you must do separately.</p>
-
-<hr />
+  
+  <p><strong>Note</strong>: The old gitolite (v1.x, v2.x) used to tie itself into knots
+    dealing with gitweb and daemon.  One of the goals of g3 was to get out of
+    that game, which your author does not play anyway.  This means statements
+    like "...special user called 'gitweb'..." really apply to the <a href="non-core.html">non-core</a>
+    programs that gitolite ships with, not to "core" gitolite, and any or all
+    of this functionality can be disabled by commenting out certain lines in
+    the <a href="rc.html">rc</a> file.</p>
+  
+  <hr />
+  
+  <p>Also, <strong>note</strong> that gitolite does <strong>not</strong> install or configure
+    gitweb/git-daemon -- that is a one-time setup you must do separately.</p>
+  
+  <hr />
 </blockquote>
 
 <h2>gitweb</h2>
@@ -74,7 +74,8 @@
 <p>The following repos are deemed to be readable by gitweb:</p>
 
 <ul>
-<li>any repos readable by the special user <code>gitweb</code></li>
+<li>any repos readable by the special user <code>gitweb</code>
+</li>
 <li><p>any repos containing one or more of the following types of lines:
 (actually, any config variable starting with <code>gitweb.</code>).</p>
 

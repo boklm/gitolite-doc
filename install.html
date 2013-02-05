@@ -64,23 +64,36 @@ followed by <a href="setup.html">setup</a>, then <a href="clone.html">clone</a>.
 <ul>
 <li><a href="install.html">installing gitolite</a>
 <ul>
-<li><a href="install.html#nnc">notes and naming conventions</a></li>
+<li><a href="install.html#nnc">notes and naming conventions</a>
+</li>
 <li><a href="install.html#req">requirements</a>
 <ul>
-<li>your skills</li>
-<li>server</li>
-<li>client</li>
-</ul></li>
-<li>getting the software</li>
-<li>the actual install</li>
-<li>upgrading</li>
-<li><a href="install.html#package">packaging gitolite</a></li>
+<li>your skills
+</li>
+<li>server
+</li>
+<li>client
+</li>
+</ul>
+</li>
+<li>getting the software
+</li>
+<li>the actual install
+</li>
+<li>upgrading
+</li>
+<li><a href="install.html#package">packaging gitolite</a>
+</li>
 <li><a href="install.html#migr">migrating</a>
 <ul>
-<li>pre-migration checks</li>
-<li>the actual migration</li>
-</ul></li>
-</ul></li>
+<li>pre-migration checks
+</li>
+<li>the actual migration
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <hr />
@@ -101,12 +114,15 @@ as this "hosting user"</strong>.</p>
 <p>Notes:</p>
 
 <ul>
-<li>Any unix user can be a hosting user.</li>
-<li>Which also means you can have several hosting users on the same machine.</li>
+<li>Any unix user can be a hosting user.
+</li>
+<li>Which also means you can have several hosting users on the same machine.
+</li>
 <li>The URLs used will be of the form <code>git@host:reponame</code> (or its longer
 equivalent starting with <code>ssh://</code>).  The <code>.git</code> at the end is optional.  I
 recommend you leave it out, so your reponames are consistent with what the
-conf file uses.</li>
+conf file uses.
+</li>
 </ul>
 
 <h2><a name="req"></a> requirements</h2>
@@ -129,15 +145,20 @@ familiarity is not necessary to do <em>basic</em> access control.</p></li>
 <h3>server</h3>
 
 <ul>
-<li>Any Unix system with a posix compatible "sh" and a <strong>sane</strong> file system.</li>
+<li>Any Unix system with a posix compatible "sh" and a <strong>sane</strong> file system.
+</li>
 <li>Git version 1.6.6 or later.  (Git 1.7.8 or later if you want to run the
-test suite).</li>
-<li>Perl 5.8.8 or later.</li>
+test suite).
+</li>
+<li>Perl 5.8.8 or later.
+</li>
 <li>Openssh (almost any version).  Optional if you're using <a href="http.html">smart
-http</a>.</li>
+http</a>.
+</li>
 <li>A dedicated Unix userid to be the hosting user, usually "git" but it can
 be any user, even your own normal one.  (If you're using an RPM/DEB the
-install probably created one called "gitolite").</li>
+install probably created one called "gitolite").
+</li>
 </ul>
 
 <p>Also see the <a href="WARNINGS.html">WARNINGS</a> page for more on what gitolite expects on the server
@@ -146,9 +167,11 @@ side.</p>
 <h3>client</h3>
 
 <ul>
-<li>Openssh client.</li>
+<li>Openssh client.
+</li>
 <li>Git 1.6.6 or later.  Almost any git client will work, as long as it knows
-how to use ssh keys and send the right one along.</li>
+how to use ssh keys and send the right one along.
+</li>
 </ul>
 
 <h2>getting the software</h2>
@@ -169,11 +192,14 @@ case you run it with the full path.</p>
 
 <ol>
 <li>Keep the sources anywhere and use the full path to run the <code>gitolite</code>
-command.</li>
+command.
+</li>
 <li>Keep the sources anywhere and symlink <em>just</em> the <code>gitolite</code> program to
-some directory on your <code>$PATH</code>.</li>
+some directory on your <code>$PATH</code>.
+</li>
 <li>Copy the sources somewhere and use that path to run the <code>gitolite</code>
-command.</li>
+command.
+</li>
 </ol>
 
 <p>Option 2 is the best for general use.</p>
@@ -209,10 +235,13 @@ gitolite/install -to /usr/local/gitolite/bin
 <h2>upgrading</h2>
 
 <ul>
-<li>Update your clone of the gitolite source.</li>
+<li>Update your clone of the gitolite source.
+</li>
 <li>Repeat the install command you used earlier (make sure you use the same
-arguments as before).</li>
-<li>Run <code>gitolite setup</code>.</li>
+arguments as before).
+</li>
+<li>Run <code>gitolite setup</code>.
+</li>
 </ul>
 
 <h2><a name="package"></a> packaging gitolite</h2>
@@ -315,13 +344,16 @@ where you put them.</p></li>
 <li><p>The <strong>rc file</strong></p>
 
 <ul>
-<li>Rename <code>~/.gitolite.rc</code> to something else.</li>
+<li>Rename <code>~/.gitolite.rc</code> to something else.
+</li>
 </ul></li>
 <li><p>The <strong>admin repo</strong></p>
 
 <ul>
-<li>clone <code>~/repositories/gitolite-admin.git</code> to someplace safe</li>
-<li>then delete <code>~/repositories/gitolite-admin.git</code></li>
+<li>clone <code>~/repositories/gitolite-admin.git</code> to someplace safe
+</li>
+<li>then delete <code>~/repositories/gitolite-admin.git</code>
+</li>
 </ul>
 
 <p>(Make sure you do not delete any other repos!)</p></li>

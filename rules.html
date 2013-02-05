@@ -48,14 +48,14 @@
 <p style="text-align:center">
 <font color="gray">This is for gitolite "g3"; for older (v2.x) documentation click <a href="http://sitaramc.github.com/gitolite/g2/master-toc.html">here</a></font>
 </p>
-<h2><a name="rules"></a> access rules</h2>
+<h1><a name="rules"></a> access rules</h1>
 
 <p>In the following description, "user" means "user or a <a href="groups.html">group</a> that
 he/she is a member of", and "repo" means "repo, or a group that it is a member
 of, or a (<a href="wild.html">wild</a> repo) pattern that matches it, or a group that contains a
 pattern that matches it".</p>
 
-<h3>what do rules look like</h3>
+<h2>what do rules look like</h2>
 
 <p>Here's an example ruleset.</p>
 
@@ -77,11 +77,15 @@ repo foo
 <p>The most commonly used permissions are:</p>
 
 <ul>
-<li>R, for read only</li>
-<li>RW, for push existing ref or create new ref</li>
+<li>R, for read only
+</li>
+<li>RW, for push existing ref or create new ref
+</li>
 <li>RW+, for  "push -f" or ref deletion allowed (i.e., destroy
-information)</li>
-<li><code>-</code> (the minus sign), to <strong>deny</strong> access.</li>
+information)
+</li>
+<li><code>-</code> (the minus sign), to <strong>deny</strong> access.
+</li>
 </ul>
 
 <p>There are also other, less commonly used, <a href="write-types.html">types of permissions</a>.</p>
@@ -94,12 +98,12 @@ checks and controls that you can't do with just the normal ref (like
 refs/heads/master) being pushed.  The most common example is restricting
 pushes by dir/file name, but there are lots of other possibilities.</font></p>
 
-<h3>how are the rules checked</h3>
+<h2>how are the rules checked</h2>
 
 <p>Note that gitolite first <a href="rules.html#rule-accum">accumulates the rules</a> before checking
 access.</p>
 
-<h4>read access -- clone, fetch, archive</h4>
+<h3>read access -- clone, fetch, archive</h3>
 
 <p>Read access is checked once, just before passing control to git-upload-pack or
 git-archive-pack.  At this point gitolite only knows the repo name, the user
@@ -118,7 +122,7 @@ line 3 does not prevent wally from cloning the repo, because line 4 permits
 it.  (This is the default behaviour.  You can change that by using the
 <a href="rules.html#deny-rules">deny-rules</a> option).</p>
 
-<h4>write access -- push</h4>
+<h3>write access -- push</h3>
 
 <p>Write access is checked twice, once before passing control to
 git-receive-pack, and once from within the update hook.</p>
@@ -149,11 +153,14 @@ examined <em>in the sequence</em> they appear in the conf file</p></li>
 <li><p>for each rule:</p>
 
 <ul>
-<li>If the ref does not match the <a href="refex.html">refex</a>, the rule is skipped.</li>
-<li>If it's a deny rule, access is denied and the matching stops.</li>
+<li>If the ref does not match the <a href="refex.html">refex</a>, the rule is skipped.
+</li>
+<li>If it's a deny rule, access is denied and the matching stops.
+</li>
 <li>If the permission field matches the specific <a href="write-types.html">type of
 write</a> operation, access is allowed and the matching
-stops.</li>
+stops.
+</li>
 </ul></li>
 <li><p>If no rule ends with a decision, ("fallthru"), access is denied.</p></li>
 </ul>
@@ -161,7 +168,7 @@ stops.</li>
 <p>Now all you need is to understand how <a href="refex.html">refex</a> matching happens and how the
 permissions match the various <a href="write-types.html">types of write operations</a>.</p>
 
-<h3><a name="permsum"></a> summary of permissions</h3>
+<h2><a name="permsum"></a> summary of permissions</h2>
 
 <p>The full set of permissions, in regex syntax, is <code>-|R|RW+?C?D?M?</code>.  This
 expands to one of <code>-</code>, <code>R</code>, <code>RW</code>, <code>RW+</code>, <code>RWC</code>, <code>RW+C</code>, <code>RWD</code>, <code>RW+D</code>, <code>RWCD</code>,

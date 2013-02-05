@@ -147,18 +147,18 @@ metacharacters.</p>
 
 <blockquote>
   <hr />
-
-<p><em>Side-note: contrast with refexes</em></p>
-
-<p>Just for interest, note that this is in contrast to the refexes for the
-  normal "branch" permissions, as described in <code>doc/gitolite.conf.mkd</code> and
-  elsewhere.  These "refexes" are only anchored at the start; a pattern like
-  <code>refs/heads/master</code> actually can match <code>refs/heads/master01/bar</code> as well,
-  even if no one will actually push such a branch!  You can anchor both
-  sides if you really care, by using <code>master$</code> instead of <code>master</code>, but that
-  is <em>not</em> the default for refexes.</p>
-
-<hr />
+  
+  <p><em>Side-note: contrast with refexes</em></p>
+  
+  <p>Just for interest, note that this is in contrast to the refexes for the
+    normal "branch" permissions, as described in <code>doc/gitolite.conf.mkd</code> and
+    elsewhere.  These "refexes" are only anchored at the start; a pattern like
+    <code>refs/heads/master</code> actually can match <code>refs/heads/master01/bar</code> as well,
+    even if no one will actually push such a branch!  You can anchor both
+    sides if you really care, by using <code>master$</code> instead of <code>master</code>, but that
+    is <em>not</em> the default for refexes.</p>
+  
+  <hr />
 </blockquote>
 
 <h2>roles</h2>
