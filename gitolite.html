@@ -1431,14 +1431,14 @@ happens from this file.</p>
 
 <hr />
 
-<h3><a name="rules-rules"></a> access rules</h3>
+<h2><a name="rules-rules"></a> access rules</h2>
 
 <p>In the following description, "user" means "user or a <a href="gitolite.html#groups-groups">group</a> that
 he/she is a member of", and "repo" means "repo, or a group that it is a member
 of, or a (<a href="gitolite.html#wild-wild">wild</a> repo) pattern that matches it, or a group that contains a
 pattern that matches it".</p>
 
-<h4>what do rules look like</h4>
+<h3>what do rules look like</h3>
 
 <p>Here's an example ruleset.</p>
 
@@ -1481,12 +1481,12 @@ checks and controls that you can't do with just the normal ref (like
 refs/heads/master) being pushed.  The most common example is restricting
 pushes by dir/file name, but there are lots of other possibilities.</font></p>
 
-<h4>how are the rules checked</h4>
+<h3>how are the rules checked</h3>
 
 <p>Note that gitolite first <a href="gitolite.html#rules-rule-accum">accumulates the rules</a> before checking
 access.</p>
 
-<h5>read access -- clone, fetch, archive</h5>
+<h4>read access -- clone, fetch, archive</h4>
 
 <p>Read access is checked once, just before passing control to git-upload-pack or
 git-archive-pack.  At this point gitolite only knows the repo name, the user
@@ -1505,7 +1505,7 @@ line 3 does not prevent wally from cloning the repo, because line 4 permits
 it.  (This is the default behaviour.  You can change that by using the
 <a href="gitolite.html#rules-deny-rules">deny-rules</a> option).</p>
 
-<h5>write access -- push</h5>
+<h4>write access -- push</h4>
 
 <p>Write access is checked twice, once before passing control to
 git-receive-pack, and once from within the update hook.</p>
@@ -1551,7 +1551,7 @@ stops.
 <p>Now all you need is to understand how <a href="gitolite.html#refex-refex">refex</a> matching happens and how the
 permissions match the various <a href="gitolite.html#write-types-write-types">types of write operations</a>.</p>
 
-<h4><a name="rules-permsum"></a> summary of permissions</h4>
+<h3><a name="rules-permsum"></a> summary of permissions</h3>
 
 <p>The full set of permissions, in regex syntax, is <code>-|R|RW+?C?D?M?</code>.  This
 expands to one of <code>-</code>, <code>R</code>, <code>RW</code>, <code>RW+</code>, <code>RWC</code>, <code>RW+C</code>, <code>RWD</code>, <code>RW+D</code>, <code>RWCD</code>,
@@ -1716,7 +1716,7 @@ refs/heads/master/full
 
 <hr />
 
-<h3><a name="write-types-write-types"></a> different types of write operations</h3>
+<h2><a name="write-types-write-types"></a> different types of write operations</h2>
 
 <p>Git supplies enough information to the update hook to be able to distinguish
 several types of writes.</p>
@@ -5676,7 +5676,7 @@ could have done this with the old code.</p>
 
 <hr />
 
-<h3><a name="dev-status-dev-status"></a> g3 development status</h3>
+<h2><a name="dev-status-dev-status"></a> g3 development status</h2>
 
 <p>Not yet done (will be tackled in this order unless someone asks):</p>
 
@@ -5934,13 +5934,13 @@ triggers as the previous section said.</p>
 <p>Here's the big-O stuff:</p>
 
 <ul>
-<li>N = number of normal repos, each with its own set of rules.  In "repo r1
-r2 r3", N = 3.  Add up all such lines.
+<li>N = number of normal repos, each with its own set of rules.  In <code>repo r1
+r2 r3</code>, N = 3.  Add up all such lines.
 </li>
-<li>G = number of groups or wild patterns.  In "repo @g1 @g2 foo/[a-z]*", G =
+<li>G = number of groups or wild patterns.  In <code>repo @g1 @g2 foo/[a-z]*</code>, G =
 3.
 </li>
-<li>M = number of members.  In "@g1 = r1 r2 <nl> @g2 = r3 r4 r5", M = 5.
+<li>M = number of members.  In <code>@g1 = r1 r2 &lt;nl&gt; @g2 = r3 r4 r5</code>, M = 5.
 </li>
 <li>A = average number of rule lines in each "repo" block.  Usually about 5,
 maybe 10 sometimes.  You may have more.
@@ -6934,6 +6934,8 @@ the files to make sure this worked properly</em></p></li>
 </li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a href="gitolite.html#rules-rules">access rules</a>
 <ul>
 <li>what do rules look like
@@ -6948,8 +6950,6 @@ the files to make sure this worked properly</em></p></li>
 </li>
 <li><a href="gitolite.html#rules-permsum">summary of permissions</a>
 </li>
-</ul>
-</li>
 <li>additional topics
 <ul>
 <li><a href="gitolite.html#rules-rule-accum">rule accumulation</a>
@@ -6960,9 +6960,9 @@ the files to make sure this worked properly</em></p></li>
 </li>
 <li><a href="gitolite.html#refex-refex">matching a ref and a refex</a>
 </li>
-<li><a href="gitolite.html#write-types-write-types">different types of write operations</a>
-</li>
 </ul>
+</li>
+<li><a href="gitolite.html#write-types-write-types">different types of write operations</a>
 </li>
 </ul></li>
 <li><p><a href="gitolite.html">the rc file, git-config, and options</a></p>
@@ -7448,10 +7448,8 @@ the files to make sure this worked properly</em></p></li>
 <li><a href="gitolite.html#who-who">who uses gitolite</a>
 </li>
 <li><a href="gitolite.html#g3why-g3why">why a completely new version?</a>
-<ul>
-<li><a href="gitolite.html#dev-status-dev-status">g3 development status</a>
 </li>
-</ul>
+<li><a href="gitolite.html#dev-status-dev-status">g3 development status</a>
 </li>
 <li><a href="gitolite.html#files-files">files involved in gitolite</a>
 <ul>
