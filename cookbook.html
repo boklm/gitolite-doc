@@ -85,6 +85,12 @@ documentation before asking for help.</p>
 </li>
 </ul>
 </li>
+<li>moving stuff around
+<ul>
+<li>moving a gitolite install from one machine to another
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -251,3 +257,20 @@ gitolite list-memberships $GL_REPO | grep -x @foo &gt;/dev/null || exit 0
 </code></pre></li>
 <li><p>now add your hook as described in earlier steps</p></li>
 </ol>
+
+<h2>moving stuff around</h2>
+
+<h3>moving a gitolite install from one machine to another</h3>
+
+<p>Assuming you're not making a version change, this is what you need to do:</p>
+
+<ul>
+<li><p>clone the latest gitolite-admin repo to your workstation</p></li>
+<li><p>install gitolite normally on the new machine, using the same public key
+<em>and</em> name for the admin as on the old machine when running the <code>gitolite
+setup -pkr</code> command.</p></li>
+<li><p>copy over your <code>~/.gitolite.rc</code> file from the old machine to the new</p></li>
+<li><p>run <code>gitolite setup</code> (on the server)</p></li>
+<li><p>go to the gitolite-admin clone you made in step 1, add or change the
+remote to point to the new machine, and <code>git push -f</code></p></li>
+</ul>
