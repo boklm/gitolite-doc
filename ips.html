@@ -48,7 +48,7 @@
 <p style="text-align:center">
 <font color="gray">This is for gitolite "g3"; for older (v2.x) documentation click <a href="http://sitaramc.github.com/gitolite/g2/master-toc.html">here</a></font>
 </p>
-<h2>idiot-proof setup for gitolite</h2>
+<h1>idiot-proof setup for gitolite</h1>
 
 <p>If I gave you this link to read, it most likely means either:</p>
 
@@ -64,16 +64,28 @@ using gitolite
 person who once bugged me so much I wrote this for him.  However, I have since
 realised that this is also useful for (a) people for whom English is not the
 first language and (b) people who really should not be doing technical work at
-this level, but are forced to do it by circumstances.
-      * idiot-proof setup for gitolite
-          * pre-requisites
-          * additional restrictions that seem unnecessary
-          * no support for this document
-          * assumptions
-          * installation tasks
-          * administration tasks</p>
+this level, but are forced to do it by circumstances.</p>
 
-<h3>pre-requisites</h3>
+<ul>
+<li><a href="ips.html">idiot-proof setup for gitolite</a>
+<ul>
+<li>pre-requisites
+</li>
+<li>additional restrictions that seem unnecessary
+</li>
+<li>no support for this document
+</li>
+<li>assumptions
+</li>
+<li>installation tasks
+</li>
+<li>administration tasks
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>pre-requisites</h2>
 
 <ul>
 <li>any Linux machine on which git has already been installed
@@ -88,14 +100,14 @@ please do not ask me for help if it does not.
 </li>
 </ul>
 
-<h3>additional restrictions that seem unnecessary</h3>
+<h2>additional restrictions that seem unnecessary</h2>
 
 <p>People who <strong>do</strong> understand ssh will realise that this document contains many
 extra restrictions and constraints that are not actually needed.  That's the
 whole point -- I'm compensating for lack of ssh knowledge by removing things
 that trip people up.</p>
 
-<h3>no support for this document</h3>
+<h2>no support for this document</h2>
 
 <p>If even this document does not help you install gitolite, I probably cannot
 help you.  Either you did not follow the instructions carefully <font
@@ -105,7 +117,7 @@ hosting user, etc.)</font>, or your environment is far too different from
 standard Unix, or you have some other problem.  In any case, it is not
 something I can help with.  Sorry.</p>
 
-<h3>assumptions</h3>
+<h2>assumptions</h2>
 
 <ul>
 <li><p>your name is Ron.  Substitute accordingly in the instructions below.</p></li>
@@ -114,7 +126,7 @@ something I can help with.  Sorry.</p>
 <li><p>you have root access on this server.</p></li>
 </ul>
 
-<h3>installation tasks</h3>
+<h2>installation tasks</h2>
 
 <ol>
 <li><p>Create a new userid on the server, say <code>git</code>.  This will be the <strong>hosting
@@ -184,7 +196,7 @@ $HOME/bin/gitolite setup -pk /tmp/ron.pub
 <p>(do I have to mention that your SHAs will be different?)</p></li>
 </ol>
 
-<h3>administration tasks</h3>
+<h2>administration tasks</h2>
 
 <p>Most day-to-day administration is done by making changes to a clone of the
 gitolite-admin repo and pushing.  (There are some things that are done by
