@@ -65,6 +65,12 @@ documentation before asking for help.</p>
 <ul>
 <li><a href="cookbook.html">gitolite cookbook</a>
 <ul>
+<li>administration
+<ul>
+<li>separating "key admin" from "repo admin"
+</li>
+</ul>
+</li>
 <li>access
 <ul>
 <li>looking up repo access from external tools
@@ -96,6 +102,33 @@ documentation before asking for help.</p>
 </ul>
 
 <hr />
+
+<h2>administration</h2>
+
+<h3>separating "key admin" from "repo admin"</h3>
+
+<p>In gitolite, the person who controls the keys is the most powerful -- because
+he can always add his own key in your name :-)</p>
+
+<p>Traditionally, the same person also administers repos and permissions.  But
+sometimes you want to separate them.  The following should work:</p>
+
+<ul>
+<li><p>put the following in conf/gitolite.conf:</p>
+
+<pre><code>repo gitolite-admin
+    RW+ = key-manager repo-manager
+
+
+<pre><code>RW+ VREF/NAME/                    = key-manager
+-   VREF/NAME/keydir/             = @all
+-   VREF/NAME/conf/gitolite.conf  = @all
+</code></pre>
+
+include "actual.conf"
+</code></pre></li>
+<li><p>then let the repo-manager manage everything through "actual.conf".</p></li>
+</ul>
 
 <h2>access</h2>
 
