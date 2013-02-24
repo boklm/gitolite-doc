@@ -301,7 +301,7 @@ gitolite list-memberships $GL_REPO | grep -x @foo &gt;/dev/null || exit 0
 <li><p>clone the latest gitolite-admin repo to your workstation</p></li>
 <li><p>install gitolite normally on the new machine, using the same public key
 <em>and</em> name for the admin as on the old machine when running the <code>gitolite
-setup -pkr</code> command.</p></li>
+setup -pk</code> command.</p></li>
 <li><p>copy over your <code>~/.gitolite.rc</code> file from the old machine to the new</p></li>
 <li><p>run <code>gitolite setup</code> (on the server)</p></li>
 <li><p>go to the gitolite-admin clone you made in step 1, add or change the

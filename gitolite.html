@@ -1017,6 +1017,9 @@ how to use ssh keys and send the right one along.
 <pre><code>git clone git://github.com/sitaramc/gitolite
 </code></pre>
 
+<p>(Do I need to mention that you can optionally check out a specific tag if you
+wish, as long as it's not too old?)</p>
+
 <h3>the actual install</h3>
 
 <p><strong>Note</strong>: This section describes installing an ssh-based setup.  For smart
@@ -1225,7 +1228,7 @@ start with an <code>@</code> sign.</p>
 tree-structure for convenience).</p>
 
 <p>There are no continuation lines by default.  You do not need them; the section
-on "groups" will tell you how you can break up large lists of names in a group
+on <a href="gitolite.html#groups-groups">groups</a> will tell you how you can break up large lists of names in a group
 definition into multiple lines.</p>
 
 <p><font color="gray">If you <em>must</em> have them, you can optionally enable them;
@@ -2136,7 +2139,7 @@ character for an <em>ordinary</em> repo.  Therefore, a pattern like <code>foo/.+
 look like a regex to gitolite.  Use <code>foo/..*</code> if you want that.</p>
 
 <p>Also, <code>..*</code> by itself is not considered a valid repo pattern.  Try
-<code>[a-zA-Z0-9].*</code>.</p>
+<code>[a-zA-Z0-9].*</code>.  <code>CREATOR/..*</code> will also work.</p>
 
 <h4>line-anchored regexes</h4>
 
@@ -3431,7 +3434,7 @@ compile; gitolite trigger POST_COMPILE</code> to let it build again.</p></li>
 
 <h2><a name="dev-notes-dev-notes"></a> notes for developers</h2>
 
-<p>Gitolite has a huge bunch of existing features that gradually need to moved
+<p>Gitolite has a huge bunch of existing features that gradually need to be moved
 over.  Plus you may want to write your own programs to interact with it.</p>
 
 <p><strong>This document is about <em>writing</em> hooks, commands, triggers, VREFS, and sugar
