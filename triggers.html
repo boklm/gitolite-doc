@@ -63,6 +63,12 @@
 </li>
 <li>trigger-specific arguments and other details
 </li>
+<li><a href="triggers.html#addtrig">adding your own scripts to a trigger</a>
+<ul>
+<li>displaying the resulting trigger list
+</li>
+</ul>
+</li>
 <li>tips
 </li>
 </ul>
@@ -71,10 +77,10 @@
 
 <h2>intro and sample rc excerpt</h2>
 
-<p>Gitolite fires off external commands at 7 different times.  The <a href="rc.html">rc</a> file
-specifies what commands to run at each trigger point, but for illustration,
-here's an excerpt.  <strong>Note that as of v3.4, this is <em>not</em> how the rc file
-looks like externally; please see the <a href="rc.html">rc file docs</a> for more</strong>.</p>
+<p>Gitolite fires off external commands at several different times.  The <a href="rc.html">rc</a>
+file specifies what commands to run at each trigger point, but for
+illustration, here's an excerpt.  <strong>Note that as of v3.4, this is <em>not</em> how
+the rc file looks like externally.  Please see <a href="triggers.html#addtrig">this</a> for more</strong>.</p>
 
 <pre><code>%RC = (
 
@@ -231,7 +237,11 @@ Extra arguments:</p>
 <li>the git command ('git-receive-pack', 'git-upload-pack', or
 'git-upload-archive') being invoked.
 </li>
-</ul></li>
+</ul>
+
+<p><strong>NOTE</strong> that the <code>POST_GIT</code> trigger has no way of knowing if the push
+succeeded, because 'git-shell' (or maybe 'git-receive-pack', I don't know)
+exits cleanly even if the update hook died.</p></li>
 <li><p><code>PRE_CREATE</code> and <code>POST_CREATE</code> run just before and after a new "<a href="wild.html">wild</a>"
 repo is created by user action.  In addition, any command that creates a
 repo (like 'fork') or potentially changes permissions (like 'perms') may
@@ -267,6 +277,72 @@ file, then all the 'git-config's, gitweb access, and daemon access.</p>
 
 <p>No extra arguments.</p></li>
 </ul>
+
+<h2><a name="addtrig"></a> adding your own scripts to a trigger</h2>
+
+<p>For gitolite v3.3 or less, adding your own scripts to a trigger list was
+simply a matter of finding the trigger name in the rc file and adding an entry
+to it.  Even for gitolite v3.4 or higher, if your rc file was created before
+v3.4, <em>it will continue to work, and you can continue to add triggers to it
+the same way as before</em>.</p>
+
+<p>However, if you installed gitolite v3.4 or higher, you will see a different rc
+file syntax.  This new rc file does not have trigger lists, but a simple list
+of "features" within a list called "ENABLE" in the rc file; you simply comment
+out or uncomment appropriate entries to enable those features, and gitolite
+will <em>internally</em> create the trigger lists correctly.</p>
+
+<p>...which is fine for triggers that are shipped with gitolite, but now you're
+wondering how to add your own.</p>
+
+<p>The answer is: same as before.</p>
+
+<p>Here's an example.  Let's say you wrote yourself a trigger script called
+'foo', to be invoked from the <code>POST_CREATE</code> trigger list.  With the old
+format, you'd find the following lines in the rc file:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'post-compile/update-git-configs',
+        'post-compile/update-gitweb-access-list',
+        'post-compile/update-git-daemon-access-list',
+    ],
+</code></pre>
+
+<p>and you'd simply add a line for 'foo' in that list.</p>
+
+<p>With the new format, since there is no <code>POST_CREATE</code> trigger list defined in
+the rc file, you'll need to add all this:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'foo'
+    ],
+</code></pre>
+
+<p>instead of just the 'foo' line.</p>
+
+<p>Since the ENABLE list pulls in the rest of the trigger entries, this will be
+<em>effectively</em> as if you had done this in a v3.3 rc file:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'foo',
+        'post-compile/update-git-configs',
+        'post-compile/update-gitweb-access-list',
+        'post-compile/update-git-daemon-access-list',
+    ],
+</code></pre>
+
+<p>As you can see, the 'foo' gets added to the top of the list.</p>
+
+<h3>displaying the resulting trigger list</h3>
+
+<p>You can use the 'gitolite query-rc' command to see what the trigger list
+actually looks like.  For example:</p>
+
+<pre><code>gitolite query-rc POST_CREATE
+</code></pre>
 
 <h2>tips</h2>
 

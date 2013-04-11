@@ -137,7 +137,9 @@ a private key.  You can run it as <code>gitolite setup -a admin</code>.</p>
 time.  You may see none, some, or many.  It does not matter right now.</p></li>
 <li><p>Make sure your gitolite-admin clone has the correct pubkey for the
 administrator in its <code>keydir</code> directory, then run <a href="emergencies.html#bypass"><code>gitolite push
--f</code></a> to overwrite the "default" admin repo created by the install.</p></li>
+-f</code></a> to overwrite the "default" admin repo created by the install.</p>
+
+<p><strong>NOTE that is <code>gitolite push</code> not <code>git push</code>!</strong></p></li>
 <li><p>Handle any errors, look for migration issues, etc., as described in the
 links at the top of this page.</p>
 

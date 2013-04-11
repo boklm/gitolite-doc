@@ -222,7 +222,8 @@ command instead of gitolite's version and access info.</p></li>
 (note absence of <code>repositories/</code>)]</p></li>
 <li><p>You are able to clone repositories but are unable to push changes back
 (the error complains about the <code>GL_BINDIR</code> environment variable not being
-set, and the <code>hooks/update</code> failing in some way).</p>
+set or about not being able to locate <code>Gitolite/Hooks/Update.pm</code>, and the
+<code>hooks/update</code> failing in some way).</p>
 
 <p>[If you run <code>git remote -v</code> you will find that your clone URL included the
 <code>repositories/</code> described above!]</p></li>
