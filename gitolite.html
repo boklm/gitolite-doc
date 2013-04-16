@@ -1678,7 +1678,10 @@ dealt with <strong>before</strong> running <code>gitolite setup</code>; please r
 <a href="gitolite.html#migr-migr">migration</a> page and linked pages, and especially the one on "presetting
 the rc file"</p>
 
-<p>The rc file for g3 is <em>quite</em> different from that of g2.</p>
+<p>The rc file for g3 is <em>quite</em> different from that of g2.  The change affects
+<a href="gitolite.html#triggers-triggers">triggers</a> more than anything else, and to a very small extent <a href="gitolite.html#cust-commands">commands</a>.
+Please see those links for details, especially if you want to add your own
+triggers or commands.</p>
 
 <p>As before, it is designed to be the only thing unique to your site for most
 setups.  What is new is that it is easy to extend it when new needs come up,
@@ -4076,10 +4079,10 @@ becomes meaningless in terms of "number of new files" etc.</p>
 
 <h3>intro and sample rc excerpt</h3>
 
-<p>Gitolite fires off external commands at 7 different times.  The <a href="gitolite.html#rc-rc">rc</a> file
-specifies what commands to run at each trigger point, but for illustration,
-here's an excerpt.  <strong>Note that as of v3.4, this is <em>not</em> how the rc file
-looks like externally; please see the <a href="gitolite.html#rc-rc">rc file docs</a> for more</strong>.</p>
+<p>Gitolite fires off external commands at several different times.  The <a href="gitolite.html#rc-rc">rc</a>
+file specifies what commands to run at each trigger point, but for
+illustration, here's an excerpt.  <strong>Note that as of v3.4, this is <em>not</em> how
+the rc file looks like externally.  Please see <a href="gitolite.html#triggers-addtrig">this</a> for more</strong>.</p>
 
 <pre><code>%RC = (
 
@@ -4236,7 +4239,11 @@ Extra arguments:</p>
 <li>the git command ('git-receive-pack', 'git-upload-pack', or
 'git-upload-archive') being invoked.
 </li>
-</ul></li>
+</ul>
+
+<p><strong>NOTE</strong> that the <code>POST_GIT</code> trigger has no way of knowing if the push
+succeeded, because 'git-shell' (or maybe 'git-receive-pack', I don't know)
+exits cleanly even if the update hook died.</p></li>
 <li><p><code>PRE_CREATE</code> and <code>POST_CREATE</code> run just before and after a new "<a href="gitolite.html#wild-wild">wild</a>"
 repo is created by user action.  In addition, any command that creates a
 repo (like 'fork') or potentially changes permissions (like 'perms') may
@@ -4272,6 +4279,72 @@ file, then all the 'git-config's, gitweb access, and daemon access.</p>
 
 <p>No extra arguments.</p></li>
 </ul>
+
+<h3><a name="triggers-addtrig"></a> adding your own scripts to a trigger</h3>
+
+<p>For gitolite v3.3 or less, adding your own scripts to a trigger list was
+simply a matter of finding the trigger name in the rc file and adding an entry
+to it.  Even for gitolite v3.4 or higher, if your rc file was created before
+v3.4, <em>it will continue to work, and you can continue to add triggers to it
+the same way as before</em>.</p>
+
+<p>However, if you installed gitolite v3.4 or higher, you will see a different rc
+file syntax.  This new rc file does not have trigger lists, but a simple list
+of "features" within a list called "ENABLE" in the rc file; you simply comment
+out or uncomment appropriate entries, and gitolite will <em>internally</em> create
+the trigger lists correctly.</p>
+
+<p>...which is fine for triggers that are shipped with gitolite, but now you're
+wondering how to add your own.</p>
+
+<p>The answer is: same as before.</p>
+
+<p>Here's an example.  Let's say you wrote yourself a trigger script called
+'foo', to be invoked from the <code>POST_CREATE</code> trigger list.  With the old
+format, you'd find the following lines in the rc file:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'post-compile/update-git-configs',
+        'post-compile/update-gitweb-access-list',
+        'post-compile/update-git-daemon-access-list',
+    ],
+</code></pre>
+
+<p>and you'd simply add a line for 'foo' in that list.</p>
+
+<p>With the new format, since there is no <code>POST_CREATE</code> trigger list defined in
+the rc file, you'll need to add all this:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'foo'
+    ],
+</code></pre>
+
+<p>instead of just the 'foo' line.</p>
+
+<p>Since the ENABLE list pulls in the rest of the trigger entries, this will be
+<em>effectively</em> as if you had done this in a v3.3 rc file:</p>
+
+<pre><code>POST_CREATE                 =&gt;
+    [
+        'foo',
+        'post-compile/update-git-configs',
+        'post-compile/update-gitweb-access-list',
+        'post-compile/update-git-daemon-access-list',
+    ],
+</code></pre>
+
+<p>As you can see, the 'foo' gets added to the top of the list.</p>
+
+<h4>displaying the resulting trigger list</h4>
+
+<p>You can use the 'gitolite query-rc' command to see what the trigger list
+actually looks like.  For example:</p>
+
+<pre><code>gitolite query-rc POST_CREATE
+</code></pre>
 
 <h3>tips</h3>
 
@@ -4693,7 +4766,8 @@ command instead of gitolite's version and access info.</p></li>
 (note absence of <code>repositories/</code>)]</p></li>
 <li><p>You are able to clone repositories but are unable to push changes back
 (the error complains about the <code>GL_BINDIR</code> environment variable not being
-set, and the <code>hooks/update</code> failing in some way).</p>
+set or about not being able to locate <code>Gitolite/Hooks/Update.pm</code>, and the
+<code>hooks/update</code> failing in some way).</p>
 
 <p>[If you run <code>git remote -v</code> you will find that your clone URL included the
 <code>repositories/</code> described above!]</p></li>
@@ -6070,7 +6144,9 @@ a private key.  You can run it as <code>gitolite setup -a admin</code>.</p>
 time.  You may see none, some, or many.  It does not matter right now.</p></li>
 <li><p>Make sure your gitolite-admin clone has the correct pubkey for the
 administrator in its <code>keydir</code> directory, then run <a href="gitolite.html#emergencies-bypass"><code>gitolite push
--f</code></a> to overwrite the "default" admin repo created by the install.</p></li>
+-f</code></a> to overwrite the "default" admin repo created by the install.</p>
+
+<p><strong>NOTE that is <code>gitolite push</code> not <code>git push</code>!</strong></p></li>
 <li><p>Handle any errors, look for migration issues, etc., as described in the
 links at the top of this page.</p>
 
@@ -7377,6 +7453,12 @@ the files to make sure this worked properly</em></p></li>
 <li>common arguments
 </li>
 <li>trigger-specific arguments and other details
+</li>
+<li><a href="gitolite.html#triggers-addtrig">adding your own scripts to a trigger</a>
+<ul>
+<li>displaying the resulting trigger list
+</li>
+</ul>
 </li>
 <li>tips
 </li>
