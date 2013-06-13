@@ -56,6 +56,35 @@
 
 <hr />
 
+<ul>
+<li><a href="emergencies.html">help for emergencies</a>
+<ul>
+<li>install/setup issues
+</li>
+<li><a href="emergencies.html#lost-key">lost admin key/access</a>
+</li>
+<li><a href="emergencies.html#bypass">bypassing gitolite</a>
+</li>
+<li>botched something?
+<ul>
+<li>fixing botched repos
+</li>
+<li><a href="emergencies.html#clean">cleaning out a botched install</a>
+</li>
+</ul>
+</li>
+<li><a href="emergencies.html#ce">common errors</a>
+</li>
+<li><a href="emergencies.html#ue">uncommon errors</a>
+</li>
+<li><a href="emergencies.html#nonstd">non-standard configs that'll trip you up</a>
+</li>
+<li><a href="emergencies.html#ngp">things that are not gitolite problems</a>
+</li>
+</ul>
+</li>
+</ul>
+
 <h2>install/setup issues</h2>
 
 <p>Most install/setup issues are caused by lack of ssh knowledge.  Ssh is a
@@ -100,7 +129,26 @@ problem, really.</p></li>
 <strong>NOTE</strong>: gitolite does <strong>no access checking</strong> when you do this!
 </font></p>
 
-<h2><a name="clean"></a> cleaning out a botched install</h2>
+<h2>botched something?</h2>
+
+<h3>fixing botched repos</h3>
+
+<p>If you copied some repos from somewhere else, or mucked with the hooks for
+some reason, or deleted any gitolite-specific files, or tried any other
+"behind the scenes" stunts, the quickest, sanest, way to fix everything up is:</p>
+
+<ul>
+<li>make sure any new repos you copied in are mentioned in the gitolite.conf
+in some 'repo' line and the change pushed
+</li>
+<li>then run <code>gitolite setup</code> on the server
+</li>
+</ul>
+
+<p>If the repo you botched is a wild repo, please ask on the mailing list or on
+IRC (see <a href="index.html#contact">contact</a>).</p>
+
+<h3><a name="clean"></a> cleaning out a botched install</h3>
 
 <p>If you've read the <a href="files.html">files involved in gitolite</a> page, you probably know
 the answer, but here's a list of files you should blow away.</p>

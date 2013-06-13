@@ -710,7 +710,26 @@ problem, really.</p></li>
 <strong>NOTE</strong>: gitolite does <strong>no access checking</strong> when you do this!
 </font></p>
 
-<h3><a name="emergencies-clean"></a> cleaning out a botched install</h3>
+<h3>botched something?</h3>
+
+<h4>fixing botched repos</h4>
+
+<p>If you copied some repos from somewhere else, or mucked with the hooks for
+some reason, or deleted any gitolite-specific files, or tried any other
+"behind the scenes" stunts, the quickest, sanest, way to fix everything up is:</p>
+
+<ul>
+<li>make sure any new repos you copied in are mentioned in the gitolite.conf
+in some 'repo' line and the change pushed
+</li>
+<li>then run <code>gitolite setup</code> on the server
+</li>
+</ul>
+
+<p>If the repo you botched is a wild repo, please ask on the mailing list or on
+IRC (see <a href="gitolite.html#index-contact">contact</a>).</p>
+
+<h4><a name="emergencies-clean"></a> cleaning out a botched install</h4>
 
 <p>If you've read the <a href="gitolite.html#files-files">files involved in gitolite</a> page, you probably know
 the answer, but here's a list of files you should blow away.</p>
@@ -4555,7 +4574,8 @@ manually, as long as you know what you're doing and you're careful not to
 erase or overwrite the existing contents of <code>~/.ssh/authorized_keys</code> on
 the server!</p>
 
-<p>But in the gitolite case, it's different; we'll get to that in a minute.</p>
+<p>But with gitolite, it does this for you; see <a href="gitolite.html#users-users">adding and removing
+users</a> for more.</p>
 
 <ul>
 <li><strong>Troubleshooting pubkey authentication failures</strong>: if you are unable to
@@ -7034,7 +7054,13 @@ the files to make sure this worked properly</em></p></li>
 </li>
 <li><a href="gitolite.html#emergencies-bypass">bypassing gitolite</a>
 </li>
+<li>botched something?
+<ul>
+<li>fixing botched repos
+</li>
 <li><a href="gitolite.html#emergencies-clean">cleaning out a botched install</a>
+</li>
+</ul>
 </li>
 <li><a href="gitolite.html#emergencies-ce">common errors</a>
 </li>
