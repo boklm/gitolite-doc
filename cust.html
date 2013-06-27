@@ -190,11 +190,11 @@ setup</code>, or at least <code>gitolite setup --hooks-only</code>.</p>
 <code>$HOME/.gitolite</code>), then you can version those programs using the
 gitolite-admin repo.</p>
 
-<p>I suggest using a directory called "local-code" within the gitolite-admin repo
+<p>I suggest using a directory called "local" within the gitolite-admin repo
 that contains as much of the above directory structure you need.  If you do
 that, then this is what you'd have in the rc file:</p>
 
-<pre><code>LOCAL_CODE                  =&gt;  "$ENV{HOME}/.gitolite/local-code",
+<pre><code>LOCAL_CODE                  =&gt;  "$ENV{HOME}/.gitolite/local",
 </code></pre>
 
 <p>When you do this, gitolite takes care of everything automatically, including
