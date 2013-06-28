@@ -1956,6 +1956,11 @@ gitolite-options.foo = 1', so everything in the <a href="gitolite.html#git-confi
 applies here (especially the bit about <a href="gitolite.html#git-config-override_conf">overriding config
 values</a>).</p>
 
+<p><strong>However</strong>, these values are <strong>not</strong> written into git's own <code>config</code> file, so
+git (or other programs running <code>git config</code>) will not see them.  You can only
+query them using <code>gitolite git-config</code>, where they will appear in full in the
+output.</p>
+
 <p>Options are set by repo.  The syntax is very simple:</p>
 
 <pre><code>option  foo.bar     =   baz
@@ -1975,6 +1980,8 @@ and who are the slaves, for each repo.</p></li>
 <li><p>the optional post-compile trigger 'update-gitweb-daemon-from-options'
 allows you to use options instead of special usernames gitweb and daemon
 to determine access for those tools.</p></li>
+<li><p>you can set <a href="gitolite.html#dev-notes-rsev">repo-specific environment variables</a> for triggers and
+hooks to test, which is very useful.</p></li>
 </ul>
 
 <p>Here's how to disable an option from a single repo if it was enabled earlier
@@ -3555,6 +3562,9 @@ GL_ADMIN_BASE
 <p>Commands invoked by a remote client will also have <code>GL_USER</code> set.  Hooks will
 have <code>GL_REPO</code> also set.</p>
 
+<p>A special form of the <a href="gitolite.html#options-options">option</a> syntax can be used to set
+<a href="gitolite.html#dev-notes-rsev">repo-specific environment variables</a>.</p>
+
 <p>Finally, note that triggers get a lot of relevant information from gitolite as
 arguments; see <a href="gitolite.html#triggers-triggers">here</a> for details.</p>
 
@@ -3704,6 +3714,60 @@ handles that.</p>
 <p>Finally, as an exercise for the reader, consider how you would create a brand
 new env var that contains the <em>comment</em> field of the ssh pubkey that was used
 to gain access, using the information <a href="gitolite.html#sts-kfn">here</a>.</p>
+
+<h3><a name="dev-notes-rsev"></a> appendix 2: repo-specific environment variables</h3>
+
+<p>A special form of the <a href="gitolite.html#options-options">option</a> syntax can be used to set
+repo-specific environment variables that are visible to gitolite triggers and
+any git hooks you may install.</p>
+
+<p>For example, let's say you installed a post-update hook that initiates a CI
+job.  By default, of course, this hook will be active for <em>all</em>
+gitolite-managed repos.  However, you only want it to run for some specific
+repos, say r1, r2, and r4.</p>
+
+<p>To do that, first add this to the gitolite.conf:</p>
+
+<pre><code>repo r1 r2 r4
+    option ENV.CI = 1
+</code></pre>
+
+<p>This creates an environment variable called <code>GL_OPTION_CI</code> with the value 1,
+before any trigger or hook is invoked.</p>
+
+<p>Note: option names <em>must</em> start with <code>ENV.</code>, followed by a seqence of
+characters composed of alphas, numbers, and the underscore character.</p>
+
+<p>Now the hook running the CI job can easily decide what to do:</p>
+
+<pre><code># exit if $GL_OPTION_CI is not set
+[ -z $GL_OPTION_CI ] &amp;&amp; exit
+
+... rest of CI job code as before ...
+</code></pre>
+
+<p>Of course you can also do the opposite; i.e. decide that the listed repos
+should <em>not</em> run the CI job but all other repos should:</p>
+
+<pre><code>repo @all
+    option ENV.CI = 1
+
+repo r1 r2 r4
+    option ENV.CI = ""
+</code></pre>
+
+<p>(The hook code remains the same as before.)</p>
+
+<p><font color="gray">Before this feature was added, you could still do this, by
+using the <code>gitolite git-config</code> command inside the hook code to test for
+options and configs set for the repo, like:</p>
+
+<pre><code>if gitolite git-config -q reponame gitolite-options.option-name
+then
+    ...
+</code></pre>
+
+<p>The new method is much more convenient, as you can see.</font></p>
 
 <hr />
 
@@ -7416,6 +7480,8 @@ the files to make sure this worked properly</em></p></li>
 </ul>
 </li>
 <li>appendix 1: notes on the INPUT trigger
+</li>
+<li><a href="gitolite.html#dev-notes-rsev">appendix 2: repo-specific environment variables</a>
 </li>
 </ul>
 </li>

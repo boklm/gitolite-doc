@@ -58,6 +58,11 @@ gitolite-options.foo = 1', so everything in the <a href="git-config.html">git-co
 applies here (especially the bit about <a href="git-config.html#override_conf">overriding config
 values</a>).</p>
 
+<p><strong>However</strong>, these values are <strong>not</strong> written into git's own <code>config</code> file, so
+git (or other programs running <code>git config</code>) will not see them.  You can only
+query them using <code>gitolite git-config</code>, where they will appear in full in the
+output.</p>
+
 <p>Options are set by repo.  The syntax is very simple:</p>
 
 <pre><code>option  foo.bar     =   baz
@@ -77,6 +82,8 @@ and who are the slaves, for each repo.</p></li>
 <li><p>the optional post-compile trigger 'update-gitweb-daemon-from-options'
 allows you to use options instead of special usernames gitweb and daemon
 to determine access for those tools.</p></li>
+<li><p>you can set <a href="dev-notes.html#rsev">repo-specific environment variables</a> for triggers and
+hooks to test, which is very useful.</p></li>
 </ul>
 
 <p>Here's how to disable an option from a single repo if it was enabled earlier
