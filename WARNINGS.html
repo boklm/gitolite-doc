@@ -50,19 +50,37 @@
 </p>
 <h1>WARNINGS</h1>
 
-<p>Gitolite does NOT like it if you fiddle with files, directories, permissions,
-etc., on the server except as directed in the documentation.  Gitolite also
-expects all the directories and files it manages/uses to be owned by the
-<a href="install.html#nnc">hosting user</a> and not have strange permissions and ownerships.</p>
+<p><strong>Please take note of the following points</strong>:</p>
 
-<p>Very few people have fallen foul of this, but the ones who <em>did</em> became very
-obnoxious about it, hence this warning.</p>
+<ul>
+<li><p>If you're bringing existing repos into gitolite, please see
+<a href="rare.html#existing">this</a> first.</p></li>
+<li><p>Gitolite expects all the directories and files it manages/uses to be owned
+by the <a href="install.html#nnc">hosting user</a> and not have strange permissions and
+ownerships.</p></li>
+<li><p>Gitolite does NOT like it if you fiddle with files and directories it
+cares about in any way except as directed in the documentation.</p>
 
-<p>Gitolite depends on several system-installed packages: openssh, git, perl, sh
-being the main ones.  They should all be configured sensibly and with most of
-the normal defaults.  (For example, if your sshd config says the authorized
-keys file should be placed in some directory other than the default, expect
-trouble).</p>
+<p>Gitolite cares about the following directories</p>
+
+<pre><code>~/.gitolite.rc
+~/.gitolite
+~/repositories/gitolite-admin.git
+</code></pre>
+
+<p>Also, in each repo, gitolite cares about</p>
+
+<pre><code>gl-*
+hooks/update
+</code></pre></li>
+<li><p>Gitolite depends on several system-installed packages: openssh, git, perl,
+sh being the main ones.  They should all be configured sensibly and with
+most of the normal defaults.  (For example, if your sshd config says the
+authorized keys file should be placed in some directory other than the
+default, expect trouble).</p></li>
+</ul>
+
+<p>...ok that's the serious stuff done...</p>
 
 <hr />
 
