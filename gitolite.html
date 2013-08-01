@@ -2892,18 +2892,21 @@ name clashes in some far-fetched scenarios).</font></p>
 
 <h3><a name="rare-existing"></a> moving existing repos into gitolite</h3>
 
-<blockquote>
-  <p><strong>WARNING</strong>: gitolite <strong>will clobber</strong> any existing <code>update</code> hook in your
-    repos when you do this.  Please see either the <a href="cookbook.html">cookbook</a> or the
-    <a href="gitolite.html#cust-cust">customisation</a> document for information on how to make your
-    existing update hook work with gitolite.</p>
-  
-  <p>Gitolite <em>may clobber</em> any existing "git-daemon-export-ok" file in your
-    repo; see the page on <a href="gitolite.html#external-external">interfacing with external tools</a> for how
-    to enable that via gitolite.</p>
-</blockquote>
+<p><strong>WARNINGS</strong></p>
 
-<p>On the server:</p>
+<ul>
+<li><p>Gitolite <strong>will clobber</strong> any existing <code>update</code> hook in your repos when
+you do this.  Please see either the <a href="cookbook.html">cookbook</a> or the
+<a href="gitolite.html#cust-cust">customisation</a> document for information on how to make your
+existing update hook work with gitolite.</p></li>
+<li><p>Gitolite <em>may clobber</em> any existing "git-daemon-export-ok" file in your
+repo; see the page on <a href="gitolite.html#external-external">interfacing with external tools</a> for how
+to enable that via gitolite.</p></li>
+</ul>
+
+<p>With that out of the way, here's how to do this:</p>
+
+<p>First, on the server:</p>
 
 <ul>
 <li><p>Move the repos to <code>$HOME/repositories</code>.</p></li>
@@ -2922,7 +2925,7 @@ name clashes in some far-fetched scenarios).</font></p>
 about write access control!</strong></p></li>
 </ul>
 
-<p>Back on your workstation:</p>
+<p>Then, back on your workstation:</p>
 
 <ul>
 <li><p>If the repos are normal repos, <a href="gitolite.html#repos-repos">add them</a> to conf/gitolite.conf in
@@ -3269,7 +3272,7 @@ stuff there (e.g., VREFs go in <code>local/VREF</code>, and commands in
 <p>(Note: when you do this, gitolite takes care of running <code>gitolite setup
 --hooks-only</code> when you change any hooks and push).</p>
 
-<h5>SECURITY note on this mode of managing non-core code</h5>
+<h5><strong>SECURITY</strong> note on this mode of managing non-core code</h5>
 
 <p><strong>In this mode, anyone who can push changes to the admin repo will effectively
 be able to run any arbitrary command on the server.</strong></p>
@@ -7507,7 +7510,7 @@ the files to make sure this worked properly</em></p></li>
 </li>
 <li><a href="gitolite.html#cust-pushcode">using the gitolite-admin repo to manage non-core code</a>
 <ul>
-<li>SECURITY note on this mode of managing non-core code
+<li><strong>SECURITY</strong> note on this mode of managing non-core code
 </li>
 </ul>
 </li>
