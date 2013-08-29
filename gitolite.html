@@ -3333,12 +3333,12 @@ name is given in the <code>LOCAL_CODE</code> rc variable, then run <code>gitolit
 by the <a href="gitolite.html#cust-localcode"><code>LOCAL_CODE</code></a> rc variable</p></li>
 <li><p>add your hooks here, with descriptive names (i.e., not "post-receive",
 etc., but maybe "jenkins" or "deploy" or whatever)</p></li>
-<li><p>uncomment the 'repo-specific-hooks' line in the rc file.</p>
+<li><p>uncomment the 'repo-specific-hooks' line in the rc file or add it to the
+ENABLE list if it doesn't exist.</p>
 
-<p>If your rc file does not have this line already, but does have an ENABLE
-list, add it to the ENABLE list.  If your rc files does not even have an
-ENABLE list, you need to add this to the POST_COMPILE and the POST_CREATE
-lists.  Click <a href="gitolite.html#triggers-addtrig">here</a> for more on all this.</p></li>
+<p>If your rc file does not have an ENABLE list, you need to add this to the
+POST_COMPILE and the POST_CREATE lists.  Click <a href="gitolite.html#triggers-addtrig">here</a> for more on
+all this.</p></li>
 <li><p>now add lines like this to your conf file:</p>
 
 <pre><code>repo    foo
