@@ -3319,13 +3319,40 @@ section in <a href="gitolite.html#dev-notes-dev-notes">dev-notes</a> if you want
 <li><p>(gitolite-admin repo only) gitolite reserves the <code>post-update</code> hook.</p></li>
 </ul>
 
-<p><strong>NOTE</strong>: if you want to install a hook in only a few specific repositories,
-do it directly on the server.</p>
-
 <p>How/where to install them is described in detail in the "locations" section
 above, especially <a href="gitolite.html#cust-localcode">this</a> and <a href="gitolite.html#cust-pushcode">this</a>.  The summary is that
 you put them in the "hooks/common" sub-directory within the directory whose
 name is given in the <code>LOCAL_CODE</code> rc variable, then run <code>gitolite setup</code>.</p>
+
+<h5><a name="cust-rsh"></a> repo-specific hooks</h5>
+
+<p>If you want to add hooks only to specific repos, do this:</p>
+
+<ul>
+<li><p>create a directory called <code>hooks/repo-specific</code> in the location specified
+by the <a href="gitolite.html#cust-localcode"><code>LOCAL_CODE</code></a> rc variable</p></li>
+<li><p>add your hooks here, with descriptive names (i.e., not "post-receive",
+etc., but maybe "jenkins" or "deploy" or whatever)</p></li>
+<li><p>uncomment the 'repo-specific-hooks' line in the rc file.</p>
+
+<p>If your rc file does not have this line already, do not simply add it; it
+won't work.  Instead, add it to the POST_COMPILE and the POST_CREATE lists
+in the rc file.  If those lists also don't exist, you can create them.
+Click <a href="gitolite.html#triggers-addtrig">here</a> for more on all this.</p></li>
+<li><p>now add lines like this to your conf file:</p>
+
+<pre><code>repo    foo
+    RW+     =   @all
+    option hook.post-receive    =   deploy
+</code></pre>
+
+<p>The syntax should be fairly obvious, but just to be clear, in this case a
+symlink called "post-receive" will be placed in foo.git/hooks, pointing to
+the executable called "deploy" in hooks/repo-specific in the local-code
+area.</p>
+
+<p><strong>WARNING</strong>: if the hook already exists, it is silently overwritten.</p></li>
+</ul>
 
 <h4><a name="cust-sugar"></a> syntactic sugar</h4>
 
@@ -7521,6 +7548,10 @@ the files to make sure this worked properly</em></p></li>
 <li><a href="gitolite.html#cust-commands">gitolite "commands"</a>
 </li>
 <li><a href="gitolite.html#cust-hooks">hooks and gitolite</a>
+<ul>
+<li><a href="gitolite.html#cust-rsh">repo-specific hooks</a>
+</li>
+</ul>
 </li>
 <li><a href="gitolite.html#cust-sugar">syntactic sugar</a>
 </li>
